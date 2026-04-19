@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="section_sales" model="website.pricing.feature.section">
+        <field name="name">Sales Management</field>
+        <field name="sequence">10</field>
+    </record>
+    <record id="section_crm" model="website.pricing.feature.section">
+        <field name="name">Customer Relationship Management</field>
+        <field name="sequence">20</field>
+    </record>
+    <record id="section_inventory" model="website.pricing.feature.section">
+        <field name="name">Inventory &amp; Purchasing</field>
+        <field name="sequence">30</field>
+    </record>
+    <record id="section_accounting" model="website.pricing.feature.section">
+        <field name="name">Accounting Management</field>
+        <field name="sequence">40</field>
+    </record>
+    <record id="section_hr" model="website.pricing.feature.section">
+        <field name="name">Human Resources Management</field>
+        <field name="sequence">50</field>
+    </record>
+    <record id="section_operations" model="website.pricing.feature.section">
+        <field name="name">Operations Management</field>
+        <field name="sequence">60</field>
+    </record>
+    <record id="section_ecommerce" model="website.pricing.feature.section">
+        <field name="name">E-Commerce &amp; Integrations</field>
+        <field name="sequence">70</field>
+    </record>
+    <record id="section_support" model="website.pricing.feature.section">
+        <field name="name">Support &amp; Backup</field>
+        <field name="sequence">80</field>
+    </record>
+    <record id="section_addons" model="website.pricing.feature.section">
+        <field name="name">Add-Ons</field>
+        <field name="sequence">90</field>
+    </record>
+    <record id="feat_einvoice" model="website.pricing.feature">
+        <field name="name">Electronic Invoice</field>
+        <field name="section_id" ref="section_sales"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="feat_pos" model="website.pricing.feature">
+        <field name="name">Cloud Point of Sale</field>
+        <field name="description">Get unlimited POS devices in your plan. Sell online and in stores using barcodes, serial numbers, and categories, with full integration with inventory, accounting, and CRM.</field>
+        <field name="section_id" ref="section_sales"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="feat_sales_reports" model="website.pricing.feature">
+        <field name="name">Sales Reports</field>
+        <field name="section_id" ref="section_sales"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="feat_online_payments" model="website.pricing.feature">
+        <field name="name">Online Payments</field>
+        <field name="section_id" ref="section_sales"/>
+        <field name="sequence">40</field>
+    </record>
+    <record id="feat_promotions" model="website.pricing.feature">
+        <field name="name">Sales Promotions</field>
+        <field name="section_id" ref="section_sales"/>
+        <field name="sequence">50</field>
+    </record>
+    <record id="feat_price_list" model="website.pricing.feature">
+        <field name="name">Price List</field>
+        <field name="section_id" ref="section_sales"/>
+        <field name="sequence">60</field>
+    </record>
+    <record id="feat_loyalty" model="website.pricing.feature">
+        <field name="name">Loyalty Points</field>
+        <field name="section_id" ref="section_sales"/>
+        <field name="sequence">70</field>
+    </record>
+    <record id="feat_invoices" model="website.pricing.feature">
+        <field name="name">Invoices &amp; Quotes</field>
+        <field name="description">Create professional invoices and quotes, and set custom statuses for each to facilitate tracking, boost productivity, and ensure compliance.</field>
+        <field name="section_id" ref="section_sales"/>
+        <field name="sequence">80</field>
+    </record>
+    <record id="feat_customer_followup" model="website.pricing.feature">
+        <field name="name">Customer Follow-up</field>
+        <field name="section_id" ref="section_crm"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="feat_multi_channel" model="website.pricing.feature">
+        <field name="name">Multi-Channel Engagement</field>
+        <field name="section_id" ref="section_crm"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="feat_crm_reports" model="website.pricing.feature">
+        <field name="name">CRM Reports</field>
+        <field name="section_id" ref="section_crm"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="feat_memberships" model="website.pricing.feature">
+        <field name="name">Membership Management</field>
+        <field name="section_id" ref="section_crm"/>
+        <field name="sequence">40</field>
+    </record>
+    <record id="feat_sms" model="website.pricing.feature">
+        <field name="name">SMS Integration</field>
+        <field name="section_id" ref="section_crm"/>
+        <field name="sequence">50</field>
+    </record>
+    <record id="feat_customers_limit" model="website.pricing.feature">
+        <field name="name">Customers</field>
+        <field name="description">Number of new customers you can add based on your plan.</field>
+        <field name="section_id" ref="section_crm"/>
+        <field name="sequence">60</field>
+    </record>
+    <record id="feat_products" model="website.pricing.feature">
+        <field name="name">Products &amp; Services</field>
+        <field name="section_id" ref="section_inventory"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="feat_suppliers" model="website.pricing.feature">
+        <field name="name">Supplier Management</field>
+        <field name="section_id" ref="section_inventory"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="feat_stock_tracking" model="website.pricing.feature">
+        <field name="name">Inventory Tracking</field>
+        <field name="section_id" ref="section_inventory"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="feat_stock_count" model="website.pricing.feature">
+        <field name="name">Stock Count / Inventory</field>
+        <field name="section_id" ref="section_inventory"/>
+        <field name="sequence">40</field>
+    </record>
+    <record id="feat_purchase_invoices" model="website.pricing.feature">
+        <field name="name">Purchase Invoices</field>
+        <field name="section_id" ref="section_inventory"/>
+        <field name="sequence">50</field>
+    </record>
+    <record id="feat_warehouses" model="website.pricing.feature">
+        <field name="name">Warehouses</field>
+        <field name="description">Manage your warehouses in different locations from one platform to improve inventory distribution and speed up supply.</field>
+        <field name="section_id" ref="section_inventory"/>
+        <field name="sequence">60</field>
+    </record>
+    <record id="feat_assets" model="website.pricing.feature">
+        <field name="name">Assets &amp; Depreciation</field>
+        <field name="section_id" ref="section_accounting"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="feat_chart_accounts" model="website.pricing.feature">
+        <field name="name">Chart of Accounts</field>
+        <field name="section_id" ref="section_accounting"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="feat_journal_entries" model="website.pricing.feature">
+        <field name="name">Journal Entries</field>
+        <field name="section_id" ref="section_accounting"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="feat_bank_sync" model="website.pricing.feature">
+        <field name="name">Automatic Bank Sync</field>
+        <field name="section_id" ref="section_accounting"/>
+        <field name="sequence">40</field>
+    </record>
+    <record id="feat_financial_reports" model="website.pricing.feature">
+        <field name="name">Financial Reports</field>
+        <field name="section_id" ref="section_accounting"/>
+        <field name="sequence">50</field>
+    </record>
+    <record id="feat_cost_centers" model="website.pricing.feature">
+        <field name="name">Cost Centers</field>
+        <field name="section_id" ref="section_accounting"/>
+        <field name="sequence">60</field>
+    </record>
+    <record id="feat_cash_banks" model="website.pricing.feature">
+        <field name="name">Cash Registers &amp; Banks</field>
+        <field name="section_id" ref="section_accounting"/>
+        <field name="sequence">70</field>
+    </record>
+    <record id="feat_org_chart" model="website.pricing.feature">
+        <field name="name">Organizational Chart</field>
+        <field name="section_id" ref="section_hr"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="feat_contracts" model="website.pricing.feature">
+        <field name="name">Contracts</field>
+        <field name="section_id" ref="section_hr"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="feat_attendance" model="website.pricing.feature">
+        <field name="name">Attendance Management</field>
+        <field name="section_id" ref="section_hr"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="feat_payroll" model="website.pricing.feature">
+        <field name="name">Payroll</field>
+        <field name="section_id" ref="section_hr"/>
+        <field name="sequence">40</field>
+    </record>
+    <record id="feat_employee_requests" model="website.pricing.feature">
+        <field name="name">Employee Requests</field>
+        <field name="section_id" ref="section_hr"/>
+        <field name="sequence">50</field>
+    </record>
+    <record id="feat_employees_count" model="website.pricing.feature">
+        <field name="name">Employees</field>
+        <field name="section_id" ref="section_hr"/>
+        <field name="sequence">60</field>
+    </record>
+    <record id="feat_work_orders" model="website.pricing.feature">
+        <field name="name">Work Orders / Projects</field>
+        <field name="section_id" ref="section_operations"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="feat_reservations" model="website.pricing.feature">
+        <field name="name">Reservations</field>
+        <field name="section_id" ref="section_operations"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="feat_time_tracking" model="website.pricing.feature">
+        <field name="name">Time Tracking</field>
+        <field name="section_id" ref="section_operations"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="feat_manufacturing" model="website.pricing.feature">
+        <field name="name">Manufacturing Cycle</field>
+        <field name="section_id" ref="section_operations"/>
+        <field name="sequence">40</field>
+    </record>
+    <record id="feat_units" model="website.pricing.feature">
+        <field name="name">Rental / Units Management</field>
+        <field name="section_id" ref="section_operations"/>
+        <field name="sequence">50</field>
+    </record>
+    <record id="feat_woocommerce" model="website.pricing.feature">
+        <field name="name">WooCommerce Integration</field>
+        <field name="section_id" ref="section_ecommerce"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="feat_zapier" model="website.pricing.feature">
+        <field name="name">Zapier Integration</field>
+        <field name="section_id" ref="section_ecommerce"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="feat_mobile_apps" model="website.pricing.feature">
+        <field name="name">Mobile Apps</field>
+        <field name="section_id" ref="section_ecommerce"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="feat_tech_support" model="website.pricing.feature">
+        <field name="name">Technical Support</field>
+        <field name="section_id" ref="section_support"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="feat_backups" model="website.pricing.feature">
+        <field name="name">Automated Backups</field>
+        <field name="section_id" ref="section_support"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="feat_api" model="website.pricing.feature">
+        <field name="name">API Access</field>
+        <field name="section_id" ref="section_support"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="feat_addon_users" model="website.pricing.feature">
+        <field name="name">Additional Users</field>
+        <field name="section_id" ref="section_addons"/>
+        <field name="sequence">10</field>
+    </record>
+    <record id="feat_addon_branches" model="website.pricing.feature">
+        <field name="name">Additional Branches</field>
+        <field name="section_id" ref="section_addons"/>
+        <field name="sequence">20</field>
+    </record>
+    <record id="feat_addon_storage" model="website.pricing.feature">
+        <field name="name">Storage (GB)</field>
+        <field name="section_id" ref="section_addons"/>
+        <field name="sequence">30</field>
+    </record>
+    <record id="plan_basic" model="website.pricing.plan">
+        <field name="name">Basic</field>
+        <field name="sequence">10</field>
+        <field name="monthly_price">30.00</field>
+        <field name="annual_price_per_month">20.00</field>
+        <field name="annual_total">240.00</field>
+        <field name="color_class">plan-basic</field>
+        <field name="cta_label">Start Free Trial</field>
+        <field name="cta_url">/register</field>
+    </record>
+    <record id="plan_advanced" model="website.pricing.plan">
+        <field name="name">Advanced</field>
+        <field name="sequence">20</field>
+        <field name="monthly_price">55.00</field>
+        <field name="annual_price_per_month">41.25</field>
+        <field name="annual_total">495.00</field>
+        <field name="color_class">plan-advanced</field>
+        <field name="cta_label">Start Free Trial</field>
+        <field name="cta_url">/register</field>
+    </record>
+    <record id="plan_complete" model="website.pricing.plan">
+        <field name="name">Complete</field>
+        <field name="tagline">Most Popular</field>
+        <field name="sequence">30</field>
+        <field name="is_featured">True</field>
+        <field name="featured_label">Most Popular</field>
+        <field name="monthly_price">70.00</field>
+        <field name="annual_price_per_month">50.00</field>
+        <field name="annual_total">600.00</field>
+        <field name="color_class">plan-complete</field>
+        <field name="cta_label">Start Free Trial</field>
+        <field name="cta_url">/register</field>
+    </record>
+    <record id="line_basic_einvoice" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_einvoice"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_pos" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_pos"/>
+        <field name="value_type">unlimited</field>
+    </record>
+    <record id="line_basic_sales_reports" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_sales_reports"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_online_payments" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_online_payments"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_promotions" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_promotions"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_price_list" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_price_list"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_loyalty" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_loyalty"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_invoices" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_invoices"/>
+        <field name="value_type">text</field>
+        <field name="value_text">100 / month</field>
+    </record>
+    <record id="line_basic_followup" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_customer_followup"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_multi_channel" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_multi_channel"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_crm_reports" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_crm_reports"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_memberships" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_memberships"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_sms" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_sms"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_customers" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_customers_limit"/>
+        <field name="value_type">text</field>
+        <field name="value_text">100</field>
+    </record>
+    <record id="line_basic_products" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_products"/>
+        <field name="value_type">unlimited</field>
+    </record>
+    <record id="line_basic_suppliers" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_suppliers"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_stock_tracking" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_stock_tracking"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_stock_count" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_stock_count"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_purchase_invoices" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_purchase_invoices"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_warehouses" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_warehouses"/>
+        <field name="value_type">text</field>
+        <field name="value_text">1</field>
+    </record>
+    <record id="line_basic_assets" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_assets"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_chart" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_chart_accounts"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_journal" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_journal_entries"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_bank_sync" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_bank_sync"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_financial_reports" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_financial_reports"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_cost_centers" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_cost_centers"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_cash_banks" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_cash_banks"/>
+        <field name="value_type">text</field>
+        <field name="value_text">2</field>
+    </record>
+    <record id="line_basic_org_chart" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_org_chart"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_contracts" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_contracts"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_attendance" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_attendance"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_payroll" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_payroll"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_employee_requests" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_employee_requests"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_employees" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_employees_count"/>
+        <field name="value_type">text</field>
+        <field name="value_text">1 included · $3/extra</field>
+    </record>
+    <record id="line_basic_work_orders" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_work_orders"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_reservations" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_reservations"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_time_tracking" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_time_tracking"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_manufacturing" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_manufacturing"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_units" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_units"/>
+        <field name="value_type">text</field>
+        <field name="value_text">3 included · $2.5/extra</field>
+    </record>
+    <record id="line_basic_woocommerce" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_woocommerce"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_zapier" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_zapier"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_mobile" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_mobile_apps"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_support" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_tech_support"/>
+        <field name="value_type">text</field>
+        <field name="value_text">24/7</field>
+    </record>
+    <record id="line_basic_backups" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_backups"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_api" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_api"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_basic_addon_users" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_addon_users"/>
+        <field name="value_type">text</field>
+        <field name="value_text">$9.33/mo per extra</field>
+    </record>
+    <record id="line_basic_addon_branches" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_addon_branches"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_basic_addon_storage" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="feature_id" ref="feat_addon_storage"/>
+        <field name="value_type">text</field>
+        <field name="value_text">5 GB · $0.5/extra</field>
+    </record>
+    <record id="line_adv_einvoice" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_einvoice"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_pos" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_pos"/>
+        <field name="value_type">unlimited</field>
+    </record>
+    <record id="line_adv_sales_reports" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_sales_reports"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_online_payments" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_online_payments"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_promotions" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_promotions"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_price_list" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_price_list"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_loyalty" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_loyalty"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_invoices" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_invoices"/>
+        <field name="value_type">text</field>
+        <field name="value_text">500 / month</field>
+    </record>
+    <record id="line_adv_followup" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_customer_followup"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_multi_channel" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_multi_channel"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_crm_reports" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_crm_reports"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_memberships" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_memberships"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_sms" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_sms"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_customers" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_customers_limit"/>
+        <field name="value_type">text</field>
+        <field name="value_text">300</field>
+    </record>
+    <record id="line_adv_products" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_products"/>
+        <field name="value_type">unlimited</field>
+    </record>
+    <record id="line_adv_suppliers" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_suppliers"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_stock_tracking" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_stock_tracking"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_stock_count" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_stock_count"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_purchase_invoices" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_purchase_invoices"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_warehouses" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_warehouses"/>
+        <field name="value_type">text</field>
+        <field name="value_text">3</field>
+    </record>
+    <record id="line_adv_assets" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_assets"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_chart" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_chart_accounts"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_journal" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_journal_entries"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_bank_sync" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_bank_sync"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_financial_reports" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_financial_reports"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_cost_centers" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_cost_centers"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_cash_banks" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_cash_banks"/>
+        <field name="value_type">text</field>
+        <field name="value_text">5</field>
+    </record>
+    <record id="line_adv_org_chart" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_org_chart"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_contracts" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_contracts"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_attendance" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_attendance"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_payroll" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_payroll"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_employee_requests" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_employee_requests"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_employees" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_employees_count"/>
+        <field name="value_type">text</field>
+        <field name="value_text">2 included · $3/extra</field>
+    </record>
+    <record id="line_adv_work_orders" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_work_orders"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_reservations" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_reservations"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_time_tracking" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_time_tracking"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_manufacturing" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_manufacturing"/>
+        <field name="value_type">x</field>
+    </record>
+    <record id="line_adv_units" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_units"/>
+        <field name="value_type">text</field>
+        <field name="value_text">6 included · $2.5/extra</field>
+    </record>
+    <record id="line_adv_woocommerce" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_woocommerce"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_zapier" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_zapier"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_mobile" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_mobile_apps"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_support" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_tech_support"/>
+        <field name="value_type">text</field>
+        <field name="value_text">24/7</field>
+    </record>
+    <record id="line_adv_backups" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_backups"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_api" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_api"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_adv_addon_users" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_addon_users"/>
+        <field name="value_type">text</field>
+        <field name="value_text">1 included · $9.33/extra</field>
+    </record>
+    <record id="line_adv_addon_branches" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_addon_branches"/>
+        <field name="value_type">text</field>
+        <field name="value_text">$52/mo per extra</field>
+    </record>
+    <record id="line_adv_addon_storage" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_advanced"/>
+        <field name="feature_id" ref="feat_addon_storage"/>
+        <field name="value_type">text</field>
+        <field name="value_text">10 GB · $0.5/extra</field>
+    </record>
+    <record id="line_comp_einvoice" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_einvoice"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_pos" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_pos"/>
+        <field name="value_type">unlimited</field>
+    </record>
+    <record id="line_comp_sales_reports" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_sales_reports"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_online_payments" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_online_payments"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_promotions" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_promotions"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_price_list" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_price_list"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_loyalty" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_loyalty"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_invoices" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_invoices"/>
+        <field name="value_type">unlimited</field>
+    </record>
+    <record id="line_comp_followup" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_customer_followup"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_multi_channel" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_multi_channel"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_crm_reports" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_crm_reports"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_memberships" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_memberships"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_sms" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_sms"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_customers" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_customers_limit"/>
+        <field name="value_type">unlimited</field>
+    </record>
+    <record id="line_comp_products" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_products"/>
+        <field name="value_type">unlimited</field>
+    </record>
+    <record id="line_comp_suppliers" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_suppliers"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_stock_tracking" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_stock_tracking"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_stock_count" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_stock_count"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_purchase_invoices" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_purchase_invoices"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_warehouses" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_warehouses"/>
+        <field name="value_type">text</field>
+        <field name="value_text">5 included · $15.6/extra</field>
+    </record>
+    <record id="line_comp_assets" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_assets"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_chart" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_chart_accounts"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_journal" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_journal_entries"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_bank_sync" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_bank_sync"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_financial_reports" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_financial_reports"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_cost_centers" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_cost_centers"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_cash_banks" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_cash_banks"/>
+        <field name="value_type">unlimited</field>
+    </record>
+    <record id="line_comp_org_chart" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_org_chart"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_contracts" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_contracts"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_attendance" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_attendance"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_payroll" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_payroll"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_employee_requests" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_employee_requests"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_employees" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_employees_count"/>
+        <field name="value_type">text</field>
+        <field name="value_text">3 included · $3/extra</field>
+    </record>
+    <record id="line_comp_work_orders" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_work_orders"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_reservations" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_reservations"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_time_tracking" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_time_tracking"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_manufacturing" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_manufacturing"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_units" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_units"/>
+        <field name="value_type">text</field>
+        <field name="value_text">10 included · $2.5/extra</field>
+    </record>
+    <record id="line_comp_woocommerce" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_woocommerce"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_zapier" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_zapier"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_mobile" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_mobile_apps"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_support" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_tech_support"/>
+        <field name="value_type">text</field>
+        <field name="value_text">24/7</field>
+    </record>
+    <record id="line_comp_backups" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_backups"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_api" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_api"/>
+        <field name="value_type">check</field>
+    </record>
+    <record id="line_comp_addon_users" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_addon_users"/>
+        <field name="value_type">text</field>
+        <field name="value_text">1 included · $9.33/extra</field>
+    </record>
+    <record id="line_comp_addon_branches" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_addon_branches"/>
+        <field name="value_type">text</field>
+        <field name="value_text">$52/mo per extra</field>
+    </record>
+    <record id="line_comp_addon_storage" model="website.pricing.plan.line">
+        <field name="plan_id" ref="plan_complete"/>
+        <field name="feature_id" ref="feat_addon_storage"/>
+        <field name="value_type">text</field>
+        <field name="value_text">20 GB · $0.5/extra</field>
+    </record>
+</odoo>

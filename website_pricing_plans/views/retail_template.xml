@@ -1,0 +1,1414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================
+         RETAIL STORES PAGE
+         Route: /retail-stores
+         Mirrors: daftra.com/برنامج-إدارة-المحلات-التجارية/
+    ============================================================ -->
+    <template id="retail_stores_page" name="Retail Stores - برنامج إدارة المحلات التجارية">
+        <t t-call="website.layout">
+            <t t-set="no_header" t-value="True"/>
+            <t t-set="no_footer" t-value="True"/>
+            <t t-set="head">
+                <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;display=swap"
+                      rel="stylesheet"/>
+                <title data-ar="برنامج إدارة المحلات التجارية - دفترة" data-en="Retail Stores Management Software - daftra">برنامج إدارة المحلات التجارية - دفترة</title>
+                <meta name="description"
+                      content="برنامج محاسبة للمحلات التجارية من دفترة - إدارة المبيعات والمخزون والفواتير الإلكترونية ونقاط البيع بسهولة تامة"/>
+                <style>
+/* ================================================================
+   RETAIL PAGE STYLES — retail_template.xml
+   ================================================================ */
+
+/* ── Base ── */
+#df-retail-wrap *,
+#df-retail-wrap *::before,
+#df-retail-wrap *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+#df-retail-wrap {
+    font-family: 'Cairo', sans-serif;
+    color: #1a1f36;
+    background: #fff;
+    line-height: 1.6;
+}
+#df-retail-wrap a { text-decoration: none; color: inherit; }
+#df-retail-wrap img { max-width: 100%; display: block; }
+#df-retail-wrap ul { list-style: none; }
+
+/* ── Container ── */
+#df-retail-wrap .df-r-cont {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* ════════════════════════════════════════
+   SUB-NAV
+════════════════════════════════════════ */
+#df-retail-wrap .df-r-subnav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e8edf5;
+    padding: 0;
+}
+#df-retail-wrap .df-r-subnav__inner {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+#df-retail-wrap .df-r-subnav__inner::-webkit-scrollbar { display: none; }
+#df-retail-wrap .df-r-subnav__link {
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+#df-retail-wrap .df-r-subnav__link:hover,
+#df-retail-wrap .df-r-subnav__link--active {
+    color: #00a865 !important;
+    border-bottom-color: #00c97c !important;
+}
+
+/* ════════════════════════════════════════
+   HERO SECTION
+════════════════════════════════════════ */
+#df-retail-wrap .df-r-hero {
+    background: #fff;
+    padding: 56px 0 44px;
+}
+#df-retail-wrap .df-r-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #6b7a99;
+    margin-bottom: 24px;
+}
+#df-retail-wrap .df-r-breadcrumb a { color: #6b7a99; }
+#df-retail-wrap .df-r-breadcrumb a:hover { color: #00a865; }
+#df-retail-wrap .df-r-breadcrumb svg { flex-shrink: 0; }
+
+#df-retail-wrap .df-r-hero__center {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+}
+#df-retail-wrap .df-r-hero h1 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    font-weight: 900;
+    color: #1a1f36;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+#df-retail-wrap .df-r-highlight { color: #00c97c; }
+#df-retail-wrap .df-r-hero__sub {
+    font-size: 15px;
+    color: #5a6580;
+    line-height: 1.9;
+    max-width: 660px;
+    margin: 0 auto;
+}
+
+/* ── Hero CTA Button ── */
+#df-retail-wrap .df-r-hero__cta-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 28px auto 22px;
+    max-width: 560px;
+}
+#df-retail-wrap .df-r-btn-split {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    background: #00c97c;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+#df-retail-wrap .df-r-btn-split:hover { background: #00b06c; }
+#df-retail-wrap .df-r-btn-split .btn-arrow {
+    background: rgba(0,0,0,0.13);
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+#df-retail-wrap .df-r-btn-split .btn-text {
+    flex: 1;
+    padding: 14px 20px;
+    text-align: center;
+}
+
+/* ── Badges ── */
+#df-retail-wrap .df-r-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    margin: 0 auto 36px;
+}
+#df-retail-wrap .df-r-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4a5568;
+}
+#df-retail-wrap .df-r-badge__dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+#df-retail-wrap .df-r-badge__dot::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00c97c;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* ── Hero Mini-Cards ── */
+#df-retail-wrap .df-r-hero__mini-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+}
+#df-retail-wrap .df-r-mini-card {
+    background: #f7f9fc;
+    border: 1px solid #e8edf5;
+    border-radius: 14px;
+    padding: 18px 20px;
+    width: 210px;
+    flex-shrink: 0;
+}
+#df-retail-wrap .df-r-mini-card__icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+#df-retail-wrap .df-r-mini-card__title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #1a1f36;
+    margin-bottom: 5px;
+}
+#df-retail-wrap .df-r-mini-card__desc {
+    font-size: 12px;
+    color: #7a8498;
+    line-height: 1.65;
+}
+
+/* ── Hero Image Wrap ── */
+#df-retail-wrap .df-r-hero__img-wrap {
+    max-width: 900px;
+    margin: 32px auto 0;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e8edf5;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.09);
+}
+#df-retail-wrap .df-r-hero__img-wrap img {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+}
+
+/* ════════════════════════════════════════
+   FEATURE SECTIONS
+════════════════════════════════════════ */
+#df-retail-wrap .df-r-feat {
+    padding: 80px 0;
+    background: #fff;
+}
+#df-retail-wrap .df-r-feat--gray { background: #f8fafd; }
+
+#df-retail-wrap .df-r-feat__in {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+#df-retail-wrap .df-r-feat__in--rev .df-r-feat__media { order: -1; }
+
+#df-retail-wrap .df-r-feat__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(0,201,124,0.1);
+    border: 1px solid rgba(0,201,124,0.2);
+    border-radius: 50px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #00a865;
+    margin-bottom: 16px;
+}
+#df-retail-wrap .df-r-feat__tag svg { width: 15px; height: 15px; }
+
+#df-retail-wrap .df-r-feat__content h2 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 800;
+    line-height: 1.3;
+    color: #1a1f36;
+    margin-bottom: 14px;
+}
+#df-retail-wrap .df-r-feat__content p {
+    font-size: 14.5px;
+    color: #5a6580;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+#df-retail-wrap .df-r-feat__bullets {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#df-retail-wrap .df-r-feat__bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3a55;
+}
+#df-retail-wrap .df-r-feat__bullets li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #00c97c;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+}
+#df-retail-wrap .df-r-feat__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+#df-retail-wrap .df-r-feat__link-primary {
+    font-size: 14px;
+    font-weight: 700;
+    color: #00a865;
+    transition: text-decoration 0.15s;
+}
+#df-retail-wrap .df-r-feat__link-primary:hover { text-decoration: underline; }
+
+#df-retail-wrap .df-r-feat__link-secondary {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+    background: #00c97c;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+#df-retail-wrap .df-r-feat__link-secondary:hover { background: #00b06c; }
+#df-retail-wrap .df-r-feat__link-secondary .btn-arrow {
+    background: rgba(0,0,0,0.13);
+    padding: 13px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+#df-retail-wrap .df-r-feat__link-secondary .btn-text {
+    flex: 1;
+    padding: 13px 18px;
+    text-align: center;
+}
+
+#df-retail-wrap .df-r-feat__media { position: relative; }
+#df-retail-wrap .df-r-feat__img-card {
+    background: #f0f5ff;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e0e8f8;
+    padding: 8px;
+}
+#df-retail-wrap .df-r-feat__img-card img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+/* ════════════════════════════════════════
+   GROW BANNER
+════════════════════════════════════════ */
+#df-retail-wrap .df-r-grow {
+    background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 50%, #0d3b2a 100%);
+    padding: 70px 0;
+    position: relative;
+    overflow: hidden;
+}
+#df-retail-wrap .df-r-grow__in {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+#df-retail-wrap .df-r-grow__img img {
+    width: 100%;
+    max-width: 220px;
+    opacity: 0.85;
+}
+#df-retail-wrap .df-r-grow__text { text-align: center; }
+#df-retail-wrap .df-r-grow__text h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 12px;
+}
+#df-retail-wrap .df-r-grow__text p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 28px;
+}
+#df-retail-wrap .df-r-grow__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #00c97c;
+    color: #fff;
+    padding: 13px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: background 0.15s;
+}
+#df-retail-wrap .df-r-grow__cta:hover { background: #00b06c; }
+
+/* ════════════════════════════════════════
+   STATS (floating cards on hero)
+════════════════════════════════════════ */
+#df-retail-wrap .df-r-stat-card {
+    position: absolute;
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    min-width: 160px;
+    text-align: center;
+}
+#df-retail-wrap .df-r-stat-card--1 { bottom: 60px; right: -20px; }
+#df-retail-wrap .df-r-stat-card--2 { top: 60px; left: -20px; }
+#df-retail-wrap .df-r-stat-card__num {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #00c97c;
+    line-height: 1.1;
+}
+#df-retail-wrap .df-r-stat-card__label {
+    font-size: 12px;
+    color: #6b7a99;
+    margin-top: 4px;
+}
+
+/* ════════════════════════════════════════
+   WHY DAFTRA
+════════════════════════════════════════ */
+#df-retail-wrap .df-r-why {
+    padding: 80px 0;
+    background: #fff;
+}
+#df-retail-wrap .df-r-why__head {
+    text-align: right;
+    margin-bottom: 48px;
+}
+#df-retail-wrap .df-r-why__head h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 900;
+    line-height: 1.3;
+    color: #1a1f36;
+}
+#df-retail-wrap .df-r-why__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: #e8edf5;
+    border: 1px solid #e8edf5;
+    border-radius: 18px;
+    overflow: hidden;
+}
+#df-retail-wrap .df-r-why__card {
+    background: #fff;
+    padding: 40px 36px;
+    transition: background 0.2s;
+}
+#df-retail-wrap .df-r-why__card:hover { background: #f8fafd; }
+#df-retail-wrap .df-r-why__icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 16px;
+    font-size: 2rem;
+    line-height: 1;
+}
+#df-retail-wrap .df-r-why__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#df-retail-wrap .df-r-why__card h3 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #1a1f36;
+    margin-bottom: 10px;
+}
+#df-retail-wrap .df-r-why__card p {
+    font-size: 13.5px;
+    color: #5a6580;
+    line-height: 1.8;
+}
+
+/* ════════════════════════════════════════
+   FAQ SECTION
+════════════════════════════════════════ */
+#df-retail-wrap .df-r-faq {
+    padding: 80px 0;
+    background: #f8fafd;
+}
+#df-retail-wrap .df-r-faq__head {
+    text-align: center;
+    margin-bottom: 48px;
+}
+#df-retail-wrap .df-r-faq__head h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 900;
+    color: #1a1f36;
+    margin-bottom: 10px;
+}
+#df-retail-wrap .df-r-faq__head p {
+    font-size: 15px;
+    color: #6b7a99;
+}
+#df-retail-wrap .df-r-faq__list {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+#df-retail-wrap .df-r-faq__item {
+    background: #fff;
+    border: 1px solid #e8edf5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+#df-retail-wrap .df-r-faq__item.df-r-open { border-color: #00c97c; }
+#df-retail-wrap .df-r-faq__q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1f36;
+    text-align: right;
+    gap: 16px;
+}
+#df-retail-wrap .df-r-faq__chevron {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    color: #00c97c;
+    transition: transform 0.3s;
+}
+#df-retail-wrap .df-r-faq__item.df-r-open .df-r-faq__chevron {
+    transform: rotate(180deg);
+}
+#df-retail-wrap .df-r-faq__a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+#df-retail-wrap .df-r-faq__item.df-r-open .df-r-faq__a {
+    max-height: 300px;
+}
+#df-retail-wrap .df-r-faq__a-inner {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    color: #5a6580;
+    line-height: 1.9;
+    border-top: 1px solid #f0f4f8;
+}
+
+/* ════════════════════════════════════════
+   CTA STRIP
+════════════════════════════════════════ */
+#df-retail-wrap .df-r-cta-strip {
+    background: linear-gradient(135deg, #00c97c 0%, #00a865 100%);
+    padding: 70px 0;
+    text-align: center;
+}
+#df-retail-wrap .df-r-cta-strip h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 12px;
+}
+#df-retail-wrap .df-r-cta-strip p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 28px;
+}
+#df-retail-wrap .df-r-cta-strip a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #00a865;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 16px;
+    transition: all 0.15s;
+}
+#df-retail-wrap .df-r-cta-strip a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* ════════════════════════════════════════
+   PARTNERS
+════════════════════════════════════════ */
+#df-retail-wrap .df-r-partners {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+#df-retail-wrap .df-r-partners__label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    white-space: nowrap;
+}
+#df-retail-wrap .df-r-partners__logos {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+#df-retail-wrap .df-r-partners__logos img {
+    height: 28px;
+    filter: brightness(0) invert(1);
+    opacity: 0.6;
+}
+
+/* ════════════════════════════════════════
+   SCROLL ANIMATIONS
+════════════════════════════════════════ */
+#df-retail-wrap .df-r-anim,
+#df-retail-wrap .df-r-anim--left,
+#df-retail-wrap .df-r-anim--right {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+#df-retail-wrap .df-r-anim--left  { transform: translateX(28px); }
+#df-retail-wrap .df-r-anim--right { transform: translateX(-28px); }
+#df-retail-wrap .df-r-visible { opacity: 1 !important; transform: none !important; }
+#df-retail-wrap .df-r-delay-1 { transition-delay: 0.1s; }
+#df-retail-wrap .df-r-delay-2 { transition-delay: 0.2s; }
+#df-retail-wrap .df-r-delay-3 { transition-delay: 0.3s; }
+#df-retail-wrap .df-r-delay-4 { transition-delay: 0.4s; }
+#df-retail-wrap .df-r-delay-5 { transition-delay: 0.5s; }
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media (max-width: 960px) {
+    #df-retail-wrap .df-r-feat__in,
+    #df-retail-wrap .df-r-feat__in--rev {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    #df-retail-wrap .df-r-feat__in--rev .df-r-feat__media { order: 0; }
+    #df-retail-wrap .df-r-grow__in { grid-template-columns: 1fr; }
+    #df-retail-wrap .df-r-grow__img { display: none; }
+    #df-retail-wrap .df-r-why__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+    #df-retail-wrap .df-r-cont { padding: 0 16px; }
+    #df-retail-wrap .df-r-hero__mini-cards { flex-direction: column; align-items: center; }
+    #df-retail-wrap .df-r-mini-card { width: 100%; max-width: 340px; }
+    #df-retail-wrap .df-r-why__grid { grid-template-columns: 1fr; }
+}
+                </style>
+            </t>
+
+            <!-- Early direction script -->
+            <script>
+                (function(){
+                    var l='ar';
+                    try{ var s=localStorage.getItem('df_lang'); if(s==='en'||s==='ar') l=s; }catch(e){}
+                    var w=document.getElementById('df-retail-wrap');
+                    if(w){ w.setAttribute('dir',l==='ar'?'rtl':'ltr'); w.classList.add('lang-'+l); }
+                    else{
+                        document.addEventListener('DOMContentLoaded',function(){
+                            var w2=document.getElementById('df-retail-wrap');
+                            if(w2){ w2.setAttribute('dir',l==='ar'?'rtl':'ltr'); w2.classList.add('lang-'+l); }
+                        });
+                    }
+                })();
+            </script>
+
+            <div id="df-retail-wrap" class="lang-ar" dir="rtl">
+
+                <!-- ════════════════════════════════════════════
+                     SHARED NAVIGATION
+                ════════════════════════════════════════════ -->
+                <t t-call="website_pricing_plans.df_nav"/>
+
+                <!-- ════════════════════════════════════════════
+                     SUB-NAV (sticky section anchors)
+                ════════════════════════════════════════════ -->
+                <nav class="df-r-subnav">
+                    <div class="df-r-cont">
+                        <div class="df-r-subnav__inner">
+                            <a href="#overview" class="df-r-subnav__link"
+                               data-ar="نظرة عامة" data-en="Overview">نظرة عامة</a>
+                            <a href="#first-feature" class="df-r-subnav__link"
+                               data-ar="المزايا" data-en="Features">المزايا</a>
+                            <a href="#why-daftra" class="df-r-subnav__link"
+                               data-ar="لماذا دفترة" data-en="Why daftra">لماذا دفترة</a>
+                            <a href="#faq" class="df-r-subnav__link"
+                               data-ar="الأسئلة الشائعة" data-en="FAQs">الأسئلة الشائعة</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- ════════════════════════════════════════════
+                     HERO SECTION
+                ════════════════════════════════════════════ -->
+                <section class="df-r-hero" id="overview">
+                    <div class="df-r-cont">
+
+                        <!-- Breadcrumb -->
+                        <div class="df-r-breadcrumb df-r-anim">
+                            <a href="/home"
+                               data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                            <span data-ar="مجالات العمل" data-en="Business Sectors">مجالات العمل</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                            <span data-ar="المحلات التجارية" data-en="Retail Stores">المحلات التجارية</span>
+                        </div>
+
+                        <!-- Centered heading block -->
+                        <div class="df-r-hero__center df-r-anim df-r-delay-1">
+                            <h1>
+                                <span data-ar="برنامج محاسبة" data-en="Accounting Software">برنامج محاسبة</span>
+                                <span class="df-r-highlight"
+                                      data-ar=" للمحلات التجارية" data-en=" for Retail Stores"> للمحلات التجارية</span>
+                            </h1>
+                            <p class="df-r-hero__sub"
+                               data-ar="برنامج إدارة المحلات التجارية من دفترة يناسب طبيعة أعمال نشاطك التجاري؛ حيث يعتبر نظام محاسبة متكامل للمحلات يعينك على إدارة الجوانب المالية والمحاسبية وكذلك إدارة الموارد البشرية والمخزون والمشتريات ليجعلك في غنى عن استخدام أكثر من برنامج في نفس الوقت." data-en="daftra's retail management software is designed to fit your business needs — a complete accounting system that helps you manage financial and accounting aspects, HR, inventory, and purchasing all in one place.">برنامج إدارة المحلات التجارية من دفترة يناسب طبيعة أعمال نشاطك التجاري؛ حيث يعتبر نظام محاسبة متكامل للمحلات يعينك على إدارة الجوانب المالية والمحاسبية وكذلك إدارة الموارد البشرية والمخزون والمشتريات ليجعلك في غنى عن استخدام أكثر من برنامج في نفس الوقت.</p>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <div class="df-r-hero__cta-wrap df-r-anim df-r-delay-2">
+                            <a href="/register?trk=SEO_organic"
+                               class="df-r-btn-split"
+                               data-ar-href="/register?trk=SEO_organic"
+                               data-en-href="/register?trk=SEO_organic">
+                                <span class="btn-arrow">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="2.5">
+                                        <path d="M19 12H5M12 5l-7 7 7 7"/>
+                                    </svg>
+                                </span>
+                                <span class="btn-text"
+                                      data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا</span>
+                            </a>
+                        </div>
+
+                        <!-- Badges -->
+                        <div class="df-r-badges df-r-anim df-r-delay-3">
+                            <span class="df-r-badge">
+                                <span class="df-r-badge__dot"/>
+                                <span data-ar="تجربة مجانية" data-en="Free Trial">تجربة مجانية</span>
+                            </span>
+                            <span class="df-r-badge">
+                                <span class="df-r-badge__dot"/>
+                                <span data-ar="لا حاجة لبطاقة ائتمان" data-en="No Credit Card">لا حاجة لبطاقة ائتمان</span>
+                            </span>
+                            <span class="df-r-badge">
+                                <span class="df-r-badge__dot"/>
+                                <span data-ar="جاهز للعمل فورًا" data-en="Ready Instantly">جاهز للعمل فورًا</span>
+                            </span>
+                            <span class="df-r-badge">
+                                <span class="df-r-badge__dot"/>
+                                <span data-ar="شامل لجميع التطبيقات" data-en="All-App Inclusive">شامل لجميع التطبيقات</span>
+                            </span>
+                        </div>
+
+                        <!-- Mini Feature Cards -->
+                        <div class="df-r-hero__mini-cards df-r-anim df-r-delay-4">
+                            <div class="df-r-mini-card">
+                                <div class="df-r-mini-card__icon">&#128203;</div>
+                                <div class="df-r-mini-card__title"
+                                     data-ar="إصدار الفواتير بسهولة" data-en="Easy Invoicing">إصدار الفواتير بسهولة</div>
+                                <div class="df-r-mini-card__desc"
+                                     data-ar="فواتير إلكترونية معتمدة وإيصالات عبر الكاشير POS" data-en="Approved e-invoices and receipts via POS">فواتير إلكترونية معتمدة وإيصالات عبر الكاشير POS</div>
+                            </div>
+                            <div class="df-r-mini-card">
+                                <div class="df-r-mini-card__icon">&#128200;</div>
+                                <div class="df-r-mini-card__title"
+                                     data-ar="تحكم كامل بالأرباح والعملاء" data-en="Full Control of Profits &amp; Customers">تحكم كامل بالأرباح والعملاء</div>
+                                <div class="df-r-mini-card__desc"
+                                     data-ar="احتساب الأرباح وإدارة العملاء بنظام CRM متكامل" data-en="Calculate profits and manage customers with integrated CRM">احتساب الأرباح وإدارة العملاء بنظام CRM متكامل</div>
+                            </div>
+                            <div class="df-r-mini-card">
+                                <div class="df-r-mini-card__icon">&#128196;</div>
+                                <div class="df-r-mini-card__title"
+                                     data-ar="تقارير مالية بضغطة زر" data-en="Financial Reports at a Click">تقارير مالية بضغطة زر</div>
+                                <div class="df-r-mini-card__desc"
+                                     data-ar="استخرج التقارير والقوائم المالية والإقرارات الضريبية بسهولة" data-en="Extract financial reports, statements and tax returns easily">استخرج التقارير والقوائم المالية والإقرارات الضريبية بسهولة</div>
+                            </div>
+                        </div>
+
+                        <!-- Hero Screenshot -->
+                        <div class="df-r-hero__img-wrap df-r-anim df-r-delay-5">
+                            <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/Hero Images Section.png"
+                                 data-ar-src="https://static.portal.daftra.com/images/ar/industries/retail-stores/Hero Images Section.png"
+                                 data-en-src="https://static.portal.daftra.com/images/ar/industries/retail-stores/Hero Images Section.png"
+                                 alt="برنامج إدارة المحلات التجارية"
+                                 onerror="this.closest('.df-r-hero__img-wrap').style.display='none'"/>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 1 — Accounting
+                ════════════════════════════════════════════ -->
+                <div id="first-feature"/>
+                <section class="df-r-feat" id="feat-accounting">
+                    <div class="df-r-cont">
+                        <div class="df-r-feat__in">
+                            <div class="df-r-feat__content df-r-anim--right">
+                                <div class="df-r-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                    <span data-ar="المحاسبة" data-en="Accounting">المحاسبة</span>
+                                </div>
+                                <h2 data-ar="أدِر حسابات متجرك وتابع المبيعات واحسب الأرباح باحترافية" data-en="Manage your store accounts, track sales, and calculate profits professionally">أدِر حسابات متجرك وتابع المبيعات واحسب الأرباح باحترافية</h2>
+                                <p data-ar="بفضل التكامل بين تطبيقات نظام دفترة والواجهة سهلة الاستخدام؛ لست بحاجة لمعرفة عميقة في مجال المحاسبة، حيث يوفر لك كل ما يلزم لتنفيذ العمليات المختلفة بما في ذلك إصدار الفواتير ومتابعة مبيعات المنتجات ومشترياتها لحظيًا." data-en="Thanks to the integration between daftra's apps and the easy-to-use interface, you don't need deep accounting knowledge. It provides everything needed to execute various operations including invoicing and real-time tracking of product sales and purchases.">بفضل التكامل بين تطبيقات نظام دفترة والواجهة سهلة الاستخدام؛ لست بحاجة لمعرفة عميقة في مجال المحاسبة، حيث يوفر لك كل ما يلزم لتنفيذ العمليات المختلفة بما في ذلك إصدار الفواتير ومتابعة مبيعات المنتجات ومشترياتها لحظيًا.</p>
+                                <ul class="df-r-feat__bullets">
+                                    <li data-ar="تسجيل قيود اليومية آليًا" data-en="Automated daily journal entries">تسجيل قيود اليومية آليًا</li>
+                                    <li data-ar="دليل حسابات بتنسيق شجري منظم" data-en="Chart of accounts in organized tree format">دليل حسابات بتنسيق شجري منظم</li>
+                                    <li data-ar="تقارير مالية تفصيلية وحساب صافي الدخل" data-en="Detailed financial reports and net income calculation">تقارير مالية تفصيلية وحساب صافي الدخل</li>
+                                </ul>
+                                <div class="df-r-feat__links">
+                                    <a href="/features/all_features" class="df-r-feat__link-primary"
+                                       data-ar="استكشف نظام إدارة المحاسبة »" data-en="Explore Accounting System »">استكشف نظام إدارة المحاسبة »</a>
+                                    <a href="/register" class="df-r-feat__link-secondary"
+                                       data-ar-href="/register" data-en-href="/register">
+                                        <span class="btn-arrow">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2.5">
+                                                <path d="M19 12H5M12 5l-7 7 7 7"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn-text"
+                                              data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="df-r-feat__media df-r-anim--left">
+                                <div class="df-r-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/info1.svg"
+                                         alt="Accounting Dashboard"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 2 — E-Invoicing
+                ════════════════════════════════════════════ -->
+                <section class="df-r-feat df-r-feat--gray" id="feat-invoicing">
+                    <div class="df-r-cont">
+                        <div class="df-r-feat__in df-r-feat__in--rev">
+                            <div class="df-r-feat__media df-r-anim--right">
+                                <div class="df-r-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/device1.png"
+                                         alt="E-Invoicing"/>
+                                </div>
+                            </div>
+                            <div class="df-r-feat__content df-r-anim--left">
+                                <div class="df-r-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                    </svg>
+                                    <span data-ar="الفواتير الإلكترونية" data-en="E-Invoicing">الفواتير الإلكترونية</span>
+                                </div>
+                                <h2 data-ar="أصدر الفواتير الإلكترونية للعملاء واطبعها مباشرة" data-en="Issue electronic invoices to customers and print them directly">أصدر الفواتير الإلكترونية للعملاء واطبعها مباشرة</h2>
+                                <p data-ar="من خلال برنامج الفواتير الإلكترونية الذي يتضمن أدوات متقدمة وواجهة سهلة الاستخدام؛ ابدأ في إصدار فواتير المبيعات للعملاء في تجربة مرنة واحترافية في خيارات ضبط البيانات وتطبيق نسب الضريبة والخصم على المنتجات والخدمات." data-en="Through the e-invoicing software that includes advanced tools and an easy-to-use interface, start issuing sales invoices to customers in a flexible and professional experience, with options for setting data and applying tax and discount rates on products and services.">من خلال برنامج الفواتير الإلكترونية الذي يتضمن أدوات متقدمة وواجهة سهلة الاستخدام؛ ابدأ في إصدار فواتير المبيعات للعملاء في تجربة مرنة واحترافية في خيارات ضبط البيانات وتطبيق نسب الضريبة والخصم على المنتجات والخدمات.</p>
+                                <ul class="df-r-feat__bullets">
+                                    <li data-ar="تفعيل العروض الحصرية على المنتجات" data-en="Activate exclusive product promotions">تفعيل العروض الحصرية على المنتجات</li>
+                                    <li data-ar="تطبيق قواعد الخصم الآلي على الأصناف" data-en="Apply automated discount rules to items">تطبيق قواعد الخصم الآلي على الأصناف</li>
+                                    <li data-ar="تحديد تواريخ بداية وانتهاء العروض" data-en="Set promotion start and end dates">تحديد تواريخ بداية وانتهاء العروض</li>
+                                </ul>
+                                <div class="df-r-feat__links">
+                                    <a href="/invoicing" class="df-r-feat__link-primary"
+                                       data-ar="استكشف نظام إدارة المبيعات »" data-en="Explore Sales System »">استكشف نظام إدارة المبيعات »</a>
+                                    <a href="/register" class="df-r-feat__link-secondary"
+                                       data-ar-href="/register" data-en-href="/register">
+                                        <span class="btn-arrow">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2.5">
+                                                <path d="M19 12H5M12 5l-7 7 7 7"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn-text"
+                                              data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 3 — Barcode / POS
+                ════════════════════════════════════════════ -->
+                <section class="df-r-feat" id="feat-barcode">
+                    <div class="df-r-cont">
+                        <div class="df-r-feat__in">
+                            <div class="df-r-feat__content df-r-anim--right">
+                                <div class="df-r-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 7V5a1 1 0 011-1h2M4 17v2a1 1 0 001 1h2m10-16h2a1 1 0 011 1v2m-3 14h2a1 1 0 001-1v-2M8 12h8"/>
+                                    </svg>
+                                    <span data-ar="الباركود ونقاط البيع" data-en="Barcode &amp; POS">الباركود ونقاط البيع</span>
+                                </div>
+                                <h2 data-ar="استدعِ منتجاتك بسرعة وأدرجها في الفواتير من خلال أجهزة الباركود" data-en="Instantly retrieve products and add them to invoices via barcode scanners">استدعِ منتجاتك بسرعة وأدرجها في الفواتير من خلال أجهزة الباركود</h2>
+                                <p data-ar="يدعم دفترة أجهزة الباركود المختلفة مع برنامج نقاط البيع لإدارة أكثر سلاسة لعمليات البيع في محلك التجاري؛ أنشئ الباركود لمنتجاتك واطبعها كملصق يوضع عليها، بحيث يمكنك الاستعلام عن كل منتج على حدة واستدعائه في فواتير البيع." data-en="daftra supports various barcode devices with the POS system for smoother sales operations in your store. Create barcodes for your products and print them as labels, so you can query each product individually and retrieve it in sales invoices.">يدعم دفترة أجهزة الباركود المختلفة مع برنامج نقاط البيع لإدارة أكثر سلاسة لعمليات البيع في محلك التجاري؛ أنشئ الباركود لمنتجاتك واطبعها كملصق يوضع عليها، بحيث يمكنك الاستعلام عن كل منتج على حدة واستدعائه في فواتير البيع.</p>
+                                <div class="df-r-feat__links">
+                                    <a href="/features/all_features" class="df-r-feat__link-primary"
+                                       data-ar="استكشف نقاط البيع »" data-en="Explore Point of Sale »">استكشف نقاط البيع »</a>
+                                    <a href="/register" class="df-r-feat__link-secondary"
+                                       data-ar-href="/register" data-en-href="/register">
+                                        <span class="btn-arrow">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2.5">
+                                                <path d="M19 12H5M12 5l-7 7 7 7"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn-text"
+                                              data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="df-r-feat__media df-r-anim--left">
+                                <div class="df-r-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/device2.png"
+                                         alt="Barcode POS"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 4 — Sales Sessions
+                ════════════════════════════════════════════ -->
+                <section class="df-r-feat df-r-feat--gray" id="feat-sessions">
+                    <div class="df-r-cont">
+                        <div class="df-r-feat__in df-r-feat__in--rev">
+                            <div class="df-r-feat__media df-r-anim--right">
+                                <div class="df-r-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/info2.svg"
+                                         alt="Sales Sessions"/>
+                                </div>
+                            </div>
+                            <div class="df-r-feat__content df-r-anim--left">
+                                <div class="df-r-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                                    </svg>
+                                    <span data-ar="إدارة جلسات البيع" data-en="Sales Session Management">إدارة جلسات البيع</span>
+                                </div>
+                                <h2 data-ar="أدِر نقاط البيع ونظِّم جلسات فريق المبيعات لديك بفعالية" data-en="Manage POS and organize your sales team sessions effectively">أدِر نقاط البيع ونظِّم جلسات فريق المبيعات لديك بفعالية</h2>
+                                <p data-ar="ابدأ جلسة بيع جديدة لك أو لأحد موظفيك في فريق المبيعات في خطوات بسيطة، وانتقل إلى شاشة البيع بالحساب والمصممة لتقديم تجربة استخدام سلسة مع نوافذ عرض واضحة تُظهِر قوائم المنتجات بالأسماء والصور ومقسمة حسب التصنيفات." data-en="Start a new sales session for you or one of your sales team members in simple steps, and move to the POS screen designed to deliver a smooth experience with clear display windows showing product lists by names, images, and categories.">ابدأ جلسة بيع جديدة لك أو لأحد موظفيك في فريق المبيعات في خطوات بسيطة، وانتقل إلى شاشة البيع بالحساب والمصممة لتقديم تجربة استخدام سلسة مع نوافذ عرض واضحة تُظهِر قوائم المنتجات بالأسماء والصور ومقسمة حسب التصنيفات.</p>
+                                <ul class="df-r-feat__bullets">
+                                    <li data-ar="دعم كامل للإدخال من أجهزة الباركود" data-en="Full barcode device input support">دعم كامل للإدخال من أجهزة الباركود</li>
+                                    <li data-ar="إدارة متعددة للكاشيرات والموظفين" data-en="Multi-cashier and employee management">إدارة متعددة للكاشيرات والموظفين</li>
+                                    <li data-ar="تقارير أداء تفصيلية لكل جلسة" data-en="Detailed performance reports per session">تقارير أداء تفصيلية لكل جلسة</li>
+                                </ul>
+                                <div class="df-r-feat__links">
+                                    <a href="/register" class="df-r-feat__link-secondary"
+                                       data-ar-href="/register" data-en-href="/register">
+                                        <span class="btn-arrow">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2.5">
+                                                <path d="M19 12H5M12 5l-7 7 7 7"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn-text"
+                                              data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 5 — Inventory
+                ════════════════════════════════════════════ -->
+                <section class="df-r-feat" id="feat-inventory">
+                    <div class="df-r-cont">
+                        <div class="df-r-feat__in">
+                            <div class="df-r-feat__content df-r-anim--right">
+                                <div class="df-r-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                                    </svg>
+                                    <span data-ar="المخزون والمستودعات" data-en="Inventory &amp; Warehouses">المخزون والمستودعات</span>
+                                </div>
+                                <h2 data-ar="تابع حركة المنتجات في مخزونك واحصل على تنبيهات عند انخفاض كميتها" data-en="Track product movement in your inventory and get low-stock alerts">تابع حركة المنتجات في مخزونك واحصل على تنبيهات عند انخفاض كميتها</h2>
+                                <p data-ar="يتيح لك دفترة متابعة حركة منتجاتك داخل المخزون بالصرف والإضافة والتحويل بين المستودعات، كما سينبهك النظام إذا ما قارب أحد المنتجات على النفاد أو انخفاضه عن المستوى الذي تقوم بتحديده في ملف المنتج." data-en="daftra lets you track your products' movement inside inventory through issuance, addition, and transfers between warehouses. The system will also alert you when a product is about to run out or drops below the level you set in the product file.">يتيح لك دفترة متابعة حركة منتجاتك داخل المخزون بالصرف والإضافة والتحويل بين المستودعات، كما سينبهك النظام إذا ما قارب أحد المنتجات على النفاد أو انخفاضه عن المستوى الذي تقوم بتحديده في ملف المنتج.</p>
+                                <ul class="df-r-feat__bullets">
+                                    <li data-ar="أذون مخزنية للصرف والإضافة والتحويل" data-en="Warehouse permits for issuance, addition, and transfer">أذون مخزنية للصرف والإضافة والتحويل</li>
+                                    <li data-ar="تنبيهات تلقائية عند انخفاض المخزون" data-en="Automatic alerts when inventory is low">تنبيهات تلقائية عند انخفاض المخزون</li>
+                                    <li data-ar="عمليات جرد مقارنة بأرقام النظام" data-en="Inventory counts compared with system figures">عمليات جرد مقارنة بأرقام النظام</li>
+                                </ul>
+                                <div class="df-r-feat__links">
+                                    <a href="/features/all_features" class="df-r-feat__link-primary"
+                                       data-ar="برنامج إدارة المخزون والمستودعات »" data-en="Inventory Management Software »">برنامج إدارة المخزون والمستودعات »</a>
+                                    <a href="/register" class="df-r-feat__link-secondary"
+                                       data-ar-href="/register" data-en-href="/register">
+                                        <span class="btn-arrow">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2.5">
+                                                <path d="M19 12H5M12 5l-7 7 7 7"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn-text"
+                                              data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="df-r-feat__media df-r-anim--left">
+                                <div class="df-r-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/info3.svg"
+                                         alt="Inventory Management"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     GROW WITH DAFTRA BANNER
+                ════════════════════════════════════════════ -->
+                <section class="df-r-grow" id="grow-banner">
+                    <div class="df-r-cont">
+                        <div class="df-r-grow__in">
+                            <div class="df-r-grow__img df-r-anim--right">
+                                <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/Frame 621ss21.png"
+                                     alt="Team working"
+                                     onerror="this.style.display='none'"/>
+                            </div>
+                            <div class="df-r-grow__text df-r-anim">
+                                <h2 data-ar="انمُ مع دفترة" data-en="Grow With daftra">انمُ مع دفترة</h2>
+                                <p data-ar="القادة والمدراء والموظفون — يعملون كفريق واحد." data-en="Leaders, managers, and employees — all work as one.">القادة والمدراء والموظفون — يعملون كفريق واحد.</p>
+                                <a href="/register?trk=SEO_Organic_1000017" class="df-r-grow__cta"
+                                   data-ar="ابدأ الآن" data-en="Get Started Now">ابدأ الآن<svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="2.5">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="df-r-grow__img df-r-anim--left">
+                                <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/info4.svg"
+                                     alt="Business growth"
+                                     onerror="this.style.display='none'"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 6 — HR / Collectors
+                ════════════════════════════════════════════ -->
+                <section class="df-r-feat df-r-feat--gray" id="feat-hr">
+                    <div class="df-r-cont">
+                        <div class="df-r-feat__in df-r-feat__in--rev">
+                            <div class="df-r-feat__media df-r-anim--right">
+                                <div class="df-r-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/info4.svg"
+                                         alt="HR Management"/>
+                                </div>
+                            </div>
+                            <div class="df-r-feat__content df-r-anim--left">
+                                <div class="df-r-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    <span data-ar="الموارد البشرية" data-en="Human Resources">الموارد البشرية</span>
+                                </div>
+                                <h2 data-ar="تابع أداء المحصلين وموظفي المحل باحترافية" data-en="Track collector and store employee performance professionally">تابع أداء المحصلين وموظفي المحل باحترافية</h2>
+                                <p data-ar="يوفر لك نظام دفترة إمكانية إضافة المحصلين وغيرهم من الموظفين بأدوارهم المختلفة حسب احتياجات أعمالك، مع أدوات لمتابعة مبيعات كل منهم، وتقارير متقدمة توضح أداء كل موظف ومحصل حسب الصلاحيات الموكلة له." data-en="daftra's system allows you to add collectors and other employees with their different roles according to your business needs, with tools to track each one's sales and advanced reports that show each employee and collector's performance.">يوفر لك نظام دفترة إمكانية إضافة المحصلين وغيرهم من الموظفين بأدوارهم المختلفة حسب احتياجات أعمالك، مع أدوات لمتابعة مبيعات كل منهم، وتقارير متقدمة توضح أداء كل موظف ومحصل حسب الصلاحيات الموكلة له.</p>
+                                <div class="df-r-feat__links">
+                                    <a href="/features/all_features" class="df-r-feat__link-primary"
+                                       data-ar="استكشف الموارد البشرية »" data-en="Explore Human Resources »">استكشف الموارد البشرية »</a>
+                                    <a href="/register" class="df-r-feat__link-secondary"
+                                       data-ar-href="/register" data-en-href="/register">
+                                        <span class="btn-arrow">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2.5">
+                                                <path d="M19 12H5M12 5l-7 7 7 7"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn-text"
+                                              data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 7 — Expenses
+                ════════════════════════════════════════════ -->
+                <section class="df-r-feat" id="feat-expenses">
+                    <div class="df-r-cont">
+                        <div class="df-r-feat__in">
+                            <div class="df-r-feat__content df-r-anim--right">
+                                <div class="df-r-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span data-ar="المصروفات والمرتبات" data-en="Expenses &amp; Payroll">المصروفات والمرتبات</span>
+                                </div>
+                                <h2 data-ar="أضف مصروفات محلك التجاري ومرتبات موظفيك واحسب صافي الدخل بدقة" data-en="Add your store expenses, employee salaries, and calculate net income accurately">أضف مصروفات محلك التجاري ومرتبات موظفيك واحسب صافي الدخل بدقة</h2>
+                                <p data-ar="يتيح لك برنامج محاسبة المحلات من دفترة تسجيل كافة مصاريف متجرك من إيجارات ورواتب ومصاريف المنتجات وغيرها من المصاريف الدورية مع أدوات لمتابعتها بدقة وحساب صافي الدخل من خلال تقارير الأرباح والخسائر." data-en="daftra's retail accounting software allows you to record all your store expenses including rent, salaries, product costs and other recurring expenses, with tools to track them precisely and calculate net income through profit and loss reports.">يتيح لك برنامج محاسبة المحلات من دفترة تسجيل كافة مصاريف متجرك من إيجارات ورواتب ومصاريف المنتجات وغيرها من المصاريف الدورية مع أدوات لمتابعتها بدقة وحساب صافي الدخل من خلال تقارير الأرباح والخسائر.</p>
+                                <div class="df-r-feat__links">
+                                    <a href="/register" class="df-r-feat__link-secondary"
+                                       data-ar-href="/register" data-en-href="/register">
+                                        <span class="btn-arrow">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2.5">
+                                                <path d="M19 12H5M12 5l-7 7 7 7"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn-text"
+                                              data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="df-r-feat__media df-r-anim--left">
+                                <div class="df-r-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/info7.svg"
+                                         alt="Expenses &amp; Payroll"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 8 — Advanced Reports
+                ════════════════════════════════════════════ -->
+                <section class="df-r-feat df-r-feat--gray" id="feat-reports">
+                    <div class="df-r-cont">
+                        <div class="df-r-feat__in df-r-feat__in--rev">
+                            <div class="df-r-feat__media df-r-anim--right">
+                                <div class="df-r-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/info6.svg"
+                                         alt="Advanced Reports"/>
+                                </div>
+                            </div>
+                            <div class="df-r-feat__content df-r-anim--left">
+                                <div class="df-r-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                    </svg>
+                                    <span data-ar="التقارير المتقدمة" data-en="Advanced Reports">التقارير المتقدمة</span>
+                                </div>
+                                <h2 data-ar="تابع أداء متجرك عن طريق التقارير المتقدمة بدقة" data-en="Track your store performance through advanced reports accurately">تابع أداء متجرك عن طريق التقارير المتقدمة بدقة</h2>
+                                <p data-ar="أصدر التقارير التفصيلية في خطوات بسيطة للتعرف على أداء أعمالك، احسب صافى الدخل عن كل فترة من خلال تقارير الأرباح والخسائر، ونفِّذ عمليات الجرد على نحو دوري لمخزونك من المنتجات من خلال تقرير الجرد، مع إمكانية الاستفادة من العديد من التقارير الأخرى التي تغطى كافة جوانب عملك." data-en="Issue detailed reports in simple steps to understand your business performance. Calculate net income for each period through profit and loss reports, conduct periodic inventory counts, and benefit from many other reports covering all aspects of your work.">أصدر التقارير التفصيلية في خطوات بسيطة للتعرف على أداء أعمالك، احسب صافى الدخل عن كل فترة من خلال تقارير الأرباح والخسائر، ونفِّذ عمليات الجرد على نحو دوري لمخزونك من المنتجات من خلال تقرير الجرد، مع إمكانية الاستفادة من العديد من التقارير الأخرى التي تغطى كافة جوانب عملك.</p>
+                                <div class="df-r-feat__links">
+                                    <a href="/register?trk=SEO_Organic_1000017" class="df-r-feat__link-secondary"
+                                       data-ar-href="/register?trk=SEO_Organic_1000017"
+                                       data-en-href="/register?trk=SEO_Organic_1000017">
+                                        <span class="btn-arrow">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2.5">
+                                                <path d="M19 12H5M12 5l-7 7 7 7"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn-text"
+                                              data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 9 — Integrations / Chart of Accounts
+                ════════════════════════════════════════════ -->
+                <section class="df-r-feat" id="feat-integrations">
+                    <div class="df-r-cont">
+                        <div class="df-r-feat__in">
+                            <div class="df-r-feat__content df-r-anim--right">
+                                <div class="df-r-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                    <span data-ar="التكامل الشامل" data-en="Full Integration">التكامل الشامل</span>
+                                </div>
+                                <h2 data-ar="تمتع بتجربة احترافية بفضل التكامل المؤتمت بين تطبيقات النظام" data-en="Enjoy a professional experience through automated integration between system apps">تمتع بتجربة احترافية بفضل التكامل المؤتمت بين تطبيقات النظام</h2>
+                                <p data-ar="يتيح لك التكامل فيما بين تطبيقات نظام دفترة المختلفة متابعة قيودك اليومية التي يتم إدخالها في حسابك آليًا عن أي عملية أو إجراء مالي تقوم بتنفيذه على الحساب، بالإضافة إلى دليل حسابات بتنسيق شجري منظِّم تنظيمًا آليًا لعرض كل أرصدة حسابات متجرك مع كافة الحركات داخل الحساب، إلى جانب إصدار تقارير محاسبية ختامية توضح الوضع المالي لمتجرك بنهاية كل عام." data-en="Integration between daftra's various apps allows you to track your daily journal entries automatically for any financial operation you perform, plus an organized tree-format chart of accounts showing all your store account balances, alongside annual closing accounting reports.">يتيح لك التكامل فيما بين تطبيقات نظام دفترة المختلفة متابعة قيودك اليومية التي يتم إدخالها في حسابك آليًا عن أي عملية أو إجراء مالي تقوم بتنفيذه على الحساب، بالإضافة إلى دليل حسابات بتنسيق شجري منظِّم تنظيمًا آليًا لعرض كل أرصدة حسابات متجرك مع كافة الحركات داخل الحساب، إلى جانب إصدار تقارير محاسبية ختامية توضح الوضع المالي لمتجرك بنهاية كل عام.</p>
+                                <div class="df-r-feat__links">
+                                    <a href="/دليل-الحسابات" class="df-r-feat__link-primary"
+                                       data-ar="استكشف جدول الحسابات »" data-en="Explore Chart of Accounts »">استكشف جدول الحسابات »</a>
+                                    <a href="/register?trk=SEO_Organic_1000017" class="df-r-feat__link-secondary"
+                                       data-ar-href="/register?trk=SEO_Organic_1000017"
+                                       data-en-href="/register?trk=SEO_Organic_1000017">
+                                        <span class="btn-arrow">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2.5">
+                                                <path d="M19 12H5M12 5l-7 7 7 7"/>
+                                            </svg>
+                                        </span>
+                                        <span class="btn-text"
+                                              data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="df-r-feat__media df-r-anim--left">
+                                <div class="df-r-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/retail-stores/info7.svg"
+                                         alt="Integration"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     WHY DAFTRA SECTION
+                ════════════════════════════════════════════ -->
+                <section class="df-r-why" id="why-daftra">
+                    <div class="df-r-cont">
+                        <div class="df-r-why__head df-r-anim">
+                            <h2>
+                                <span data-ar="لماذا يعتبر " data-en="Why is ">لماذا يعتبر </span>
+                                <span style="color:#00c97c;" data-ar="دفترة" data-en="daftra">دفترة</span>
+                                <span data-ar=" شريكك الرقمي الأمثل لإدارة أعمالك؟" data-en=" your ideal digital partner for managing your business?"> شريكك الرقمي الأمثل لإدارة أعمالك؟</span>
+                            </h2>
+                        </div>
+                        <div class="df-r-why__grid">
+                            <div class="df-r-why__card df-r-anim df-r-delay-1">
+                                <div class="df-r-why__icon">
+                                    <img src="https://static.portal.daftra.com/images/why-section/free-lifetime-updates.svg"
+                                         alt="Updates"
+                                         onerror="this.parentElement.textContent='🔄'"/>
+                                </div>
+                                <h3 data-ar="تحديثات مجانية مدى الحياة" data-en="Free Lifetime Updates">تحديثات مجانية مدى الحياة</h3>
+                                <p data-ar="دفترة يسمعك ويتطوّر باستمرار ليواكب احتياجات أعمالك. تحديثات دورية، أدوات جديدة، وميزات إضافية، كلها توصلك مجانًا مدى الحياة مع دفترة." data-en="daftra listens and continuously evolves to keep pace with your business needs. Regular updates, new tools, and additional features, all delivered free for life.">دفترة يسمعك ويتطوّر باستمرار ليواكب احتياجات أعمالك. تحديثات دورية، أدوات جديدة، وميزات إضافية، كلها توصلك مجانًا مدى الحياة مع دفترة.</p>
+                            </div>
+                            <div class="df-r-why__card df-r-anim df-r-delay-2">
+                                <div class="df-r-why__icon">
+                                    <img src="https://static.portal.daftra.com/images/why-section/safe-secure&amp;trusted.svg"
+                                         alt="Secure"
+                                         onerror="this.parentElement.textContent='🔒'"/>
+                                </div>
+                                <h3 data-ar="آمن ومتوافق مع أعلى المعايير" data-en="Secure &amp; Compliant with Highest Standards">آمن ومتوافق مع أعلى المعايير</h3>
+                                <p data-ar="دفترة ملتزم بمعايير GDPR الأوروبية لحماية خصوصية وأمان بياناتك. تشفير SSL 256-bit، نسخ احتياطي دوري، وخوادم سحابية مؤمنة في أكثر من قارة." data-en="daftra complies with European GDPR standards for data protection. 256-bit SSL encryption, regular backups, and secured cloud servers on multiple continents.">دفترة ملتزم بمعايير GDPR الأوروبية لحماية خصوصية وأمان بياناتك. تشفير SSL 256-bit، نسخ احتياطي دوري، وخوادم سحابية مؤمنة في أكثر من قارة.</p>
+                            </div>
+                            <div class="df-r-why__card df-r-anim df-r-delay-3">
+                                <div class="df-r-why__icon">
+                                    <img src="https://static.portal.daftra.com/images/why-section/free-quick&amp;reliable-support.svg"
+                                         alt="Support"
+                                         onerror="this.parentElement.textContent='💬'"/>
+                                </div>
+                                <h3 data-ar="دعم سريع ومجاني على مدار الساعة" data-en="Fast &amp; Free 24/7 Support">دعم سريع ومجاني على مدار الساعة</h3>
+                                <p data-ar="دفترة بجانبك دائمًا، دعم فني مجاني على مدار الساعة عبر الهاتف، الواتساب، والبريد الإلكتروني، مع دليل مستخدم شامل بالعربية والإنجليزية." data-en="daftra is always by your side. Free technical support 24/7 via phone, WhatsApp, and email, with a comprehensive user guide in both Arabic and English.">دفترة بجانبك دائمًا، دعم فني مجاني على مدار الساعة عبر الهاتف، الواتساب، والبريد الإلكتروني، مع دليل مستخدم شامل بالعربية والإنجليزية.</p>
+                            </div>
+                            <div class="df-r-why__card df-r-anim df-r-delay-4">
+                                <div class="df-r-why__icon">
+                                    <img src="https://static.portal.daftra.com/images/why-section/remote-yes-disconnected-never.svg"
+                                         alt="Remote"
+                                         onerror="this.parentElement.textContent='📱'"/>
+                                </div>
+                                <h3 data-ar="كل أعمالك بين يديك دائمًا" data-en="Your Business Always in Your Hands">كل أعمالك بين يديك دائمًا</h3>
+                                <p data-ar="دفترة يجعلك متصلًا بأعمالك أينما كنت. نظام سحابي يعمل في أي وقت وأي مكان، ومع تطبيقات الجوال المتنوعة تستطيع العمل حتى بدون إنترنت." data-en="daftra keeps you connected to your business wherever you are. A cloud system that works anytime and anywhere, with mobile apps that let you work offline.">دفترة يجعلك متصلًا بأعمالك أينما كنت. نظام سحابي يعمل في أي وقت وأي مكان، ومع تطبيقات الجوال المتنوعة تستطيع العمل حتى بدون إنترنت.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FAQ SECTION
+                ════════════════════════════════════════════ -->
+                <section class="df-r-faq" id="faq">
+                    <div class="df-r-cont">
+                        <div class="df-r-faq__head df-r-anim">
+                            <h2 data-ar="الأسئلة الشائعة" data-en="Frequently Asked Questions">الأسئلة الشائعة</h2>
+                            <p data-ar="كل ما تحتاج معرفته عن برنامج إدارة المحلات التجارية من دفترة" data-en="Everything you need to know about daftra's retail store management software">كل ما تحتاج معرفته عن برنامج إدارة المحلات التجارية من دفترة</p>
+                        </div>
+                        <div class="df-r-faq__list">
+                            <div class="df-r-faq__item df-r-anim df-r-delay-1">
+                                <button class="df-r-faq__q" type="button">
+                                    <span data-ar="هل يمكنني تخصيص النظام لمحلي التجاري؟" data-en="Can I get bespoke customization for my retail store?">هل يمكنني تخصيص النظام لمحلي التجاري؟</span>
+                                    <span class="df-r-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-r-faq__a">
+                                    <div class="df-r-faq__a-inner"
+                                         data-ar="نعم، دفترة يوفر خدمات تخصيص شاملة لتناسب طبيعة أعمالك. يمكنك الاستفادة من إعدادات المنتجات والتصنيفات والتقارير المخصصة، فضلاً عن حلول مصممة خصيصاً لاحتياجاتك الفريدة." data-en="Yes, daftra offers comprehensive customization services to fit your business nature. You can benefit from product settings, categories, and custom reports, in addition to solutions specifically designed for your unique needs.">نعم، دفترة يوفر خدمات تخصيص شاملة لتناسب طبيعة أعمالك. يمكنك الاستفادة من إعدادات المنتجات والتصنيفات والتقارير المخصصة، فضلاً عن حلول مصممة خصيصاً لاحتياجاتك الفريدة.</div>
+                                </div>
+                            </div>
+                            <div class="df-r-faq__item df-r-anim df-r-delay-2">
+                                <button class="df-r-faq__q" type="button">
+                                    <span data-ar="كيف يقارن دفترة بالبدائل المماثلة؟" data-en="How does daftra compare to similar solutions?">كيف يقارن دفترة بالبدائل المماثلة؟</span>
+                                    <span class="df-r-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-r-faq__a">
+                                    <div class="df-r-faq__a-inner"
+                                         data-ar="دفترة يتميز بكونه حلًا شاملاً باللغة العربية مع دعم كامل للمتطلبات الضريبية الإقليمية. يجمع دفترة بين نقاط البيع والمحاسبة والمخزون والموارد البشرية في منصة واحدة بسعر تنافسي." data-en="daftra stands out as a comprehensive Arabic-language solution with full support for regional tax requirements. daftra combines POS, accounting, inventory, and HR in a single platform at a competitive price.">دفترة يتميز بكونه حلًا شاملاً باللغة العربية مع دعم كامل للمتطلبات الضريبية الإقليمية. يجمع دفترة بين نقاط البيع والمحاسبة والمخزون والموارد البشرية في منصة واحدة بسعر تنافسي.</div>
+                                </div>
+                            </div>
+                            <div class="df-r-faq__item df-r-anim df-r-delay-3">
+                                <button class="df-r-faq__q" type="button">
+                                    <span data-ar="هل يمكنني أتمتة نظام الفوترة لمحلي؟" data-en="Can I automate my billing system for my store independently?">هل يمكنني أتمتة نظام الفوترة لمحلي؟</span>
+                                    <span class="df-r-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-r-faq__a">
+                                    <div class="df-r-faq__a-inner"
+                                         data-ar="بالتأكيد. يتضمن دفترة أدوات أتمتة قوية للفواتير المتكررة والعروض والخصومات، مما يتيح لك إعداد قواعد الفواتير مرة واحدة وتطبيقها تلقائياً." data-en="Absolutely. daftra includes powerful automation tools for recurring invoices, promotions, and discounts, letting you set billing rules once and apply them automatically.">بالتأكيد. يتضمن دفترة أدوات أتمتة قوية للفواتير المتكررة والعروض والخصومات، مما يتيح لك إعداد قواعد الفواتير مرة واحدة وتطبيقها تلقائياً.</div>
+                                </div>
+                            </div>
+                            <div class="df-r-faq__item df-r-anim df-r-delay-4">
+                                <button class="df-r-faq__q" type="button">
+                                    <span data-ar="هل أحتاج إلى نسخ احتياطي لبياناتي؟" data-en="Do I need a data backup?">هل أحتاج إلى نسخ احتياطي لبياناتي؟</span>
+                                    <span class="df-r-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-r-faq__a">
+                                    <div class="df-r-faq__a-inner"
+                                         data-ar="لا داعي للقلق — دفترة يقوم بنسخ احتياطي تلقائي لجميع بياناتك على فترات منتظمة على خوادم سحابية مؤمنة في أكثر من قارة، مما يضمن لك أمان بياناتك في جميع الأوقات." data-en="No worries — daftra automatically backs up all your data at regular intervals on secured cloud servers on multiple continents, ensuring your data is safe at all times.">لا داعي للقلق — دفترة يقوم بنسخ احتياطي تلقائي لجميع بياناتك على فترات منتظمة على خوادم سحابية مؤمنة في أكثر من قارة، مما يضمن لك أمان بياناتك في جميع الأوقات.</div>
+                                </div>
+                            </div>
+                            <div class="df-r-faq__item df-r-anim df-r-delay-5">
+                                <button class="df-r-faq__q" type="button">
+                                    <span data-ar="هل يمكنني نقل بياناتي من نظام آخر إلى دفترة؟" data-en="Can I migrate data from another platform to daftra?">هل يمكنني نقل بياناتي من نظام آخر إلى دفترة؟</span>
+                                    <span class="df-r-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-r-faq__a">
+                                    <div class="df-r-faq__a-inner"
+                                         data-ar="نعم، يدعم دفترة استيراد البيانات من منصات وأنظمة مختلفة. فريق الدعم لدينا يساعدك في عملية الترحيل لضمان انتقال سلس لجميع بياناتك." data-en="Yes, daftra supports importing data from various platforms and systems. Our support team will assist you through the migration process to ensure a smooth transition of all your data.">نعم، يدعم دفترة استيراد البيانات من منصات وأنظمة مختلفة. فريق الدعم لدينا يساعدك في عملية الترحيل لضمان انتقال سلس لجميع بياناتك.</div>
+                                </div>
+                            </div>
+                            <div class="df-r-faq__item df-r-anim">
+                                <button class="df-r-faq__q" type="button">
+                                    <span data-ar="كيف أدير المرتبات بشكل مستقل؟" data-en="How do I run payroll independently?">كيف أدير المرتبات بشكل مستقل؟</span>
+                                    <span class="df-r-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-r-faq__a">
+                                    <div class="df-r-faq__a-inner"
+                                         data-ar="يوفر دفترة نظام إدارة مرتبات متكامل يتضمن حساب الرواتب الأساسية، البدلات، الاستقطاعات، والإجازات بشكل تلقائي — مع تقارير تفصيلية لكل موظف." data-en="daftra provides a complete payroll management system including automatic calculation of basic salaries, allowances, deductions, and leave — with detailed reports for each employee.">يوفر دفترة نظام إدارة مرتبات متكامل يتضمن حساب الرواتب الأساسية، البدلات، الاستقطاعات، والإجازات بشكل تلقائي — مع تقارير تفصيلية لكل موظف.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FINAL CTA STRIP
+                ════════════════════════════════════════════ -->
+                <section class="df-r-cta-strip">
+                    <div class="df-r-cont">
+                        <h2 class="df-r-anim"
+                            data-ar="جاهز لبدء إدارة محلك التجاري باحترافية؟" data-en="Ready to manage your retail store professionally?">جاهز لبدء إدارة محلك التجاري باحترافية؟</h2>
+                        <p class="df-r-anim df-r-delay-1"
+                           data-ar="انضم إلى أكثر من 50,000 محل تجاري يثقون في دفترة" data-en="Join over 50,000 retail stores that trust daftra">انضم إلى أكثر من 50,000 محل تجاري يثقون في دفترة</p>
+                        <a href="/register?trk=SEO_organic" class="df-r-anim df-r-delay-2"
+                           data-ar="ابدأ الاستخدام مجانًا" data-en="Start Using for Free">ابدأ الاستخدام مجانًا<svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     SHARED FOOTER
+                ════════════════════════════════════════════ -->
+                <t t-call="website_pricing_plans.df_footer"/>
+
+            </div><!-- /#df-retail-wrap -->
+
+        </t>
+    </template>
+
+</odoo>

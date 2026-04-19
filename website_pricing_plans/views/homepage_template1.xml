@@ -1,0 +1,2600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="home_page" name="Daftra Homepage">
+        <t t-call="website.layout">
+            <t t-set="no_header" t-value="True"/>
+            <t t-set="no_footer" t-value="True"/>
+            <t t-set="head">
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+                      rel="stylesheet"/>
+            </t>
+            <script>
+                (function(){
+                    var l='en';
+                    try{ var s=localStorage.getItem('df_lang'); if(s==='en'||s==='ar') l=s; }catch(e){}
+                    var w=document.getElementById('df-home-wrap');
+                    if(w){ w.setAttribute('dir',l==='ar'?'rtl':'ltr'); w.classList.add('lang-'+l); }
+                    else{
+                        document.addEventListener('DOMContentLoaded',function(){
+                            var w2=document.getElementById('df-home-wrap');
+                            if(w2){ w2.setAttribute('dir',l==='ar'?'rtl':'ltr'); w2.classList.add('lang-'+l); }
+                        });
+                    }
+                })();
+            </script>
+            <div id="df-home-wrap" class="lang-en" dir="ltr">
+
+                <t t-call="website_pricing_plans.df_nav"/>
+
+                <section class="df-h-hero">
+                    <div class="df-cont">
+                        <div class="df-h-hero__in">
+                            <h1 data-ar="نظام ERP الشامل لإدارة أعمالك"
+                                data-en="The Ultimate ERP System to Run Your Business">The Ultimate ERP System to Run
+                                Your Business
+                            </h1>
+                            <p class="df-h-hero__sub"
+                               data-ar="دفترة هو حل سحابي شامل ومتكامل، مطور خصيصاً لإدارة كل احتياجاتك من تمويل ومحاسبة ومبيعات وإنشاء فواتير إلكترونية متوافقة ومخزون وعلاقات عملاء وموظفين وعمليات — كل ذلك مخصص حسب قطاعك."
+                               data-en="Daftra is a cloud-based, all-in-one solution specifically developed to address end-to-end all your finance, accounting, sales, create compliant e-invoices, inventory, customer relations, employees, and operations—all industry-customized.">
+                                Daftra is a cloud-based, all-in-one solution specifically developed to address
+                                end-to-end all your finance, accounting, sales,
+                                <a href="/electronic-invoice-ksa">create compliant e-invoices</a>, inventory, customer
+                                relations, employees, and operations—all industry-customized.
+                            </p>
+                            <a href="/register" class="df-btn-grn" data-ar="ابدأ مجاناً" data-en="Get Started for Free">
+                                Get Started for Free
+                            </a>
+                            <div class="df-h-badges">
+                                <span class="df-h-badge">
+                                    <span class="df-h-badge__dot"/>
+                                    <span data-ar="تجربة مجانية 14 يومًا" data-en="Free 14-Day Trial">Free 14-Day
+                                        Trial
+                                    </span>
+                                </span>
+                                <span class="df-h-badge">
+                                    <span class="df-h-badge__dot"/>
+                                    <span data-ar="لا حاجة لبطاقة ائتمان" data-en="No Credit Card Required">No Credit
+                                        Card Required
+                                    </span>
+                                </span>
+                                <span class="df-h-badge">
+                                    <span class="df-h-badge__dot"/>
+                                    <span data-ar="لا إعدادات" data-en="No Setups">No Setups</span>
+                                </span>
+                                <span class="df-h-badge">
+                                    <span class="df-h-badge__dot"/>
+                                    <span data-ar="شامل لجميع التطبيقات" data-en="All-App Inclusive">All-App Inclusive
+                                    </span>
+                                </span>
+                            </div>
+                            <br/>
+                            <br/>
+                        </div>
+                    </div>
+                    
+                    <div class="df-h-hero__preview">
+                        <div class="df-cont">
+                            <div class="df-hero-dash">
+                                <div class="df-hero-dash__bar">
+                                    <span class="df-hero-dash__dot" style="background:#ef4444"/>
+                                    <span class="df-hero-dash__dot" style="background:#f59e0b"/>
+                                    <span class="df-hero-dash__dot" style="background:#22c55e"/>
+                                    <span class="df-hero-dash__url">app.daftra.com</span>
+                                </div>
+                                <div class="df-hero-dash__body">
+                                    <div class="df-hero-dash__top">
+                                        <span class="df-hero-dash__greeting">
+                                            <span data-ar="مرحباً" data-en="Hi">Hi</span>
+                                            <strong data-ar="ماجد،" data-en="Maged,">Maged,</strong>
+                                        </span>
+                                        <span class="df-hero-dash__goto">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2">
+                                                <rect x="3" y="3" width="7" height="7"/>
+                                                <rect x="14" y="3" width="7" height="7"/>
+                                                <rect x="14" y="14" width="7" height="7"/>
+                                                <rect x="3" y="14" width="7" height="7"/>
+                                            </svg>
+                                            <span data-ar="الذهاب للمتجر الإلكتروني" data-en="Go to eStore">Go to eStore</span>
+                                        </span>
+                                    </div>
+                                    <div class="df-hero-dash__search-row">
+                                        <div class="df-hero-dash__search">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af"
+                                                 stroke-width="2">
+                                                <circle cx="11" cy="11" r="8"/>
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                                            </svg>
+                                            <span data-ar="بحث الفواتير" data-en="Invoices Search">Invoices Search</span>
+                                        </div>
+                                        <div class="df-hero-dash__search">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9ca3af"
+                                                 stroke-width="2">
+                                                <circle cx="11" cy="11" r="8"/>
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                                            </svg>
+                                            <span data-ar="بحث العملاء" data-en="Clients Search">Clients Search</span>
+                                        </div>
+                                    </div>
+                                    <div class="df-hero-dash__actions">
+                                        <div class="df-hero-dash__action">
+                                            <span class="df-hero-dash__action-ic">🛒</span>
+                                            <span data-ar="ابدأ البيع" data-en="Start Selling">Start Selling</span>
+                                        </div>
+                                        <div class="df-hero-dash__action">
+                                            <span class="df-hero-dash__action-ic">📄</span>
+                                            <span data-ar="أنشئ فاتورة" data-en="Create Invoice">Create Invoice</span>
+                                        </div>
+                                        <div class="df-hero-dash__action">
+                                            <span class="df-hero-dash__action-ic">🖥️</span>
+                                            <span data-ar="جلسات POS" data-en="POS Sessions">POS Sessions</span>
+                                        </div>
+                                        <div class="df-hero-dash__action">
+                                            <span class="df-hero-dash__action-ic">📋</span>
+                                            <span data-ar="الفواتير" data-en="Invoices">Invoices</span>
+                                        </div>
+                                        <div class="df-hero-dash__action">
+                                            <span class="df-hero-dash__action-ic">👥</span>
+                                            <span data-ar="العملاء" data-en="Clients">Clients</span>
+                                        </div>
+                                        <div class="df-hero-dash__action">
+                                            <span class="df-hero-dash__action-ic">➕</span>
+                                            <span>Add Client</span>
+                                        </div>
+                                    </div>
+                                    <div class="df-hero-dash__charts">
+                                        <div class="df-hero-dash__chart">
+                                            <div class="df-hero-dash__chart-title">
+                                                <span>Sales</span>
+                                                <div class="df-hero-dash__chart-toggle">
+                                                    <span class="active">Invoices</span>
+                                                    <span style="background:#fef3c7;color:#d97706;">Overdue</span>
+                                                </div>
+                                            </div>
+                                            <div style="font-size:10px;color:#9ca3af;margin-bottom:6px;">Daily Revenue
+                                                Summary (EGP)
+                                            </div>
+                                            <svg class="df-hero-chart-svg" viewBox="0 0 300 70"
+                                                 preserveAspectRatio="none">
+                                                <polyline
+                                                        points="0,55 30,48 60,42 90,35 120,28 150,22 180,18 210,24 240,16 270,12 300,8"
+                                                        fill="none" stroke="#4318FF" stroke-width="2"/>
+                                                <polyline
+                                                        points="0,65 30,63 60,62 90,64 120,61 150,60 180,62 210,59 240,63 270,61 300,60"
+                                                        fill="none" stroke="#ef4444" stroke-width="1.5"
+                                                        stroke-dasharray="4,2"/>
+                                                <polyline
+                                                        points="0,68 30,67 60,68 90,66 120,68 150,67 180,68 210,67 240,68 270,66 300,67"
+                                                        fill="none" stroke="#f59e0b" stroke-width="1.5"
+                                                        stroke-dasharray="4,2"/>
+                                            </svg>
+                                        </div>
+                                        <div class="df-hero-dash__chart">
+                                            <div class="df-hero-dash__chart-title">
+                                                <span>Profit &amp; Loss</span>
+                                                <div class="df-hero-dash__chart-toggle">
+                                                    <span>Accrual</span>
+                                                    <span class="active">Cash</span>
+                                                </div>
+                                            </div>
+                                            <div style="font-size:10px;color:#9ca3af;margin-bottom:6px;">Period Totals
+                                            </div>
+                                            <svg class="df-hero-chart-svg" viewBox="0 0 300 70"
+                                                 preserveAspectRatio="none">
+                                                <rect x="10" y="30" width="20" height="35" fill="#22c55e" rx="2"/>
+                                                <rect x="35" y="15" width="20" height="50" fill="#ef4444" rx="2"/>
+                                                <rect x="75" y="20" width="20" height="45" fill="#22c55e" rx="2"/>
+                                                <rect x="100" y="35" width="20" height="30" fill="#ef4444" rx="2"/>
+                                                <rect x="140" y="8" width="20" height="57" fill="#22c55e" rx="2"/>
+                                                <rect x="165" y="28" width="20" height="37" fill="#ef4444" rx="2"/>
+                                                <polyline points="20,28 85,18 150,6 215,22 280,15"
+                                                          fill="none" stroke="#4318FF" stroke-width="2"/>
+                                                <circle cx="20" cy="28" r="3" fill="#4318FF"/>
+                                                <circle cx="85" cy="18" r="3" fill="#4318FF"/>
+                                                <circle cx="150" cy="6" r="3" fill="#4318FF"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-mods">
+                    <div class="df-cont">
+                        <h2 class="df-h-mods__t df-reveal">Empower Your System<br/>And Solidify Your Business
+                        </h2>
+                        <div class="df-h-mods__g">
+                            <div class="df-mcard df-reveal">
+                                <div class="df-mcard__ic df-mcard__ic--s">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed"
+                                         stroke-width="2">
+                                        <circle cx="9" cy="21" r="1"/>
+                                        <circle cx="20" cy="21" r="1"/>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                                    </svg>
+                                </div>
+                                <h4>Sales</h4>
+                                <div class="df-mcard__lnk">
+                                    <a href="/sales/">Billing &amp; Invoicing,</a>
+                                    <a href="/pos/">POS,</a>
+                                    <a href="/offers/">Offers,</a>
+                                    <a href="/features/">Price Lists,</a>
+                                    <a href="/insurance-management/">Insurance Management,</a>
+                                    <a href="/sales-commission/">Sales Targets &amp; Commissions,</a>
+                                    <a href="/installments/">Installments.</a>
+                                </div>
+                            </div>
+                            <div class="df-mcard df-reveal">
+                                <div class="df-mcard__ic df-mcard__ic--a">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16a34a"
+                                         stroke-width="2">
+                                        <line x1="12" y1="1" x2="12" y2="23"/>
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                    </svg>
+                                </div>
+                                <h4>Accounting</h4>
+                                <div class="df-mcard__lnk">
+                                    <a href="/expenses/">Expenses,</a>
+                                    <a href="/features/">Taxes,</a>
+                                    <a href="/chart-of-accounts/">Chart of Accounts,</a>
+                                    <a href="/features/">General Ledger,</a>
+                                    <a href="/features/">Auto-Journals,</a>
+                                    <a href="/cost-centers/">Cost Centers,</a>
+                                    <a href="/features/">Treasuries,</a>
+                                    <a href="/features/">Financial Reports,</a>
+                                    <a href="/cheque-cycle/">Cheque Cycle,</a>
+                                    <a href="/asset-management/">Asset Management.</a>
+                                </div>
+                            </div>
+                            <div class="df-mcard df-reveal">
+                                <div class="df-mcard__ic df-mcard__ic--i">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#db2777"
+                                         stroke-width="2">
+                                        <rect x="2" y="7" width="20" height="14" rx="2"/>
+                                        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                                    </svg>
+                                </div>
+                                <h4>Inventory</h4>
+                                <div class="df-mcard__lnk">
+                                    <a href="/features/">Stock Tracking,</a>
+                                    <a href="/features/">Barcode,</a>
+                                    <a href="/purchase-management/">Purchases,</a>
+                                    <a href="/supplier-management/">Suppliers,</a>
+                                    <a href="/features/">Warehouses,</a>
+                                    <a href="/stocktaking/">Stocktaking,</a>
+                                    <a href="/requisitions/">Requisitions,</a>
+                                    <a href="/features/">Price Lists.</a>
+                                </div>
+                            </div>
+                            <div class="df-mcard df-reveal">
+                                <div class="df-mcard__ic df-mcard__ic--h">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ea580c"
+                                         stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="12" cy="7" r="4"/>
+                                    </svg>
+                                </div>
+                                <h4>Human Resources</h4>
+                                <div class="df-mcard__lnk">
+                                    <a href="/personnel-management-software/">Employee Management,</a>
+                                    <a href="/contracts/">Contracts,</a>
+                                    <a href="/payroll/">Payroll,</a>
+                                    <a href="/features/">Loans,</a>
+                                    <a href="/attendance-leave-management/">Attendance &amp; Leaves Management,</a>
+                                    <a href="/features/">Multi-Shifts,</a>
+                                    <a href="/requests/">Requests.</a>
+                                </div>
+                            </div>
+                            <div class="df-mcard df-reveal">
+                                <div class="df-mcard__ic df-mcard__ic--c">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669"
+                                         stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                                    </svg>
+                                </div>
+                                <h4>CRM</h4>
+                                <div class="df-mcard__lnk">
+                                    <a href="/client-follow-up/">Customer Management,</a>
+                                    <a href="/features/">Appointments,</a>
+                                    <a href="/features/">Contract Management,</a>
+                                    <a href="/memberships/">Memberships,</a>
+                                    <a href="/points-credits/">Points &amp; Credits,</a>
+                                    <a href="/features/">Clients Attendance.</a>
+                                </div>
+                            </div>
+                            <div class="df-mcard df-reveal">
+                                <div class="df-mcard__ic df-mcard__ic--o">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb"
+                                         stroke-width="2">
+                                        <circle cx="12" cy="12" r="3"/>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+                                    </svg>
+                                </div>
+                                <h4>Operations</h4>
+                                <div class="df-mcard__lnk">
+                                    <a href="/work-orders/">Work Orders,</a>
+                                    <a href="/features/">Project Management,</a>
+                                    <a href="/booking-management/">Online Booking Management,</a>
+                                    <a href="/time-tracking/">Time Tracking,</a>
+                                    <a href="/manufacturing-software/">Manufacturing,</a>
+                                    <a href="/work-flow/">Work Flows.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-zatca">
+                    <div class="df-cont">
+                        <div class="df-zatca__in">
+                            <div class="df-zatca__badge df-reveal">
+                                <span class="df-zatca__tag" data-ar="متوافق بالكامل مع فاتورة"
+                                      data-en="Full E-Invoice Compliance With ZATCA">Full E-Invoice Compliance With
+                                    ZATCA
+                                </span>
+                            </div>
+                            <div class="df-zatca__cols">
+                                <div class="df-zatca__col df-reveal">
+                                    <div class="df-zatca__col-icon">
+                                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4318FF"
+                                             stroke-width="2">
+                                            <path d="M9 11l3 3L22 4"/>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                        </svg>
+                                    </div>
+                                    <h3 data-ar="متوافق بالكامل مع المرحلة الثانية."
+                                        data-en="Fully compliant with phase two.">Fully compliant with phase two.
+                                    </h3>
+                                    <p data-ar="اربط نظامك مباشرة بمنصة فاتورة وأصدر فواتير إلكترونية متوافقة في الوقت الفعلي، مع توقيعات رقمية وأرقام تسلسلية وتخزين آمن للبيانات وإرسال تلقائي دون أي تدخل يدوي."
+                                       data-en="Directly connect your system to Fatora platform and issue compliant electronic invoices in real-time, with digital signatures, serial numbers, secure data storage, and automatic sending without any manual intervention.">
+                                        Directly connect your system to Fatora platform and issue compliant electronic
+                                        invoices in real-time, with digital signatures, serial numbers, secure data
+                                        storage, and automatic sending without any manual intervention.
+                                    </p>
+                                    <a href="/electronic-invoice-ksa/" class="df-zatca__link"
+                                       data-ar="اعرف المزيد عن المرحلة الثانية ←" data-en="Know more about phase two →">
+                                        Know more about phase two →
+                                    </a>
+                                </div>
+                                <div class="df-zatca__col df-reveal">
+                                    <div class="df-zatca__col-icon">
+                                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#22c55e"
+                                             stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <path d="M12 6v6l4 2"/>
+                                        </svg>
+                                    </div>
+                                    <h3 data-ar="تحديث سلس يلبي متطلبات الهيئة."
+                                        data-en="Seamless update that meets the authority's requirements.">Seamless
+                                        update that meets the authority's requirements.
+                                    </h3>
+                                    <p data-ar="ابقَ على اطلاع دائم ببرنامج الفوترة الإلكترونية من دفترة، الذي يلبي أحدث متطلبات هيئة الزكاة والضريبة والجمارك المتعلقة بالمرحلة الثانية من الفوترة الإلكترونية، لتجنب انقطاع مسيرتك التجارية."
+                                       data-en="Stay up to date with the electronic invoicing program from Daftra, which meets the latest requirements of ZATCA regarding phase two of electronic invoicing, to avoid disrupting your business journey.">
+                                        Stay up to date with the electronic invoicing program from Daftra, which meets
+                                        the latest requirements of ZATCA regarding phase two of electronic invoicing, to
+                                        avoid disrupting your business journey.
+                                    </p>
+                                    <a href="/register/" class="df-btn-grn-sm" data-ar="ابدأ مجاناً ←"
+                                       data-en="Get Started for Free →">Get Started for Free →
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="df-zatca__logos df-reveal">
+                                <a class="df-compliance-item" href="#">
+                                    <img src="https://static.portal.daftra.com/images/footer/zakat-ar.png"
+                                         onerror="this.style.display='none'" alt="Zakat"/>
+                                    <span data-ar="هيئة الزكاة والضريبة والجمارك"
+                                          data-en="Zakat, Tax and Customs Authority">Zakat, Tax and Customs Authority
+                                    </span>
+                                </a>
+                                <a class="df-compliance-item" href="#">
+                                    <img src="https://static.portal.daftra.com/images/footer/federal-tax-ar.png"
+                                         onerror="this.style.display='none'" alt="Federal Tax"/>
+                                    <span data-ar="الهيئة الاتحادية للضرائب" data-en="Federal Tax Authority">Federal Tax
+                                        Authority
+                                    </span>
+                                </a>
+                                <a class="df-compliance-item" href="#">
+                                    <img src="https://static.portal.daftra.com/images/footer/egyptian-tax-ar.png"
+                                         onerror="this.style.display='none'" alt="Egyptian Tax"/>
+                                    <span data-ar="مصلحة الضرائب المصرية" data-en="Egyptian Tax Authority">Egyptian Tax
+                                        Authority
+                                    </span>
+                                </a>
+                                <a class="df-compliance-item" href="#">
+                                    <img src="https://static.portal.daftra.com/images/footer/fatoora-ar.png"
+                                         onerror="this.style.display='none'" alt="Fatoora"/>
+                                    <span data-ar="فاتورة" data-en="Fatoora">Fatoora</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-ind">
+                    <div
+                            style="background-image:url('/website_pricing_plans/static/src/img/h1.jpeg');">
+                        <br/>
+                        <h2>Customized<br/>for 50+ industries
+                        </h2>
+                        <p>Find out your industry. Find out how Daftra fits your business for free.</p>
+                        <a href="#" class="df-btn-bl">Customize Your Experience</a>
+                    </div>
+                </section>
+
+                <section class="df-h-feat">
+                    <div class="df-cont">
+                        <div class="df-h-feat__in">
+                            <div class="df-h-feat__txt df-reveal">
+                                <h2>Track Sales, Invoices<br/>and Payments
+                                </h2>
+                                <div class="df-acc">
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📄</span>
+                                            Invoicing, Estimates &amp; Quotes
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Automate invoicing and generate accurate estimates and quotes instantly.
+                                                Set custom tax mandates, apply discounts, and share invoices across
+                                                channels.
+                                            </p>
+                                            <a href="/invoicing/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🏪</span>
+                                            POS (Point of Sale)
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Cloud-based and offline-ready POS system for retail and services with
+                                                barcode scanning and real-time inventory sync.
+                                            </p>
+                                            <a href="/pos/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📊</span>
+                                            Installments Management
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Allow customers to pay in installments with automatic reminders,
+                                                tracking, and complete financial integration.
+                                            </p>
+                                            <a href="/installments/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🎯</span>
+                                            Sales Targets &amp; Commissions
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Set sales targets and track commissions to motivate your sales team with
+                                                clear, measurable goals.
+                                            </p>
+                                            <a href="/sales-commission/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🏷️</span>
+                                            Offers, Discounts, and Price Lists
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Create targeted promotions with flexible pricing rules, seasonal
+                                                discounts, and customer-specific price lists.
+                                            </p>
+                                            <a href="/offers/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🛡️</span>
+                                            Insurance Management
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Manage insurance policies, track claims, and handle coverage details
+                                                integrated with your billing workflow.
+                                            </p>
+                                            <a href="/insurance-management/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/register" class="df-btn-grn-sm">Get Started for Free →</a>
+                            </div>
+                            <div class="df-h-feat__vis">
+                                <div class="df-mock-wrap">
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Invoice
+                                                #13456
+                                            </span>
+                                            <span class="df-bdg-paid">Paid</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Item</span>
+                                            <span class="df-mock__lbl">Price</span>
+                                            <span class="df-mock__lbl">Client</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Blood Monitor</span>
+                                            <span>EGP 200</span>
+                                            <span>EGP 150.00</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">CPAP Machine</span>
+                                            <span>EGP 100.24</span>
+                                            <span>EGP 80.00</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Wheelchair</span>
+                                            <span>EGP 180.24</span>
+                                            <span>EGP 144.00</span>
+                                        </div>
+                                        <div class="df-mock__row" style="font-weight:700;border-top:2px solid #e8e8f0">
+                                            <span>Total</span>
+                                            <span/>
+                                            <span>EGP 374.00</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">POS Session
+                                                #88
+                                            </span>
+                                            <span class="df-bdg-paid">Open</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Terminal</span>
+                                            <span class="df-mock__val">Main Cashier</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Orders Today</span>
+                                            <span class="df-mock__val">47</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Revenue</span>
+                                            <span class="df-mock__val" style="color:#22c55e">EGP 12,340</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Cash on Hand</span>
+                                            <span class="df-mock__val">EGP 8,200</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Installment
+                                                Plan
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Client</span>
+                                            <span class="df-mock__val">Sara Ahmed</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Total Amount</span>
+                                            <span class="df-mock__val">EGP 6,000</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Installment 1</span>
+                                            <span class="df-bdg-paid">Paid</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Installment 2</span>
+                                            <span class="df-bdg-pend">Due Apr 15</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Installment 3</span>
+                                            <span style="color:#9ca3af;font-size:12px">Upcoming</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Sales Targets
+                                                Q1
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Agent</span>
+                                            <span class="df-mock__lbl">Target</span>
+                                            <span class="df-mock__lbl">Achieved</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Khalid</span>
+                                            <span>50K</span>
+                                            <span class="df-bdg-paid">62K</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Nour</span>
+                                            <span>40K</span>
+                                            <span class="df-bdg-pend">31K</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Hassan</span>
+                                            <span>45K</span>
+                                            <span class="df-bdg-paid">48K</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Active
+                                                Promotions
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Summer Sale 20%</span>
+                                            <span class="df-bdg-paid">Active</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">VIP Client -15%</span>
+                                            <span class="df-bdg-paid">Active</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Bundle Offer B</span>
+                                            <span class="df-bdg-pend">Scheduled</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Total Savings Given</span>
+                                            <span class="df-mock__val" style="color:#22c55e">EGP 4,280</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Insurance
+                                                Policy #44
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Client</span>
+                                            <span class="df-mock__val">Mona Sayed</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Coverage</span>
+                                            <span class="df-mock__val">Dental + Vision</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Expires</span>
+                                            <span class="df-bdg-pend">Dec 2025</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Claims Filed</span>
+                                            <span class="df-mock__val">3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-feat">
+                    <div class="df-cont">
+                        <div class="df-h-feat__in">
+                            <div class="df-h-feat__txt df-reveal">
+                                <h2>Full-Scale Finance<br/>and Accounting
+                                </h2>
+                                <div class="df-acc">
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📒</span>
+                                            Chart of Accounts &amp; Journals
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Automate general ledger, modify chart of accounts, generate income
+                                                statements, and balance sheets with precision.
+                                            </p>
+                                            <a href="/chart-of-accounts/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">💳</span>
+                                            Finance &amp; Expenses Tracking
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Track all expenses, manage budgets, and get real-time financial insights
+                                                across your business.
+                                            </p>
+                                            <a href="/expenses/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🏢</span>
+                                            Assets Management
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Smart asset management including registration, automatic depreciation,
+                                                and disposal tracking.
+                                            </p>
+                                            <a href="/asset-management/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📍</span>
+                                            Cost Centers
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Distribute expenses and revenues to cost centers and analyze
+                                                profitability per department or project.
+                                            </p>
+                                            <a href="/cost-centers/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🔄</span>
+                                            Check Cycle
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Manage checks through clear steps from issuance to collection with full
+                                                audit trail.
+                                            </p>
+                                            <a href="/cheque-cycle/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/register" class="df-btn-grn-sm">Get Started for Free →</a>
+                            </div>
+                            <div class="df-h-feat__vis">
+                                <div class="df-mock-wrap">
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Journal Entry
+                                                #6367
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">June Salaries</span>
+                                            <span/>
+                                            <span class="df-mock__val">EGP 6,000.00</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Date</span>
+                                            <span/>
+                                            <span>08-09-2022</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Assign Cost Centers</span>
+                                            <span/>
+                                            <span style="color:#22c55e">● Enabled</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Expense
+                                                Report
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Category</span>
+                                            <span class="df-mock__lbl">Amount</span>
+                                            <span class="df-mock__lbl">Status</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Travel</span>
+                                            <span>EGP 1,200</span>
+                                            <span class="df-bdg-paid">Approved</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Utilities</span>
+                                            <span>EGP 850</span>
+                                            <span class="df-bdg-paid">Approved</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Marketing</span>
+                                            <span>EGP 3,400</span>
+                                            <span class="df-bdg-pend">Pending</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Asset
+                                                Register
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Asset</span>
+                                            <span class="df-mock__lbl">Value</span>
+                                            <span class="df-mock__lbl">Deprec.</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Printer X200</span>
+                                            <span>EGP 4,500</span>
+                                            <span style="color:#ef4444">-12%</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Server Rack</span>
+                                            <span>EGP 22,000</span>
+                                            <span style="color:#ef4444">-8%</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Company Van</span>
+                                            <span>EGP 85,000</span>
+                                            <span style="color:#ef4444">-15%</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Cost Center
+                                                Summary
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Department</span>
+                                            <span class="df-mock__lbl">Budget</span>
+                                            <span class="df-mock__lbl">Used</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Operations</span>
+                                            <span>30K</span>
+                                            <span class="df-bdg-paid">22K</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Marketing</span>
+                                            <span>20K</span>
+                                            <span class="df-bdg-pend">19.4K</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">HR</span>
+                                            <span>15K</span>
+                                            <span class="df-bdg-paid">11K</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Cheque
+                                                #00341
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Payee</span>
+                                            <span class="df-mock__val">Al Nour Supplies</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Amount</span>
+                                            <span class="df-mock__val">EGP 14,500</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Issue Date</span>
+                                            <span>Mar 01, 2025</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Status</span>
+                                            <span class="df-bdg-paid">Cleared</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-dark">
+                    <div class="df-h-dark__img"
+                         style="background-image:url('/website_pricing_plans/static/src/img/h2.jpeg');"/>
+                    <div class="df-h-dark__overlay"/>
+                    <div class="df-cont">
+                        <div class="df-reveal">
+                            <h2>Accounting has become easier — even for non-accountants!</h2>
+                            <p>All your invoicing, payment, accounting, and cashflow working in unison.</p>
+                            <a href="/register" class="df-dark-link">Get Started Now →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-feat">
+                    <div class="df-cont">
+                        <div class="df-h-feat__in">
+                            <div class="df-h-feat__txt df-reveal">
+                                <h2 data-en="Purchasing, Supply &amp; Inventory" data-ar="المشتريات والتوريد والمخازن">Purchasing, Supply &amp; Inventory</h2>
+                                <div class="df-acc">
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📦</span>
+                                            <span data-ar="إدارة المخزون والمنتجات" data-en="Inventory &amp; Product Management">Inventory &amp; Product Management</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Flexible management for unlimited products and services with categories,
+                                                variants, and barcode support.
+                                            </p>
+                                            <a href="/inventory/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📋</span>
+                                            <span data-ar="طلبات الشراء" data-en="Requisitions">Requisitions</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Streamline internal purchase requests with approval workflows.</p>
+                                            <a href="/requisitions/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📊</span>
+                                            <span data-ar="الجرد المخزني" data-en="Stocktaking">Stocktaking</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Conduct inventory counts to match actual quantities with system
+                                                records.
+                                            </p>
+                                            <a href="/stocktaking/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🚛</span>
+                                            <span data-ar="المشتريات والموردين" data-en="Purchases &amp; Suppliers">Purchases &amp; Suppliers</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Organized records and precise tracking of supplier relationships and
+                                                purchase orders.
+                                            </p>
+                                            <a href="/purchase-management/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🔄</span>
+                                            <span data-ar="دورة المشتريات" data-en="Purchase Cycle">Purchase Cycle</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Complete purchase lifecycle from requisition to receipt with full cost
+                                                tracking.
+                                            </p>
+                                            <a href="/purchase-cycle/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/register" class="df-btn-grn-sm">Get Started for Free →</a>
+                            </div>
+                            <div class="df-h-feat__vis">
+                                <div class="df-mock-wrap">
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Stock
+                                                Overview
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Product</span>
+                                            <span class="df-mock__lbl">Qty</span>
+                                            <span class="df-mock__lbl">Status</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Amber Glow Candle</span>
+                                            <span>154</span>
+                                            <span class="df-bdg-paid">In Stock</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Pine Diffuser Set</span>
+                                            <span>23</span>
+                                            <span class="df-bdg-pend">Low</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Ceramic Vase</span>
+                                            <span>89</span>
+                                            <span class="df-bdg-paid">In Stock</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Purchase
+                                                Request #PR-55
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Requested By</span>
+                                            <span class="df-mock__val">Operations</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Items</span>
+                                            <span class="df-mock__val">4 Products</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Estimated Cost</span>
+                                            <span class="df-mock__val">EGP 7,200</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Status</span>
+                                            <span class="df-bdg-pend">Awaiting Approval</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Stocktake
+                                                Report
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Location</span>
+                                            <span class="df-mock__val">Main Warehouse</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Items Counted</span>
+                                            <span class="df-mock__val">342</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Discrepancies</span>
+                                            <span class="df-bdg-pend">5 items</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Completed</span>
+                                            <span class="df-bdg-paid">Yes</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Purchase Order
+                                                #PO-221
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Supplier</span>
+                                            <span class="df-mock__val">Cairo Wholesale</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Total</span>
+                                            <span class="df-mock__val">EGP 18,400</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Expected</span>
+                                            <span>Apr 10, 2025</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Status</span>
+                                            <span class="df-bdg-paid">Confirmed</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Purchase
+                                                Cycle
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span style="color:#4318FF;font-weight:700">① Requisition</span>
+                                            <span class="df-bdg-paid">Done</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span style="color:#4318FF;font-weight:700">② RFQ Sent</span>
+                                            <span class="df-bdg-paid">Done</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span style="color:#4318FF;font-weight:700">③ PO Confirmed</span>
+                                            <span class="df-bdg-paid">Done</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span style="color:#9ca3af;font-weight:600">④ Goods Receipt</span>
+                                            <span class="df-bdg-pend">Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-feat">
+                    <div class="df-cont">
+                        <div class="df-h-feat__in">
+                            <div class="df-h-feat__txt df-reveal">
+                                <h2 data-en="Effortless All-in-One HRM Platform" data-ar="منصة شاملة ومرنة لإدارة الموارد البشرية (HRM)">Effortless All-in-One HRM Platform</h2>
+                                <div class="df-acc">
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">👤</span>
+                                            <span data-ar="إدارة الموظفين والهيكل التنظيمي" data-en="Personnel Management &amp; Org. Structure">Personnel Management &amp; Org. Structure</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Create organizational charts reflecting your company structure with
+                                                departments and positions.
+                                            </p>
+                                            <a href="/personnel-management-software/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">💵</span>
+                                            <span data-ar="الرواتب والعقود" data-en="Payroll &amp; Contracts">Payroll &amp; Contracts</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Generate salaries based on attendance, components, and bonuses
+                                                accurately.
+                                            </p>
+                                            <a href="/payroll/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📅</span>
+                                            <span data-ar="إدارة الحضور والغياب والإجازات" data-en="Attendance &amp; Leave Management">Attendance &amp; Leave Management</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Track employee attendance in real-time linked directly to payroll with
+                                                multi-shift support.
+                                            </p>
+                                            <a href="/attendance-leave-management/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📝</span>
+                                            <span data-ar="الطلبات" data-en="Requests">Requests</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Manage all HR requests from one place with custom approval stages and
+                                                workflows.
+                                            </p>
+                                            <a href="/requests/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/register" class="df-btn-grn-sm">Get Started for Free →</a>
+                            </div>
+                            <div class="df-h-feat__vis">
+                                <div class="df-mock-wrap">
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Employee
+                                                #EMP-101
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Name</span>
+                                            <span class="df-mock__val">Omar Naguib</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Department</span>
+                                            <span class="df-mock__val">Engineering</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Position</span>
+                                            <span class="df-mock__val">Senior Dev</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Status</span>
+                                            <span class="df-bdg-paid">Active</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Payroll
+                                                Summary
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Employee</span>
+                                            <span class="df-mock__lbl">Salary</span>
+                                            <span class="df-mock__lbl">Status</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Ahmed Hassan</span>
+                                            <span>EGP 8,500</span>
+                                            <span class="df-bdg-paid">Paid</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Fatima Ali</span>
+                                            <span>EGP 7,200</span>
+                                            <span class="df-bdg-paid">Paid</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Omar Khalil</span>
+                                            <span>EGP 9,000</span>
+                                            <span class="df-bdg-pend">Pending</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Attendance –
+                                                March
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Present</span>
+                                            <span class="df-mock__val" style="color:#22c55e">218 days</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Absent</span>
+                                            <span class="df-mock__val" style="color:#ef4444">12 days</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">On Leave</span>
+                                            <span class="df-mock__val" style="color:#f59e0b">8 days</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Total Employees</span>
+                                            <span class="df-mock__val">28</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">HR Requests
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Annual Leave – Nour</span>
+                                            <span class="df-bdg-paid">Approved</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Advance Salary – Ali</span>
+                                            <span class="df-bdg-pend">Review</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">WFH Request – Dina</span>
+                                            <span class="df-bdg-paid">Approved</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Resignation – Sami</span>
+                                            <span class="df-bdg-pend">Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-dark">
+                    <div class="df-h-dark__img"
+                         style="background-image:url('/website_pricing_plans/static/src/img/h4.jpeg');"/>
+                    <div class="df-h-dark__overlay"/>
+                    <div class="df-cont">
+                        <div class="df-reveal">
+                            <h2>One Easy Platform for Everything HR.</h2>
+                            <p>Business leaders, executive managers, and staff all working in unison.</p>
+                            <a href="/register" class="df-dark-link">Get Started Now →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-feat">
+                    <div class="df-cont">
+                        <div class="df-h-feat__in">
+                            <div class="df-h-feat__txt df-reveal">
+                                <h2>Intuitive Operations:<br/>Above &amp; Beyond ERP
+                                </h2>
+                                <div class="df-acc">
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🔧</span>
+                                            <span data-ar="أوامر العمل" data-en="Work Orders">Work Orders</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Create work orders, set priorities, and track custom statuses
+                                                automatically.
+                                            </p>
+                                            <a href="/work-orders/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🔄</span>
+                                            Workflows
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p>Automate business processes with customizable workflow rules and
+                                                triggers.
+                                            </p>
+                                            <a href="/work-flow/">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🏭</span>
+                                            Manufacturing
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p data-ar="حدد دورة التصنيع الكاملة من المواد الخام إلى المنتجات النهائية باستخدام قائمة المواد (BOM)." data-en="Define complete manufacturing cycle from raw materials to finished products with BOM.">Define complete manufacturing cycle from raw materials to finished
+                                                products with BOM.
+                                            </p>
+                                            <a href="/manufacturing-software/" data-ar="تعرف على المزيد ←" data-en="Learn More →">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📆</span>
+                                            <span data-ar="إدارة الحجوزات" data-en="Bookings Management">Bookings Management</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p data-ar="أدر الحجوزات بتكامل ذكي يربط المواعيد بالفواتير." data-en="Manage reservations with smart integration linking appointments to invoices.">Manage reservations with smart integration linking appointments to
+                                                invoices.
+                                            </p>
+                                            <a href="/booking-management/" data-ar="تعرف على المزيد ←" data-en="Learn More →">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🏠</span>
+                                            <span data-ar="إدارة الإيجارات والوحدات" data-en="Rental &amp; Unit Management">Rental &amp; Unit Management</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p data-ar="أجرِ أي وحدة بسهولة وأدر كل شيء من مكان واحد مع تتبع العقود." data-en="Rent any unit easily and manage everything from one place with contract tracking.">Rent any unit easily and manage everything from one place with contract
+                                                tracking.
+                                            </p>
+                                            <a href="/rental-unit-management/" data-ar="تعرف على المزيد ←" data-en="Learn More →">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">⏱️</span>
+                                            <span data-ar="تتبع الوقت" data-en="Time Tracking">Time Tracking</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p data-ar="تتبع ساعات العمل على المهام والمشاريع واحسب التكاليف تلقائياً." data-en="Track work hours on tasks and projects and calculate costs automatically.">Track work hours on tasks and projects and calculate costs
+                                                automatically.
+                                            </p>
+                                            <a href="/time-tracking/" data-ar="تعرف على المزيد ←" data-en="Learn More →">Learn More →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/register" class="df-btn-grn-sm">Get Started for Free →</a>
+                            </div>
+                            <div class="df-h-feat__vis">
+                                <div class="df-mock-wrap">
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Work Orders
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Order</span>
+                                            <span class="df-mock__lbl">Priority</span>
+                                            <span class="df-mock__lbl">Status</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">WO-2841</span>
+                                            <span style="color:#ef4444;font-weight:600">High</span>
+                                            <span class="df-bdg-pend">In Progress</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">WO-2842</span>
+                                            <span style="color:#f59e0b;font-weight:600">Medium</span>
+                                            <span class="df-bdg-paid">Done</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">WO-2843</span>
+                                            <span style="color:#22c55e;font-weight:600">Low</span>
+                                            <span style="background:#e0e7ff;color:#4318ff;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600">
+                                                Queued
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Workflow:
+                                                Invoice Approval
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span style="color:#4318FF;font-weight:700">① Trigger: New Invoice</span>
+                                            <span class="df-bdg-paid">Active</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span style="color:#4318FF;font-weight:700">② Notify: Manager</span>
+                                            <span class="df-bdg-paid">Active</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span style="color:#4318FF;font-weight:700">③ Approve / Reject</span>
+                                            <span class="df-bdg-paid">Active</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span style="color:#9ca3af;font-weight:600">④ Send to Client</span>
+                                            <span class="df-bdg-pend">Conditional</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Production
+                                                Order #MO-14
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Product</span>
+                                            <span class="df-mock__val">Candle Set A</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Quantity</span>
+                                            <span class="df-mock__val">500 units</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Raw Materials</span>
+                                            <span class="df-bdg-paid">Available</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Deadline</span>
+                                            <span class="df-bdg-pend">Apr 20</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Bookings
+                                                Today
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Time</span>
+                                            <span class="df-mock__lbl">Client</span>
+                                            <span class="df-mock__lbl">Service</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span>10:00</span>
+                                            <span class="df-mock__val">Layla</span>
+                                            <span class="df-bdg-paid">Confirmed</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span>11:30</span>
+                                            <span class="df-mock__val">Ahmed</span>
+                                            <span class="df-bdg-paid">Confirmed</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span>14:00</span>
+                                            <span class="df-mock__val">Sara</span>
+                                            <span class="df-bdg-pend">Pending</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Rental Unit
+                                                #U-07
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Tenant</span>
+                                            <span class="df-mock__val">Karim Mostafa</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Monthly Rent</span>
+                                            <span class="df-mock__val">EGP 5,500</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Contract End</span>
+                                            <span>Dec 2025</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Last Payment</span>
+                                            <span class="df-bdg-paid">Mar 2025</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Time Logs –
+                                                This Week
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Employee</span>
+                                            <span class="df-mock__lbl">Hours</span>
+                                            <span class="df-mock__lbl">Project</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Nour</span>
+                                            <span>32h</span>
+                                            <span style="color:#4318FF;font-size:12px">Website</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Hassan</span>
+                                            <span>28h</span>
+                                            <span style="color:#4318FF;font-size:12px">App Dev</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Dina</span>
+                                            <span>36h</span>
+                                            <span style="color:#4318FF;font-size:12px">Support</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-feat">
+                    <div class="df-cont">
+                        <div class="df-h-feat__in">
+                            <div class="df-h-feat__txt df-reveal">
+                                <h2 data-en="Online CRM to Put Your Clients First" data-ar="نظام CRM أونلاين يضع عملاءك في المقدمة">Online CRM to Put Your Clients First</h2>
+                                <div class="df-acc">
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">📇</span>
+                                            <span data-ar="إدارة ومتابعة العملاء" data-en="Customers Management and Follow-Up">Customers Management and Follow-Up</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p data-ar="صنف العملاء حسب المشتريات أو الأنشطة، وقم بالإدارة بناءً على اقتراب مواعيد التجديد أو انتهاء الاشتراكات." data-en="Categorize customers per purchases or activities, manage on nearing renewals or expiring subscriptions.">Categorize customers per purchases or activities, manage on nearing
+                                                renewals or expiring subscriptions.
+                                            </p>
+                                            <a href="/client-follow-up/" data-ar="تعرف على المزيد ←" data-en="Learn More →">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">🎫</span>
+                                            <span data-ar="العضويات" data-en="Memberships">Memberships</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p data-ar="إدارة العضويات والاشتراكات بالكامل من مكان واحد مع التجديد التلقائي." data-en="Fully manage memberships and subscriptions from one place with auto-renewals.">Fully manage memberships and subscriptions from one place with
+                                                auto-renewals.
+                                            </p>
+                                            <a href="/memberships/" data-ar="تعرف على المزيد ←" data-en="Learn More →">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">💎</span>
+                                            <span data-ar="النقاط والمدفوعات" data-en="Points &amp; Credits">Points &amp; Credits</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p data-ar="نظام مرن لإدارة النقاط والأرصدة لعروض العملاء الذكية." data-en="Flexible system to manage points and balances for smart customer offers.">Flexible system to manage points and balances for smart customer
+                                                offers.
+                                            </p>
+                                            <a href="/points-credits/" data-ar="تعرف على المزيد ←" data-en="Learn More →">Learn More →</a>
+                                        </div>
+                                    </div>
+                                    <div class="df-acc__it">
+                                        <button class="df-acc__hd">
+                                            <span class="df-ic">⭐</span>
+                                            <span data-ar="نقاط الولاء" data-en="Loyalty Points">Loyalty Points</span>
+                                            <span class="df-chev">▲</span>
+                                        </button>
+                                        <div class="df-acc__bd">
+                                            <p data-ar="كافئ العملاء بالنقاط مقابل المشتريات وفعل برامج ولاء مخصصة." data-en="Reward customers with points for purchases and activate custom loyalty programs.">Reward customers with points for purchases and activate custom loyalty
+                                                programs.
+                                            </p>
+                                            <a href="/loyalty-points/" data-ar="تعرف على المزيد ←" data-en="Learn More →">Learn More →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/register" class="df-btn-grn-sm">Get Started for Free →</a>
+                            </div>
+                            <div class="df-h-feat__vis">
+                                <div class="df-mock-wrap">
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Customer
+                                                Profile
+                                            </span>
+                                        </div>
+                                        <div style="text-align:center;padding:16px 0">
+                                            <div style="width:56px;height:56px;border-radius:50%;background:#4318FF;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:22px;font-weight:700">
+                                                AE
+                                            </div>
+                                            <div style="font-weight:700;margin-top:8px">Abdulaziz Elsawy</div>
+                                            <div style="font-size:12px;color:#4b5563">#001254 · Branch: Madinat Nasr
+                                            </div>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Loyalty Points</span>
+                                            <span class="df-mock__val" style="color:#22c55e">2,450 pts</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Membership</span>
+                                            <span class="df-bdg-paid">Gold</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Balance</span>
+                                            <span class="df-mock__val">EGP 1,200</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Memberships
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Plan</span>
+                                            <span class="df-mock__lbl">Members</span>
+                                            <span class="df-mock__lbl">Renewal</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Gold</span>
+                                            <span>124</span>
+                                            <span class="df-bdg-paid">Auto</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">Silver</span>
+                                            <span>287</span>
+                                            <span class="df-bdg-paid">Auto</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__val">VIP</span>
+                                            <span>32</span>
+                                            <span class="df-bdg-pend">Manual</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Points &amp;
+                                                Credits
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Client: Hana M.</span>
+                                            <span class="df-mock__val" style="color:#4318FF">1,800 pts</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Credit Balance</span>
+                                            <span class="df-mock__val">EGP 450</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Last Earned</span>
+                                            <span>Mar 22, 2025</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Redeemable</span>
+                                            <span class="df-bdg-paid">Yes</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mock">
+                                        <div class="df-mock__hd">
+                                            <span class="df-mock__dot" style="background:#ef4444"/>
+                                            <span class="df-mock__dot" style="background:#f59e0b"/>
+                                            <span class="df-mock__dot" style="background:#22c55e"/>
+                                            <span style="margin-left:auto;font-size:13px;font-weight:600">Loyalty
+                                                Program
+                                            </span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Program</span>
+                                            <span class="df-mock__val">Spring Rewards</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Points per EGP</span>
+                                            <span class="df-mock__val">1 pt / 10 EGP</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Active Members</span>
+                                            <span class="df-mock__val">1,432</span>
+                                        </div>
+                                        <div class="df-mock__row">
+                                            <span class="df-mock__lbl">Status</span>
+                                            <span class="df-bdg-paid">Running</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="inv-enterprise-split">
+                    <div class="inv-ent-left">
+                        <div class="tag" data-en="Smartest Solution" data-ar="الحل الأذكى">الحل الأذكى</div>
+                        <h2 data-en="For Enterprises" data-ar="للمؤسسات">للمؤسسات</h2>
+                        <a href="/enterprises" data-en="Choose your ideal digital partner →"
+                           data-ar="اختر شريكك الرقمي المثالي ←">اختر شريكك الرقمي المثالي ←
+                        </a>
+                    </div>
+                    <div class="inv-ent-right">
+                        <div class="tag" data-en="Tailored for" data-ar="مصمم خصيصاً لـ">مصمم خصيصاً لـ</div>
+                        <h2 data-en="Entrepreneurs, Startups &amp; Growing Businesses"
+                            data-ar="رواد الأعمال والشركات الناشئة والأعمال المتنامية">رواد الأعمال<br/>والشركات الناشئة
+                            <br/>والأعمال المتنامية
+                        </h2>
+                        <p data-en="Expand and scale your business with Daftra." data-ar="وسّع أعمالك مع دفترة.">وسّع
+                            أعمالك مع دفترة.
+                        </p>
+                    </div>
+                </div>
+
+                <section class="inv-biz-band">
+
+                    <div class="inv-biz-band__inner">
+                        <div class="inv-biz-left">
+                            <h2 data-en="For you, for every size of business" data-ar="لك ولكل حجم من أحجام الأعمال">
+                                لك ولكل حجم من أحجام الأعمال
+                            </h2>
+                            <p data-en="Unleash your potential. Unlock your growth."
+                               data-ar="أطلق إمكاناتك. افتح آفاق نموك.">
+                                أطلق إمكاناتك. افتح آفاق نموك.
+                            </p>
+                            <a href="/register" class="inv-btn-green" style="max-width:300px;color:white"
+                               data-en="Get Started For Free" data-ar="ابدأ مجاناً">
+                                ابدأ مجاناً
+                            </a>
+                        </div>
+                        <div class="inv-biz-right" id="inv-biz-slider">
+                            <div class="inv-biz-cursor-prev" id="inv-biz-cursor-prev"></div>
+                            <div class="inv-biz-cursor-next" id="inv-biz-cursor-next"></div>
+
+                            <div class="inv-biz-track" id="inv-biz-track">
+                                <a href="/perfume-stores" class="inv-biz-slide" style="text-decoration:none;display:block;">
+                                    <img src="/website_pricing_plans/static/src/img/retail.jpeg" alt="Perfume Shops"/>
+                                    <div class="inv-biz-slide-overlay"></div>
+                                    <div class="inv-biz-slide-foot">
+                                        <span class="inv-biz-label" data-ar="🌸 محلات العطور" data-en="🌸 Perfume Shops" style="color:inherit;text-decoration:none;">🌸 Perfume Shops</span>
+                                    </div>
+                                </a>
+                                <div class="inv-biz-slide">
+                                    <img src="/website_pricing_plans/static/src/img/logistics.jpeg" alt="Logistics"/>
+                                    <div class="inv-biz-slide-overlay"></div>
+                                    <div class="inv-biz-slide-foot">
+                                        <span class="inv-biz-label" data-ar="🚚 الخدمات اللوجستية" data-en="🚚 Logistics">🚚 Logistics</span>
+                                    </div>
+                                </div>
+                                <div class="inv-biz-slide">
+                                    <img src="/website_pricing_plans/static/src/img/medical.jpeg" alt="Medical"/>
+                                    <div class="inv-biz-slide-overlay"></div>
+                                    <div class="inv-biz-slide-foot">
+                                        <span class="inv-biz-label" data-ar="🏥 الخدمات الطبية" data-en="🏥 Medical">🏥 Medical</span>
+                                    </div>
+                                </div>
+                                <a href="/retail-stores" class="inv-biz-slide" style="text-decoration:none;display:block;">
+                                    <img src="/website_pricing_plans/static/src/img/retail.jpeg" alt="Retail"/>
+                                    <div class="inv-biz-slide-overlay"></div>
+                                    <div class="inv-biz-slide-foot">
+                                        <span class="inv-biz-label" data-ar="🛍️ تجارة التجزئة" data-en="🛍️ Retail" style="color:inherit;text-decoration:none;">🛍️ Retail</span>
+                                    </div>
+                                </a>
+                                <div class="inv-biz-slide">
+                                    <img src="/website_pricing_plans/static/src/img/real_state.jpeg" alt="Real Estate"/>
+                                    <div class="inv-biz-slide-overlay"></div>
+                                    <div class="inv-biz-slide-foot">
+                                        <span class="inv-biz-label" data-ar="🏢 العقارات" data-en="🏢 Real Estate">🏢 Real Estate</span>
+                                    </div>
+                                </div>
+                                <div class="inv-biz-slide">
+                                    <img src="/website_pricing_plans/static/src/img/bussiness_service.jpeg"
+                                         alt="Professional service"/>
+
+                                    <div class="inv-biz-slide-foot">
+                                        <span class="inv-biz-label" data-ar="👩‍💼 الخدمات المهنية" data-en="👩‍💼 Professional service">👩‍💼 Professional service</span>
+                                    </div>
+                                </div>
+
+                                <div class="inv-biz-slide">
+                                    <img src="/website_pricing_plans/static/src/img/learning.jpeg" alt="Learning"/>
+
+                                    <div class="inv-biz-slide-foot">
+                                        <span class="inv-biz-label" data-ar="🖊️ التعليم" data-en="🖊️ Learning">🖊️ Learning</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="inv-biz-slide">
+                                    <img src="/website_pricing_plans/static/src/img/automative.jpeg" alt="Automative"/>
+                                    
+                                    <div class="inv-biz-slide-foot">
+                                        <span class="inv-biz-label" data-ar="👩‍🔧 السيارات" data-en="👩‍🔧 Automotive">👩‍🔧 Automotive</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inv-biz-dots" id="inv-biz-dots"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+                <section class="df-h-mobile">
+                    <div class="df-cont">
+                        <div class="df-mobile__in">
+                            <div class="df-mobile__txt ">
+                                <h2 data-en="Daftra on Your iOS &amp; Android Devices" data-ar="دفترة على أجهزة iOS وAndroid">Daftra on Your iOS &amp; Android Devices</h2>
+                                <div class="df-mobile__acc">
+                                    
+                                    <div class="df-mobile__it df-mobile__it--open" data-mobile-mock="mock-management">
+                                        <button class="df-mobile__hd">
+                                            <span class="df-mobile__app-ic">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     stroke="#4318FF" stroke-width="2">
+                                                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                                    <path d="M8 21h8M12 17v4"/>
+                                                </svg>
+                                            </span>
+                                            <span data-ar="إدارة الأعمال" data-en="Business Management">Business
+                                                Management
+                                            </span>
+                                            <svg class="df-mobile__chev" width="16" height="16" viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M18 15l-6-6-6 6"/>
+                                            </svg>
+                                        </button>
+                                        <div class="df-mobile__bd">
+                                            <p data-ar="المبيعات، المحاسبة، الموارد البشرية، المخزون، إدارة علاقات العملاء، العمليات والتقارير؛ أعمالك في متناول يدك."
+                                               data-en="Sales, Accounting, HRM, Inventory, CRM, Operations, and Reporting; Your business at your fingertips.">
+                                                Sales, Accounting, HRM, Inventory, CRM, Operations, and Reporting; Your
+                                                business at your fingertips.
+                                            </p>
+                                            <a href="/business-application/" class="df-mobile__learn"
+                                               data-ar="اعرف المزيد ←" data-en="Learn More →">Learn More →
+                                            </a>
+                                            <div class="df-mobile__stores">
+                                                <a href="https://apps.apple.com/us/app/id1347814396" target="_blank"
+                                                   class="df-mobile__store-btn">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                                                    </svg>
+                                                    <div>
+                                                        <span data-ar="متوفر على" data-en="Download on the">Download on the</span>
+                                                        <strong>App Store</strong>
+                                                    </div>
+                                                </a>
+                                                <a href="https://play.google.com/store/apps/details?id=com.daftra.app"
+                                                   target="_blank" class="df-mobile__store-btn">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                                        <path d="M3.18 23.76c.3.16.64.16.95 0L15.9 12 3.18.24A1.06 1.06 0 003 1v22c0 .28.07.55.18.76zM19.12 9.56l-2.8-1.6L13.14 12l3.18 3.04 2.8-1.6A1.96 1.96 0 0021 12c0-.8-.7-1.89-1.88-2.44zM4.67.7l11.41 10.9-2.78 2.65L4.67.7z"/>
+                                                    </svg>
+                                                    <div>
+                                                        <span data-ar="احصل عليه من" data-en="GET IT ON">GET IT ON</span>
+                                                        <strong>Google Play</strong>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mobile__it" data-mobile-mock="mock-pos">
+                                        <button class="df-mobile__hd">
+                                            <span class="df-mobile__app-ic">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     stroke="#4318FF" stroke-width="2">
+                                                    <rect x="5" y="2" width="14" height="20" rx="2"/>
+                                                    <path d="M12 18h.01"/>
+                                                </svg>
+                                            </span>
+                                            <span data-ar="نقطة البيع (POS)" data-en="(POS) Point-of-Sale">(POS)
+                                                Point-of-Sale
+                                            </span>
+                                            <svg class="df-mobile__chev" width="16" height="16" viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M6 9l6 6 6-6"/>
+                                            </svg>
+                                        </button>
+                                        <div class="df-mobile__bd">
+                                            <p data-ar="تطبيق نقطة بيع سحابي وغير متصل بالإنترنت للبيع بالتجزئة والخدمات مع مسح الباركود ومزامنة المخزون الفورية."
+                                               data-en="Cloud-based and offline-ready POS app for retail and services with barcode scanning and real-time inventory sync.">
+                                                Cloud-based and offline-ready POS app for retail and services with
+                                                barcode scanning and real-time inventory sync.
+                                            </p>
+                                            <a href="/pos-application/" class="df-mobile__learn" data-ar="اعرف المزيد ←"
+                                               data-en="Learn More →">Learn More →
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mobile__it" data-mobile-mock="mock-ess">
+                                        <button class="df-mobile__hd">
+                                            <span class="df-mobile__app-ic">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     stroke="#4318FF" stroke-width="2">
+                                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                                    <circle cx="12" cy="7" r="4"/>
+                                                </svg>
+                                            </span>
+                                            <span data-ar="خدمة الموظف الذاتية (ESS)"
+                                                  data-en="(ESS) Employee Self-Service">(ESS) Employee Self-Service
+                                            </span>
+                                            <svg class="df-mobile__chev" width="16" height="16" viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M6 9l6 6 6-6"/>
+                                            </svg>
+                                        </button>
+                                        <div class="df-mobile__bd">
+                                            <p data-ar="يمكّن الموظفين من إدارة طلباتهم ومتابعة حضورهم وإجازاتهم بشكل مستقل."
+                                               data-en="Empowers employees to manage their requests, attendance, and leaves independently.">
+                                                Empowers employees to manage their requests, attendance, and leaves
+                                                independently.
+                                            </p>
+                                            <a href="/ess-app/" class="df-mobile__learn" data-ar="اعرف المزيد ←"
+                                               data-en="Learn More →">Learn More →
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mobile__it" data-mobile-mock="mock-expense">
+                                        <button class="df-mobile__hd">
+                                            <span class="df-mobile__app-ic">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     stroke="#4318FF" stroke-width="2">
+                                                    <path d="M3 9a2 2 0 0 1 2-2h.93a2 2 0 0 0 1.664-.89l.812-1.22A2 2 0 0 1 10.07 4h3.86a2 2 0 0 1 1.664.89l.812 1.22A2 2 0 0 0 18.07 7H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/>
+                                                    <circle cx="12" cy="13" r="3"/>
+                                                </svg>
+                                            </span>
+                                            <span data-ar="ماسح المصروفات" data-en="Quick Expense Scanner">Quick Expense
+                                                Scanner
+                                            </span>
+                                            <svg class="df-mobile__chev" width="16" height="16" viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M6 9l6 6 6-6"/>
+                                            </svg>
+                                        </button>
+                                        <div class="df-mobile__bd">
+                                            <p data-ar="امسح إيصالاتك وأضف مصروفاتك فوراً بكاميرا هاتفك."
+                                               data-en="Scan receipts and add your expenses instantly using your phone camera.">
+                                                Scan receipts and add your expenses instantly using your phone camera.
+                                            </p>
+                                            <a href="/quick-expense-scanner/" class="df-mobile__learn"
+                                               data-ar="اعرف المزيد ←" data-en="Learn More →">Learn More →
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="df-mobile__it" data-mobile-mock="mock-stock">
+                                        <button class="df-mobile__hd">
+                                            <span class="df-mobile__app-ic">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     stroke="#4318FF" stroke-width="2">
+                                                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                                                    <rect x="9" y="3" width="6" height="4" rx="1"/>
+                                                    <path d="M9 12h6M9 16h4"/>
+                                                </svg>
+                                            </span>
+                                            <span data-ar="تطبيق الجرد" data-en="Stocktaking App">Stocktaking App</span>
+                                            <svg class="df-mobile__chev" width="16" height="16" viewBox="0 0 24 24"
+                                                 fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M6 9l6 6 6-6"/>
+                                            </svg>
+                                        </button>
+                                        <div class="df-mobile__bd">
+                                            <p data-ar="أجرِ جرد مخزونك بدقة باستخدام ماسح الباركود عبر هاتفك."
+                                               data-en="Conduct precise inventory counts using your phone's barcode scanner.">
+                                                Conduct precise inventory counts using your phone's barcode scanner.
+                                            </p>
+                                            <a href="/stocktaking-app/" class="df-mobile__learn" data-ar="اعرف المزيد ←"
+                                               data-en="Learn More →">Learn More →
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="df-mobile__phone df-reveal">
+                                <div class="df-phone-wrap">
+                                    <div class="df-phone-frame">
+                                        <div class="df-phone-notch"/>
+                                        <div class="df-phone-screen" id="mobile-mockup-container">
+
+                                            <div id="mock-management" class="mobile-mock-content active-mock">
+                                                <div class="df-phone-status">9:41</div>
+                                                <div class="df-phone-topbar">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                         stroke="#fff" stroke-width="2">
+                                                        <path d="M4 6h16M4 12h16M4 18h16"/>
+                                                    </svg>
+                                                    <div style="display:flex;gap:6px;">
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                             stroke="#fff" stroke-width="2">
+                                                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                                                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                                                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                                                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                                                        </svg>
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                             stroke="#fff" stroke-width="2">
+                                                            <circle cx="12" cy="8" r="4"/>
+                                                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="df-phone-tabs">
+                                                    <span class="df-phone-tab">Sales</span>
+                                                    <span class="df-phone-tab df-phone-tab--act">Profit &amp; Loss</span>
+                                                </div>
+                                                <div class="df-phone-title">Q3 Profit &amp; Loss (Cash)</div>
+                                                <div class="df-phone-chart">
+                                                    <div class="df-phone-bars">
+                                                        <div class="df-phone-bar-pair">
+                                                            <div class="df-phone-bar"
+                                                                 style="height:48px;background:#22c55e"/>
+                                                            <div class="df-phone-bar"
+                                                                 style="height:36px;background:#ef4444"/>
+                                                            <span class="df-phone-bar-lbl">Jul</span>
+                                                        </div>
+                                                        <div class="df-phone-bar-pair">
+                                                            <div class="df-phone-bar"
+                                                                 style="height:64px;background:#22c55e"/>
+                                                            <div class="df-phone-bar"
+                                                                 style="height:52px;background:#ef4444"/>
+                                                            <span class="df-phone-bar-lbl">Aug</span>
+                                                        </div>
+                                                        <div class="df-phone-bar-pair">
+                                                            <div class="df-phone-bar"
+                                                                 style="height:80px;background:#22c55e"/>
+                                                            <div class="df-phone-bar"
+                                                                 style="height:44px;background:#ef4444"/>
+                                                            <span class="df-phone-bar-lbl">Sep</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="df-phone-legend">
+                                                        <span><span class="df-phone-dot" style="background:#4318FF"/>Total
+                                                            Profit
+                                                        </span>
+                                                        <span><span class="df-phone-dot" style="background:#22c55e"/>Total
+                                                            Income
+                                                        </span>
+                                                        <span><span class="df-phone-dot" style="background:#ef4444"/>Total
+                                                            Expenses
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="df-phone-section-title" data-en="Low Stock Products" data-ar="نواقص المخزون">Low Stock Products
+                                                    <span
+                                                            class="df-phone-badge">05
+                                                    </span>
+                                                    <span class="df-phone-repl" data-ar="تجديد الكل"
+                                                          data-en="Replenish All">Replenish All
+                                                    </span>
+                                                </div>
+                                                <div class="df-phone-stock-item">
+                                                    <span>Product Bundle A</span>
+                                                    <span class="df-phone-tag-green" data-ar="متوفر" data-en="In Stock">In
+                                                        Stock
+                                                    </span>
+                                                </div>
+                                                <div class="df-phone-stock-item">
+                                                    <span>Square Desk</span>
+                                                    <span class="df-phone-tag-red" data-ar="نفذ" data-en="Out of Stock">Out
+                                                        of Stock
+                                                    </span>
+                                                </div>
+                                                <div class="df-phone-stock-item">
+                                                    <span>Duct Tape</span>
+                                                    <span class="df-phone-tag-green" data-ar="متوفر" data-en="In Stock">In
+                                                        Stock
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div id="mock-pos" class="mobile-mock-content">
+                                                <div class="df-phone-status">9:41</div>
+                                                <div class="df-phone-topbar">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                                                    <div style="display:flex;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                                                </div>
+                                                <div style="padding:8px 4px;">
+                                                    <div style="background:#f3f4f6; border-radius:12px; padding:8px; text-align:center; margin-bottom:12px;"><span style="font-weight:bold;">🧾 New Sale</span></div>
+                                                    <div class="df-phone-stock-item"><span>Wireless Mouse</span><span class="df-phone-tag-green">$25.00</span></div>
+                                                    <div class="df-phone-stock-item"><span>Keyboard Pro</span><span class="df-phone-tag-green">$45.00</span></div>
+                                                    <div class="df-phone-stock-item"><span>USB-C Cable</span><span class="df-phone-tag-green">$12.00</span></div>
+                                                    <div style="margin-top:12px; background:#4318FF; color:white; padding:8px; border-radius:10px; text-align:center; font-weight:bold;">Total: $82.00</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div id="mock-ess" class="mobile-mock-content">
+                                                <div class="df-phone-status">9:41</div>
+                                                <div class="df-phone-topbar">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                                                    <div style="display:flex;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                                                </div>
+                                                <div style="padding:8px 4px;">
+                                                    <div style="display:flex; justify-content:space-between; margin-bottom:12px;"><span>👤 Ahmed Ali</span><span class="df-phone-tag-green">Present</span></div>
+                                                    <div class="df-phone-section-title">Upcoming Leave</div>
+                                                    <div class="df-phone-stock-item"><span>Annual Leave</span><span>Apr 10-15</span></div>
+                                                    <div class="df-phone-section-title" style="margin-top:8px;">Requests</div>
+                                                    <div class="df-phone-stock-item"><span>Sick Leave</span><span class="df-bdg-pend">Pending</span></div>
+                                                    <div class="df-phone-stock-item"><span>Business Trip</span><span class="df-bdg-paid">Approved</span></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div id="mock-expense" class="mobile-mock-content">
+                                                <div class="df-phone-status">9:41</div>
+                                                <div class="df-phone-topbar">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                                                    <div style="display:flex;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                                                </div>
+                                                <div style="padding:8px 4px;">
+                                                    <div style="background:#f3f4f6; border-radius:12px; padding:12px; text-align:center; margin-bottom:12px;">📸 Scan Receipt</div>
+                                                    <div class="df-phone-stock-item"><span>Office Supplies</span><span>$45.00</span></div>
+                                                    <div class="df-phone-stock-item"><span>Transport</span><span>$12.50</span></div>
+                                                    <div class="df-phone-stock-item"><span>Meal</span><span>$18.00</span></div>
+                                                    <div style="margin-top:12px; background:#4318FF; color:white; padding:8px; border-radius:10px; text-align:center;">+ Add New Expense</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div id="mock-stock" class="mobile-mock-content">
+                                                <div class="df-phone-status">9:41</div>
+                                                <div class="df-phone-topbar">
+                                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                                                    <div style="display:flex;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                                                </div>
+                                                <div class="df-phone-section-title">Inventory Count</div>
+                                                <div class="df-phone-stock-item"><span>Monitor 24"</span><span>Count: 12</span></div>
+                                                <div class="df-phone-stock-item"><span>Keyboard</span><span>Count: 45</span></div>
+                                                <div class="df-phone-stock-item"><span>Mouse</span><span>Count: 23</span></div>
+                                                <div class="df-phone-section-title" style="margin-top:8px;">Variance</div>
+                                                <div class="df-phone-stock-item"><span>Headset</span><span class="df-phone-tag-red">-2</span></div>
+                                                <div class="df-phone-stock-item"><span>USB Hub</span><span class="df-phone-tag-green">+5</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="df-h-why">
+                    <div class="df-cont">
+                        <h2 class="df-h-why__title df-reveal">
+                            <span data-ar="لماذا" data-en="Why">Why</span>
+                            <span class="df-h-why__brand">Daftra</span>
+                            <span data-ar="هو شريكك المثالي لحلول الأعمال؟"
+                                  data-en="Is Your Perfect Partner For Business Solution?">Is Your Perfect Partner For
+                                Business Solution?
+                            </span>
+                        </h2>
+                        <div class="df-h-why__g">
+                            <div class="df-wcard df-reveal">
+                                <div class="df-wcard__ic df-wcard__ic--svg">
+                                    <svg width="40" height="40" viewBox="0 0 48 48" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="48" height="48" rx="12" fill="#EEF2FF"/>
+                                        <path d="M24 12c-1.5 0-3 .4-4.2 1.1L14 16l-2 6 4 4-1 6 9 4 9-4-1-6 4-4-2-6-5.8-2.9C27 12.4 25.5 12 24 12z"
+                                              fill="#818CF8" opacity=".3"/>
+                                        <path d="M20 24l3 3 5-6" stroke="#4318FF" stroke-width="2.2"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M33 20.5c.6 1.1 1 2.3 1 3.5 0 5.5-4.5 10-10 10S14 29.5 14 24s4.5-10 10-10c2 0 3.9.6 5.5 1.7"
+                                              stroke="#4318FF" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M34 14l-4 2 2 4" stroke="#4318FF" stroke-width="2"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3 data-ar="تحديثات مجانية مدى الحياة" data-en="Free Lifetime Updates">Free Lifetime
+                                    Updates
+                                </h3>
+                                <p data-ar="دفترة تنمو وتتطور باستمرار ودعمنا يتوسع بالتوازي معها. تحديثاتنا الدائمة، مهما كانت خطتك، تضمن أن يظل برنامجك محدثاً دائماً حتى تنمو أعمالك مع دفترة."
+                                   data-en="Daftra is rapidly and constantly growing and our support expands in response. Our forever updates, whatever your plan is, ensures your software is always covered so your business can grow with Daftra.">
+                                    Daftra is rapidly and constantly growing and our support expands in response. Our
+                                    forever updates, whatever your plan is, ensures your software is always covered so
+                                    your business can grow with Daftra.
+                                </p>
+                            </div>
+                            <div class="df-wcard df-reveal">
+                                <div class="df-wcard__ic df-wcard__ic--svg">
+                                    <svg width="40" height="40" viewBox="0 0 48 48" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="48" height="48" rx="12" fill="#EEF2FF"/>
+                                        <path d="M24 14l-10 4v7c0 5.5 4.3 10.7 10 12 5.7-1.3 10-6.5 10-12v-7l-10-4z"
+                                              fill="#818CF8" opacity=".25"/>
+                                        <path d="M24 14l-10 4v7c0 5.5 4.3 10.7 10 12 5.7-1.3 10-6.5 10-12v-7l-10-4z"
+                                              stroke="#4318FF" stroke-width="2" stroke-linejoin="round"/>
+                                        <path d="M20 24l3 3 5-6" stroke="#4318FF" stroke-width="2.2"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3 data-ar="آمن وموثوق ومعتمد" data-en="Safe, Secure &amp; Trusted">Safe, Secure &amp;
+                                    Trusted
+                                </h3>
+                                <p data-ar="دفترة متوافقة مع اللائحة الأوروبية لحماية البيانات (GDPR)، مستضافة على خوادم سحابية ومشفرة بـ SSL بقوة 256 بت لضمان سلامة بياناتك وأمانها."
+                                   data-en="Daftra is GDPR-compliant, hosted on cloud-based servers, and 256-bit SSL-encrypted to ensure your data integrity, safety, and security.">
+                                    Daftra is GDPR-compliant, hosted on cloud-based servers, and 256-bit SSL-encrypted
+                                    to
+                                    ensure your data integrity, safety, and security.
+                                </p>
+                            </div>
+                            <div class="df-wcard df-reveal">
+                                <div class="df-wcard__ic df-wcard__ic--svg">
+                                    <svg width="40" height="40" viewBox="0 0 48 48" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="48" height="48" rx="12" fill="#EEF2FF"/>
+                                        <path d="M14 18h20v14a2 2 0 0 1-2 2H16a2 2 0 0 1-2-2V18z" fill="#818CF8"
+                                              opacity=".25"/>
+                                        <rect x="14" y="14" width="20" height="6" rx="2" stroke="#4318FF"
+                                              stroke-width="2"/>
+                                        <path d="M14 20h20v12a2 2 0 0 1-2 2H16a2 2 0 0 1-2-2V20z" stroke="#4318FF"
+                                              stroke-width="2"/>
+                                        <path d="M19 27h10M19 31h6" stroke="#4318FF" stroke-width="2"
+                                              stroke-linecap="round"/>
+                                        <circle cx="34" cy="34" r="6" fill="#EEF2FF"/>
+                                        <path d="M31 34l2 2 3-3" stroke="#4318FF" stroke-width="1.8"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3 data-ar="دعم مجاني وسريع وموثوق" data-en="Free, Quick &amp; Reliable Support">Free,
+                                    Quick &amp; Reliable Support
+                                </h3>
+                                <p data-ar="يلبي دعم دفترة كل احتياجات عملك على مدار الساعة طوال أيام الأسبوع لأقصى رضا عملائنا. لن تضل أبداً في استخدام نظامنا بكفاءة."
+                                   data-en="Daftra support caters to every business need, 24/7, to our customer base utmost satisfaction. You are never lost using our system efficiently.">
+                                    Daftra support caters to every business need, 24/7, to our customer base utmost
+                                    satisfaction. You are never lost using our system efficiently.
+                                </p>
+                            </div>
+                            <div class="df-wcard df-reveal">
+                                <div class="df-wcard__ic df-wcard__ic--svg">
+                                    <svg width="40" height="40" viewBox="0 0 48 48" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="48" height="48" rx="12" fill="#EEF2FF"/>
+                                        <path d="M24 14a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" fill="#818CF8"
+                                              opacity=".2"/>
+                                        <path d="M24 14a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" stroke="#4318FF"
+                                              stroke-width="2"/>
+                                        <path d="M14 24h20M24 14a15 15 0 0 1 0 20M24 14a15 15 0 0 0 0 20"
+                                              stroke="#4318FF" stroke-width="2" stroke-linecap="round"/>
+                                        <circle cx="36" cy="14" r="5" fill="#EEF2FF"/>
+                                        <path d="M34 14h4M36 12v4" stroke="#4318FF" stroke-width="1.8"
+                                              stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <h3 data-ar="عن بُعد: نعم. منقطع: أبداً." data-en="Remote: Yes. Disconnected: Never.">
+                                    Remote: Yes. Disconnected: Never.
+                                </h3>
+                                <p data-ar="أينما كنت ومتى شئت ومن أي جهاز مسجّل، احصل على وصول فوري عبر السحابة. حتى في وضع عدم الاتصال مع تطبيق دفترة المكتبي."
+                                   data-en="Wherever or whenever you are and from any logged-in device, get instant cloud-based access. Even offline with Daftra's desktop app.">
+                                    Wherever or whenever you are and from any logged-in device, get instant cloud-based
+                                    access. Even offline with Daftra's desktop app.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-stats"
+                         style="background-image:url('/website_pricing_plans/static/src/img/h5.jpeg');font-color:white">
+                    <div class="df-cont">
+                        <h2 class="df-reveal" data-ar="انضم إلى أكثر من 40 ألف عمل ينمو مع دفترة"
+                            data-en="Join 40K+ Businesses Already Growing With Daftra">Join 40K+ Businesses Already
+                            Growing With Daftra
+                        </h2>
+                        <p class="df-h-stats__sub df-reveal" data-ar="محرك أعمال وتقنيات لكل عمل ليزدهر."
+                           data-en="Business and technology enablers for every business to thrive.">Business and
+                            technology enablers for every business to thrive.
+                        </p>
+                        <div class="df-h-stats__g">
+                            <div class="df-scard df-reveal">
+                                <div class="df-scard__n" data-target="50" data-suffix="+">0</div>
+                                <div class="df-scard__l" data-ar="بنك مدعوم للتسوية الذكية"
+                                     data-en="Banks supported for smart reconciliation">Banks supported for smart
+                                    reconciliation
+                                </div>
+                            </div>
+                            <div class="df-scard df-reveal">
+                                <div class="df-scard__n" data-target="160" data-suffix="+">0</div>
+                                <div class="df-scard__l" data-ar="عملة وطريقة دفع مدعومة"
+                                     data-en="Currencies and payment methods supported">Currencies and payment methods
+                                    supported
+                                </div>
+                            </div>
+                            <div class="df-scard df-reveal">
+                                <div class="df-scard__n" data-target="40" data-suffix="%">0</div>
+                                <div class="df-scard__l" data-ar="انخفاض في فترة تحصيل المدفوعات"
+                                     data-en="Reduction in payment collection period">Reduction in payment collection
+                                    period
+                                </div>
+                            </div>
+                            <div class="df-scard df-reveal">
+                                <div class="df-scard__n" data-target="50000" data-suffix="+">0</div>
+                                <div class="df-scard__l" data-ar="موظف تخدمهم منصة إدارة الموارد البشرية"
+                                     data-en="Employees served via the HRM Platform">Employees served via the HRM
+                                    Platform
+                                </div>
+                            </div>
+                            <div class="df-scard df-reveal">
+                                <div class="df-scard__n" data-target="2" data-suffix="M+">0</div>
+                                <div class="df-scard__l" data-ar="معاملة شهرية عبر دفترة"
+                                     data-en="Monthly transactions via Daftra">Monthly transactions via Daftra
+                                </div>
+                            </div>
+                            <div class="df-scard df-reveal">
+                                <div class="df-scard__n" data-target="80" data-suffix="%">0</div>
+                                <div class="df-scard__l" data-ar="إجراءات يدوية تم توفيرها بالأتمتة"
+                                     data-en="Manual actions saved with automations">Manual actions saved with
+                                    automations
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-help">
+                    <div class="df-cont">
+                        <h2 class="df-reveal" data-ar="تحتاج مساعدة؟" data-en="Need Help?">Need Help?</h2>
+                        <div class="df-h-help__g">
+                            <div class="df-hcard df-reveal">
+                                <h4 data-ar="احصل على الدعم" data-en="Get Support">Get Support</h4>
+                                <p data-ar="هل لديك ملاحظة أو اقتراح أو تحتاج مساعدة؟ سنوفر لك المساعدة التي تحتاجها على مدار الساعة مجاناً."
+                                   data-en="Have feedback, a suggestion, or need assistance? We'll get you the help you need 24/7 for free.">
+                                    Have feedback, a suggestion, or need assistance? We'll get you the help you need
+                                    24/7
+                                    for free.
+                                </p>
+                                <a href="/contact" class="df-hcard__lnk" data-ar="تواصل مع الدعم ←"
+                                   data-en="Contact Support →">Contact Support →
+                                </a>
+                            </div>
+                            <div class="df-hcard df-reveal">
+                                <h4 data-ar="معرفة المنتج" data-en="Product Knowledge">Product Knowledge</h4>
+                                <p data-ar="اكتشف مقالات متعمقة وشروحات خطوة بخطوة لاستخدام دفترة وإدارة أعمالك بكفاءة."
+                                   data-en="Discover in-depth articles and step-by-step tutorials to use Daftra and manage your business efficiently.">
+                                    Discover in-depth articles and step-by-step tutorials to use Daftra and manage your
+                                    business efficiently.
+                                </p>
+                                <a href="https://docs.daftra.com/en/" class="df-hcard__lnk"
+                                   data-ar="اذهب إلى مركز المساعدة ←" data-en="Go to Help Center →">Go to Help Center →
+                                </a>
+                            </div>
+                            <div class="df-hcard df-reveal">
+                                <h4 data-ar="تحدث مع المبيعات" data-en="Talk to Sales">Talk to Sales</h4>
+                                <p data-ar="فريقنا سعيد للإجابة على استفساراتك حول المبيعات، بما في ذلك استعراض حالات الاستخدام والفواتير وخيارات الأسعار."
+                                   data-en="Our team is happy to answer your sales inquiries, including exploring use cases, billing, and pricing options.">
+                                    Our team is happy to answer your sales inquiries, including exploring use cases,
+                                    billing, and pricing options.
+                                </p>
+                                <a href="/contact" class="df-hcard__lnk" data-ar="تواصل مع المبيعات ←"
+                                   data-en="Contact Sales →">Contact Sales →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section style="padding-top:150px;padding-bottom:100px;">
+                    <div class="df-apps__vis df-reveal">
+                        <div class="df-apps__marketplace">
+                            
+                            <div class="df-apps__float df-apps__float--salla">
+                                <img src="website_pricing_plans/static/src/img/Salla2-01.png"
+                                     onerror="this.src=''" alt="Salla"/>
+                                <span>Salla</span>
+                                <span class="df-apps__install">Install</span>
+                            </div>
+                            <div class="df-apps__float df-apps__float--woo">
+                                <img src="website_pricing_plans/static/src/img/social.png"
+                                     onerror="this.src=''" alt="WooCommerce"/>
+                                <span>WooCommerce</span>
+                            </div>
+                            <div class="df-apps__float df-apps__float--zid">
+                                <img src="website_pricing_plans/static/src/img/Zid-En-01.png"
+                                     onerror="this.src=''" alt="Zid"/>
+                                <span>+zid</span>
+                            </div>
+                            <div class="df-apps__float df-apps__float--shopify">
+                                <img src="website_pricing_plans/static/src/img/spotify.png"
+                                     onerror="this.src=''" alt="Shopify"/>
+                                <span>Shopify</span>
+                                <span class="df-apps__deact">Deactivate</span>
+                            </div>
+                            <div class="df-apps__float df-apps__float--rsd">
+                                <img src="website_pricing_plans/static/src/img/rsd.png"
+                                     onerror="this.src=''" alt="WooCommerce"/>
+                                <span class="df-apps__install">Install</span>
+                            </div>
+                            
+                            <div class="df-apps__card">
+                                <div class="df-apps__card-hd">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4318FF"
+                                         stroke-width="2">
+                                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                                    </svg>
+                                    <span data-ar="التطبيقات المميزة" data-en="Top Apps">Top Apps</span>
+                                </div>
+                                <div class="df-apps__card-grid">
+                                    <div class="df-apps__app-item">
+                                        <div class="df-apps__app-ic" style="background:#f0fdf4">🛒</div>
+                                        <span>Salla</span>
+                                    </div>
+                                    <div class="df-apps__app-item">
+                                        <div class="df-apps__app-ic" style="background:#fef3c7">💛</div>
+                                        <span>Zid</span>
+                                    </div>
+                                    <div class="df-apps__app-item">
+                                        <div class="df-apps__app-ic" style="background:#ede9fe">🟣</div>
+                                        <span>WooCommerce</span>
+                                    </div>
+                                    <div class="df-apps__app-item">
+                                        <div class="df-apps__app-ic" style="background:#dcfce7">🟢</div>
+                                        <span>Shopify</span>
+                                    </div>
+                                </div>
+                                <div class="df-apps__card-hd" style="margin-top:12px">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4318FF"
+                                         stroke-width="2">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                    <span data-ar="التطبيقات البارزة" data-en="Featured Apps">Featured Apps
+                                    </span>
+                                </div>
+                                <div class="df-apps__card-grid">
+                                    <div class="df-apps__app-item">
+                                        <div class="df-apps__app-ic" style="background:#fce7f3">🟥</div>
+                                        <span>Salla</span>
+                                    </div>
+                                    <div class="df-apps__app-item">
+                                        <div class="df-apps__app-ic" style="background:#dbeafe">🔵</div>
+                                        <span>WooCommerce</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="df-h-hero__preview" style="padding-top:50px;padding-bottom:100px">
+
+                    <div class="df-apps__dev-band">
+                        <div class="df-apps__dev-txt">
+                            <div class="df-apps__dev-sub">
+                                <span class="df-apps__dev-code">/*</span>
+                                <span data-ar="للمطورين" data-en="For Developers">For Developers</span>
+                                <span class="df-apps__dev-code">*/</span>
+                            </div>
+                            <div class="df-apps__dev-sub">
+                                <span class="df-apps__dev-tag">&lt;</span>
+                                <span data-ar="ابنِ، انشر، واكسب" data-en="Build, Publish, and Earn">Build,
+                                    Publish, and Earn
+                                </span>
+                                <span class="df-apps__dev-tag">&gt;</span>
+                            </div>
+                            <p data-ar="انشر تطبيقاتك المخصصة على سوق دفترة مع أكثر من 40 ألف مستخدم."
+
+                               data-en="Publish your custom apps on Daftra's Marketplace with 40k+ users.">
+                                Publish your custom apps on Daftra's Marketplace with 40k+ users.
+                            </p>
+                        </div>
+                        <a href="https://developers.daftra.com" target="_blank" class="df-apps__dev-btn"
+                           data-ar="انضم إلى بوابة المطورين" data-en="Join Developers Portal">Join
+                            Developers Portal
+                        </a>
+                    </div>
+                </section>
+
+                <t t-call="website_pricing_plans.df_footer"/>
+
+            </div>
+
+</t>
+
+    </template>
+</odoo>

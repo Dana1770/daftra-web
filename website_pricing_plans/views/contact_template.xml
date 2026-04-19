@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="contact_page" name="Contact Us Page">
+        <t t-call="website.layout">
+            <t t-set="no_header" t-value="True"/>
+            <t t-set="no_footer" t-value="True"/>
+
+            <link rel="stylesheet"
+                  href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;display=swap"/>
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+            <script>
+                (function(){
+                    var l='en';
+                    try{ var s=localStorage.getItem('df_lang'); if(s==='en'||s==='ar') l=s; }catch(e){}
+                    var w=document.getElementById('dc-wrap');
+                    if(w){ w.setAttribute('dir',l==='ar'?'rtl':'ltr'); w.classList.add('lang-'+l); }
+                    else{
+                        document.addEventListener('DOMContentLoaded',function(){
+                            var w2=document.getElementById('dc-wrap');
+                            if(w2){ w2.setAttribute('dir',l==='ar'?'rtl':'ltr'); w2.classList.add('lang-'+l); }
+                        });
+                    }
+                })();
+            </script>
+
+            <div id="dc-wrap">
+                <div class="df-glow-wrap">
+                    <div class="df-glow-item df-glow-item--1"/>
+                    <div class="df-glow-item df-glow-item--2"/>
+                </div>
+
+                <t t-call="website_pricing_plans.df_nav"/>
+
+                <section class="dc-hero">
+                    <div class="dc-hero__inner">
+                        <h1 class="dc-hero__title" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h1>
+                        <p class="dc-hero__sub"
+                           data-ar="هل لديك سؤال أو تعليق أو تريد التحدث معنا؟ يسعدنا سماعك!"
+                           data-en="Have a question, comment, or want to say hi? We'll be happy to receive an e-mail from you!">
+                            هل لديك سؤال أو تعليق أو تريد التحدث معنا؟ يسعدنا سماعك!
+                        </p>
+                    </div>
+                </section>
+
+                <section class="dc-main">
+                    <div class="dc-main__inner">
+
+                        <div class="dc-left">
+
+                            <div class="dc-tabs" role="tablist">
+                                <button class="dc-tab active" data-country="egypt" role="tab">
+                                    <img class="dc-tab__flag"
+                                         src="https://static.portal.daftra.com/images/egypt.png"
+                                         onerror="this.outerHTML='🇪🇬'" alt="EG"/>
+                                    <span data-ar="مصر" data-en="Egypt">مصر</span>
+                                </button>
+                                <button class="dc-tab" data-country="saudi" role="tab">
+                                    <img class="dc-tab__flag"
+                                         src="https://static.portal.daftra.com/images/saudi-arabia.png"
+                                         onerror="this.outerHTML='🇸🇦'" alt="SA"/>
+                                    <span data-ar="السعودية" data-en="Saudi Arabia">السعودية</span>
+                                </button>
+                                <button class="dc-tab" data-country="uae" role="tab">
+                                    <img class="dc-tab__flag"
+                                         src="https://static.portal.daftra.com/images/uae.png"
+                                         onerror="this.outerHTML='🇦🇪'" alt="AE"/>
+                                    <span data-ar="الإمارات" data-en="UAE">الإمارات</span>
+                                </button>
+                                <button class="dc-tab" data-country="qatar" role="tab">
+                                    <img class="dc-tab__flag"
+                                         src="https://static.portal.daftra.com/images/qatar.png"
+                                         onerror="this.outerHTML='🇶🇦'" alt="QA"/>
+                                    <span data-ar="قطر" data-en="Qatar">قطر</span>
+                                </button>
+                                <button class="dc-tab" data-country="kuwait" role="tab">
+                                    <img class="dc-tab__flag"
+                                         src="https://static.portal.daftra.com/images/kuwait.png"
+                                         onerror="this.outerHTML='🇰🇼'" alt="KW"/>
+                                    <span data-ar="الكويت" data-en="Kuwait">الكويت</span>
+                                </button>
+                                <button class="dc-tab" data-country="bahrain" role="tab">
+                                    <img class="dc-tab__flag"
+                                         src="https://static.portal.daftra.com/images/bahrain.png"
+                                         onerror="this.outerHTML='🇧🇭'" alt="BH"/>
+                                    <span data-ar="البحرين" data-en="Bahrain">البحرين</span>
+                                </button>
+                                <button class="dc-tab" data-country="oman" role="tab">
+                                    <img class="dc-tab__flag"
+                                         src="https://static.portal.daftra.com/images/oman.png"
+                                         onerror="this.outerHTML='🇴🇲'" alt="OM"/>
+                                    <span data-ar="عمان" data-en="Oman">عمان</span>
+                                </button>
+                                <button class="dc-tab" data-country="jordan" role="tab">
+                                    <img class="dc-tab__flag"
+                                         src="https://static.portal.daftra.com/images/jordan.png"
+                                         onerror="this.outerHTML='🇯🇴'" alt="JO"/>
+                                    <span data-ar="الأردن" data-en="Jordan">الأردن</span>
+                                </button>
+                            </div>
+
+                            <div class="dc-info-panel active" data-country="egypt">
+                                <h2 class="dc-info-panel__title"
+                                    data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+                                <div class="dc-info-grid">
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <img class="dc-info-card__flag"
+                                                 src="https://static.portal.daftra.com/images/egypt.png"
+                                                 onerror="this.outerHTML='🇪🇬'" alt="EG"/>
+                                            <span class="dc-info-card__country"
+                                                  data-ar="مصر" data-en="Egypt">مصر</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:0248837601">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">0248837601</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/20248837601" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">0248837601</span>
+                                        </a>
+                                    </div>
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الشرق الأوسط" data-en="Middle East">الشرق الأوسط</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:966115030301">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/966115030301" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dc-info-panel" data-country="saudi">
+                                <h2 class="dc-info-panel__title"
+                                    data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+                                <div class="dc-info-grid">
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <img class="dc-info-card__flag"
+                                                 src="https://static.portal.daftra.com/images/saudi-arabia.png"
+                                                 onerror="this.outerHTML='🇸🇦'" alt="SA"/>
+                                            <span class="dc-info-card__country"
+                                                  data-ar="السعودية" data-en="Saudi Arabia">السعودية</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:966115030301">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/966115030301" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                    </div>
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الشرق الأوسط" data-en="Middle East">الشرق الأوسط</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:966115030301">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/966115030301" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dc-info-panel" data-country="uae">
+                                <h2 class="dc-info-panel__title"
+                                    data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+                                <div class="dc-info-grid">
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <img class="dc-info-card__flag"
+                                                 src="https://static.portal.daftra.com/images/uae.png"
+                                                 onerror="this.outerHTML='🇦🇪'" alt="AE"/>
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الإمارات العربية المتحدة" data-en="United Arab Emirates">الإمارات العربية المتحدة</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:97144986470">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+97144986470</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/97144986470" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+97144986470</span>
+                                        </a>
+                                    </div>
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الشرق الأوسط" data-en="Middle East">الشرق الأوسط</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:966115030301">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/966115030301" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dc-info-panel" data-country="qatar">
+                                <h2 class="dc-info-panel__title"
+                                    data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+                                <div class="dc-info-grid">
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <img class="dc-info-card__flag"
+                                                 src="https://static.portal.daftra.com/images/qatar.png"
+                                                 onerror="this.outerHTML='🇶🇦'" alt="QA"/>
+                                            <span class="dc-info-card__country"
+                                                  data-ar="قطر" data-en="Qatar">قطر</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:97444463650">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+97444463650</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/97444463650" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+97444463650</span>
+                                        </a>
+                                    </div>
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الشرق الأوسط" data-en="Middle East">الشرق الأوسط</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:966115030301">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/966115030301" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dc-info-panel" data-country="kuwait">
+                                <h2 class="dc-info-panel__title"
+                                    data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+                                <div class="dc-info-grid">
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <img class="dc-info-card__flag"
+                                                 src="https://static.portal.daftra.com/images/kuwait.png"
+                                                 onerror="this.outerHTML='🇰🇼'" alt="KW"/>
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الكويت" data-en="Kuwait">الكويت</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:96522207852">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+96522207852</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/96522207852" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+96522207852</span>
+                                        </a>
+                                    </div>
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الشرق الأوسط" data-en="Middle East">الشرق الأوسط</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:966115030301">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/966115030301" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dc-info-panel" data-country="bahrain">
+                                <h2 class="dc-info-panel__title"
+                                    data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+                                <div class="dc-info-grid">
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <img class="dc-info-card__flag"
+                                                 src="https://static.portal.daftra.com/images/bahrain.png"
+                                                 onerror="this.outerHTML='🇧🇭'" alt="BH"/>
+                                            <span class="dc-info-card__country"
+                                                  data-ar="البحرين" data-en="Bahrain">البحرين</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:97316609626">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+97316609626</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/97316609626" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+97316609626</span>
+                                        </a>
+                                    </div>
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الشرق الأوسط" data-en="Middle East">الشرق الأوسط</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:966115030301">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/966115030301" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dc-info-panel" data-country="oman">
+                                <h2 class="dc-info-panel__title"
+                                    data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+                                <div class="dc-info-grid">
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <img class="dc-info-card__flag"
+                                                 src="https://static.portal.daftra.com/images/oman.png"
+                                                 onerror="this.outerHTML='🇴🇲'" alt="OM"/>
+                                            <span class="dc-info-card__country"
+                                                  data-ar="عمان" data-en="Oman">عمان</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:96822711526">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+96822711526</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/96822711526" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+96822711526</span>
+                                        </a>
+                                    </div>
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الشرق الأوسط" data-en="Middle East">الشرق الأوسط</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:966115030301">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/966115030301" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dc-info-panel" data-country="jordan">
+                                <h2 class="dc-info-panel__title"
+                                    data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h2>
+                                <div class="dc-info-grid">
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <img class="dc-info-card__flag"
+                                                 src="https://static.portal.daftra.com/images/jordan.png"
+                                                 onerror="this.outerHTML='🇯🇴'" alt="JO"/>
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الأردن" data-en="Jordan">الأردن</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:96262229341">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+96262229341</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/96262229341" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+96262229341</span>
+                                        </a>
+                                    </div>
+                                    <div class="dc-info-card">
+                                        <div class="dc-info-card__head">
+                                            <span class="dc-info-card__country"
+                                                  data-ar="الشرق الأوسط" data-en="Middle East">الشرق الأوسط</span>
+                                        </div>
+                                        <a class="dc-info-card__row" href="tel:966115030301">
+                                            <img src="https://static.portal.daftra.com/images/help-center/file-contract.svg"
+                                                 class="dc-info-card__icon" alt="phone"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                        <a class="dc-info-card__row"
+                                           href="https://wa.me/966115030301" target="_blank">
+                                            <img src="https://static.portal.daftra.com/images/help-center/whatsapp.svg"
+                                                 class="dc-info-card__icon" alt="whatsapp"/>
+                                            <span class="dc-phone-num" dir="ltr">+966115030301</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="dc-right">
+                            <div class="dc-form-card">
+                                <h2 class="dc-form-card__title"
+                                    data-ar="أرسل رسالة" data-en="Send Message">أرسل رسالة</h2>
+
+                                <div class="dc-form-field">
+                                    <label class="dc-form-label" for="dc-name"
+                                           data-ar="الاسم الكامل *" data-en="Full Name *">الاسم الكامل *</label>
+                                    <input id="dc-name" class="dc-form-input" type="text"
+                                           data-placeholder-ar="أدخل اسمك"
+                                           data-placeholder-en="Enter your name"
+                                           placeholder="أدخل اسمك"/>
+                                </div>
+
+                                <div class="dc-form-field">
+                                    <label class="dc-form-label" for="dc-email"
+                                           data-ar="البريد الإلكتروني *" data-en="Email *">البريد الإلكتروني *</label>
+                                    <input id="dc-email" class="dc-form-input" type="email"
+                                           data-placeholder-ar="أدخل بريدك الإلكتروني"
+                                           data-placeholder-en="Enter your email"
+                                           placeholder="أدخل بريدك الإلكتروني"/>
+                                </div>
+
+                                <div class="dc-form-field">
+                                    <label class="dc-form-label" for="dc-phone"
+                                           data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
+                                    <div class="dc-phone-wrap">
+                                        <button class="dc-phone-code" id="dc-phone-code-btn" type="button">
+                                            <img id="dc-phone-flag"
+                                                 src="https://static.portal.daftra.com/images/egypt.png"
+                                                 onerror="this.outerHTML='🇪🇬'" alt="EG"
+                                                 class="dc-tab__flag"/>
+                                            <span id="dc-phone-code-val">+20</span>
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                 stroke="currentColor" stroke-width="2.5">
+                                                <polyline points="6 9 12 15 18 9"/>
+                                            </svg>
+                                        </button>
+                                        <div class="dc-phone-dropdown" id="dc-phone-dropdown">
+                                            <input class="dc-phone-search" type="text" id="dc-phone-search"
+                                                   placeholder="Search country..."/>
+                                            <div class="dc-phone-list" id="dc-phone-list">
+                                                
+                                            </div>
+                                        </div>
+                                        <input id="dc-phone" class="dc-form-input dc-form-input--phone" type="tel"
+                                               data-placeholder-ar="رقم هاتفك"
+                                               data-placeholder-en="Your phone number"
+                                               placeholder="رقم هاتفك"/>
+                                    </div>
+                                </div>
+
+                                <div class="dc-form-field">
+                                    <label class="dc-form-label" for="dc-subject"
+                                           data-ar="الموضوع *" data-en="Subject *">الموضوع *</label>
+                                    <input id="dc-subject" class="dc-form-input" type="text"
+                                           data-placeholder-ar="موضوع رسالتك"
+                                           data-placeholder-en="Your message subject"
+                                           placeholder="موضوع رسالتك"/>
+                                </div>
+
+                                <div class="dc-form-field">
+                                    <label class="dc-form-label" for="dc-msg"
+                                           data-ar="الرسالة *" data-en="Message *">الرسالة *</label>
+                                    <textarea id="dc-msg" class="dc-form-input dc-form-textarea"
+                                              rows="5"
+                                              data-placeholder-ar="اكتب رسالتك هنا..."
+                                              data-placeholder-en="Write your message here..."
+                                              placeholder="اكتب رسالتك هنا..."/>
+                                </div>
+
+                                <button class="dc-form-submit" id="dc-submit" type="button">
+                                    <span data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="2.5">
+                                        <line x1="22" y1="2" x2="11" y2="13"/>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                                    </svg>
+                                </button>
+
+                                <div class="dc-form-success" id="dc-success" style="display:none;">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                         stroke="#22c55e" stroke-width="2.5">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="9 12 11 14 15 10"/>
+                                    </svg>
+                                    <p data-ar="تم إرسال رسالتك بنجاح! سنتواصل معك قريباً."
+                                       data-en="Your message has been sent successfully! We'll be in touch soon.">
+                                        تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <t t-call="website_pricing_plans.df_footer"/>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>

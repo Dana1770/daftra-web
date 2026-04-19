@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="df_nav" name="Daftra Shared Nav">
+        <header class="df-h-nav">
+            <div class="df-h-nav__in">
+                <a href="/" class="df-h-nav__logo">
+                    <img class="df-nav__logo-img df-logo-ar"
+                         src="/website_pricing_plans/static/src/img/logo-ar.svg"
+                         style="display:none;"
+                         alt="دفترة"/>
+                    <img class="df-nav__logo-img df-logo-en"
+                         src="/website_pricing_plans/static/src/img/logo-en.svg"
+                         alt="daftra"/>
+                </a>
+                <div class="df-h-nav__r">
+                    <div class="df-nav__lang" id="home-lang-wrap">
+                        <button class="df-nav__lang-btn" id="home-lang-toggle" aria-label="Language" type="button">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </button>
+                        <div class="df-nav__lang-dropdown" id="home-lang-dropdown">
+                            <button class="df-nav__lang-opt" data-lang="ar">
+                                <span class="df-nav__lang-check">✓</span>
+                                <img class="df-lang-flag"
+                                     src="https://static.portal.daftra.com/images/saudi-arabia.png"
+                                     alt="AR"/>
+                                <span>العربية</span>
+                            </button>
+                            <button class="df-nav__lang-opt" data-lang="en">
+                                <span class="df-nav__lang-check">✓</span>
+                                <img class="df-lang-flag"
+                                     src="https://static.portal.daftra.com/images/united-states.png"
+                                     alt="EN"/>
+                                <span>English</span>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="df-h-nav__ham" aria-label="Menu">
+                        <span/>
+                        <span/>
+                        <span/>
+                    </button>
+                    <a href="/register" class="df-h-nav__cta" data-en="Try for Free" data-ar="ابدأ الاستخدام مجاناً">Try for Free</a>
+                </div>
+            </div>
+        </header>
+    </template>
+
+    <template id="df_footer" name="Daftra Shared Footer">
+        <footer class="df-footer">
+            <div class="df-footer__inner">
+                <div class="df-footer__top-row">
+                    <div class="df-footer__logo-wrap">
+                        <!-- Logo Visibility Logic: Server-side check for RTL/Arabic -->
+                        <t t-set="is_ar" t-value="request.env.lang and request.env.lang.startswith('ar')"/>
+                        <img class="df-footer__logo-img df-logo-ar"
+                             t-att-style="'width:100px;height:auto;display:' + ('block' if is_ar else 'none')"
+                             src="/website_pricing_plans/static/src/img/logo-ar.svg"
+                             alt="دفترة"/>
+                        <img class="df-footer__logo-img df-logo-en"
+                             t-att-style="'width:100px;height:auto;display:' + ('none' if is_ar else 'block')"
+                             src="/website_pricing_plans/static/src/img/logo-en.svg"
+                             alt="daftra"/>
+                    </div>
+                </div>
+                <div class="df-footer__cols">
+                    <div class="df-footer__col">
+                        <div class="df-footer__col-title df-foot-compat"
+                             data-ar="متوافق مع" data-en="Compliant With">Compliant With
+                        </div>
+                        <div>
+                            <a class="df-compliance-item" href="#">
+                                <div class="df-comp-img-wrap">
+                                    <img src="https://static.portal.daftra.com/images/footer/zakat-ar.png"
+                                         onerror="this.parentElement.style.display='none'" alt="Zakat"/>
+                                </div>
+                                <span data-ar="هيئة الزكاة والضريبة والجمارك"
+                                      data-en="Zakat, Tax and Customs Authority">هيئة الزكاة والضريبة والجمارك
+                                </span>
+                            </a>
+                            <a class="df-compliance-item" href="#">
+                                <div class="df-comp-img-wrap">
+                                    <img src="https://static.portal.daftra.com/images/footer/federal-tax-ar.png"
+                                         onerror="this.parentElement.style.display='none'" alt="Federal Tax"/>
+                                </div>
+                                <span data-ar="الهيئة الاتحادية للضرائب"
+                                      data-en="Federal Tax Authority">الهيئة الاتحادية للضرائب
+                                </span>
+                            </a>
+                            <a class="df-compliance-item" href="#">
+                                <div class="df-comp-img-wrap">
+                                    <img src="https://static.portal.daftra.com/images/footer/egyptian-tax-ar.png"
+                                         onerror="this.parentElement.style.display='none'" alt="Egyptian Tax"/>
+                                </div>
+                                <span data-ar="مصلحة الضرائب المصرية"
+                                      data-en="Egyptian Tax Authority">مصلحة الضرائب المصرية
+                                </span>
+                            </a>
+                            <a class="df-compliance-item" href="#">
+                                <div class="df-comp-img-wrap">
+                                    <img src="https://static.portal.daftra.com/images/footer/fatoora-ar.png"
+                                         onerror="this.parentElement.style.display='none'" alt="Fatoora"/>
+                                </div>
+                                <span data-ar="فاتورة" data-en="Fatoora">فاتورة</span>
+                            </a>
+                        </div>
+
+                        <div class="df-footer__col-title df-footer__col-title--mt"
+                             data-ar="دفترة" data-en="daftra">daftra
+                        </div>
+                        <ul>
+                            <li><a href="/plans" data-ar="الأسعار" data-en="Pricing">Pricing</a></li>
+                            <li><a href="/home" data-ar="الرئيسية" data-en="Home">Home</a></li>
+                            <li><a href="/about-daftra" data-ar="عن دفترة" data-en="About daftra">About daftra</a></li>
+                            <li><a href="/features/all_features" data-ar="مزايا النظام" data-en="System Features">System Features</a></li>
+                            <li><a href="/suppliers/" data-ar="الموردين المعتمدين" data-en="Certified Suppliers">Certified Suppliers</a></li>
+                            <li><a href="/partners/" data-ar="وكلاء دفترة" data-en="daftra Partners">daftra Partners</a></li>
+                            <li><a href="/contact" data-ar="اتصل بنا" data-en="Contact Us">Contact Us</a></li>
+                            <li><a href="https://docs.daftara.dev/" data-ar="دليل API" data-en="API Guide">API Guide</a></li>
+                            <li><a href="/clients/" data-ar="عملاؤنا" data-en="Our Clients">Our Clients</a></li>
+                            <li><a href="https://developers.daftra.com" data-ar="بوابة المطورين" data-en="Developer Portal">Developer Portal</a></li>
+                            <li><a href="/system_updates/" data-ar="تحديثات النظام" data-en="System Updates">System Updates</a></li>
+                        </ul>
+
+                        <div class="df-footer__col-title df-footer__col-title--mt"
+                             data-ar="اكسب مع دفترة" data-en="Earn with daftra">Earn with daftra
+                        </div>
+                        <ul>
+                            <li><a href="/agencies-program-ar/" data-ar="برنامج الوكالة والشراكة" data-en="Agency &amp; Partnership Program">Agency &amp; Partnership Program</a></li>
+                            <li><a href="/referral-program-ar/" data-ar="برنامج الربح والشراكة" data-en="Referral &amp; Partnership Program">Referral &amp; Partnership Program</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="df-footer__col">
+                        <div class="df-footer__col-title" data-ar="البرامج" data-en="Features">Features</div>
+                        <ul>
+                            <li><a href="/invoicing" data-ar="الفواتير وعروض الأسعار" data-en="Invoices &amp; Quotes">Invoices &amp; Quotes</a></li>
+                            <li><a href="#" data-ar="نقاط البيع (POS)" data-en="Point of Sale (POS)">Point of Sale (POS)</a></li>
+                            <li><a href="#" data-ar="العروض" data-en="Promotions">Promotions</a></li>
+                            <li><a href="#" data-ar="الأقساط" data-en="Installments">Installments</a></li>
+                            <li><a href="#" data-ar="المبيعات المستهدفة والعمولات" data-en="Targets &amp; Commissions">Targets &amp; Commissions</a></li>
+                            <li><a href="#" data-ar="التأمينات" data-en="Insurance">Insurance</a></li>
+                            <li><a href="#" data-ar="متابعة العملاء" data-en="Customer Follow-up">Customer Follow-up</a></li>
+                            <li><a href="#" data-ar="نقاط الولاء" data-en="Loyalty Points">Loyalty Points</a></li>
+                            <li><a href="#" data-ar="النقاط والأرصدة" data-en="Points &amp; Balances">Points &amp; Balances</a></li>
+                            <li><a href="#" data-ar="الاشتراكات والعضويات" data-en="Subscriptions &amp; Memberships">Subscriptions &amp; Memberships</a></li>
+                            <li><a href="#" data-ar="المنتجات" data-en="Products">Products</a></li>
+                            <li><a href="#" data-ar="المشتريات" data-en="Purchasing">Purchasing</a></li>
+                            <li><a href="#" data-ar="دورة المشتريات" data-en="Purchase Cycle">Purchase Cycle</a></li>
+                            <li><a href="#" data-ar="الموردين" data-en="Suppliers">Suppliers</a></li>
+                            <li><a href="#" data-ar="الأذون المخزنية" data-en="Warehouse Permits">Warehouse Permits</a></li>
+                            <li><a href="#" data-ar="الجرد" data-en="Inventory Count">Inventory Count</a></li>
+                            <li><a href="#" data-ar="المصروفات" data-en="Expenses">Expenses</a></li>
+                            <li><a href="#" data-ar="دليل الحسابات" data-en="Chart of Accounts">Chart of Accounts</a></li>
+                            <li><a href="#" data-ar="الأصول" data-en="Assets">Assets</a></li>
+                            <li><a href="#" data-ar="مراكز التكلفة" data-en="Cost Centers">Cost Centers</a></li>
+                            <li><a href="#" data-ar="دورة الشيكات" data-en="Cheque Cycle">Cheque Cycle</a></li>
+                            <li><a href="#" data-ar="الحضور والانصراف" data-en="Attendance Management">Attendance Management</a></li>
+                            <li><a href="#" data-ar="العقود" data-en="Contracts">Contracts</a></li>
+                            <li><a href="#" data-ar="المرتبات" data-en="Payroll">Payroll</a></li>
+                            <li><a href="#" data-ar="الطلبات" data-en="Requests">Requests</a></li>
+                            <li><a href="#" data-ar="أوامر الشغل" data-en="Work Orders">Work Orders</a></li>
+                            <li><a href="#" data-ar="الحجوزات" data-en="Reservations">Reservations</a></li>
+                            <li><a href="#" data-ar="الإيجارات والوحدات" data-en="Rentals &amp; Units">Rentals &amp; Units</a></li>
+                            <li><a href="#" data-ar="تتبع الوقت" data-en="Time Tracking">Time Tracking</a></li>
+                            <li><a href="#" data-ar="دورة العمل" data-en="Manufacturing Cycle">Manufacturing Cycle</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="df-footer__col">
+                        <div class="df-footer__col-title" data-ar="مجالات العمل" data-en="Business Sectors">Business Sectors</div>
+                        <ul>
+                            <li><a href="/retail-stores" data-ar="المحلات التجارية" data-en="Retail Stores">Retail Stores</a></li>
+                            <li><a href="/clothing-stores" data-ar="محلات الملابس" data-en="Clothing Stores">Clothing Stores</a></li>
+                            <li><a href="#" data-ar="محلات الملابس" data-en="Clothing Stores">Clothing Stores</a></li>
+                            <li><a href="#" data-ar="محلات العطور" data-en="Perfume Shops">Perfume Shops</a></li>
+                            <li><a href="#" data-ar="المتاجر الإلكترونية" data-en="E-Commerce Stores">E-Commerce Stores</a></li>
+                            <li><a href="#" data-ar="محلات الكمبيوتر" data-en="Computer Shops">Computer Shops</a></li>
+                            <li><a href="#" data-ar="شركات الإنشاء والاستثمار العقاري" data-en="Construction &amp; Real Estate">Construction &amp; Real Estate</a></li>
+                            <li><a href="#" data-ar="شركات المقاولات" data-en="Contracting Companies">Contracting Companies</a></li>
+                            <li><a href="#" data-ar="الصيدليات" data-en="Pharmacies">Pharmacies</a></li>
+                            <li><a href="#" data-ar="المكاتب والشركات الاستشارية" data-en="Consulting Firms">Consulting Firms</a></li>
+                            <li><a href="#" data-ar="شركات الشحن واللوجستيك" data-en="Shipping &amp; Logistics">Shipping &amp; Logistics</a></li>
+                            <li><a href="#" data-ar="إدارة المكاتب القانونية والمحاماة" data-en="Law Firms &amp; Legal Offices">Law Firms &amp; Legal Offices</a></li>
+                            <li><a href="#" data-ar="الجيم ومراكز اللياقة" data-en="Gyms &amp; Fitness Centers">Gyms &amp; Fitness Centers</a></li>
+                            <li><a href="#" data-ar="المراكز التعليمية" data-en="Educational Centers">Educational Centers</a></li>
+                            <li><a href="#" data-ar="متاجر قطع غيار السيارات" data-en="Auto Parts Stores">Auto Parts Stores</a></li>
+                            <li><a href="#" data-ar="العيادات والمراكز الطبية" data-en="Clinics &amp; Medical Centers">Clinics &amp; Medical Centers</a></li>
+                            <li><a href="#" data-ar="مراكز صيانة السيارات" data-en="Car Maintenance Centers">Car Maintenance Centers</a></li>
+                            <li><a href="#" data-ar="معامل التحاليل الطبية" data-en="Medical Analysis Labs">Medical Analysis Labs</a></li>
+                            <li><a href="#" data-ar="محلات الجوالات" data-en="Mobile Phone Shops">Mobile Phone Shops</a></li>
+                            <li><a href="#" data-ar="عيادات الأسنان" data-en="Dental Clinics">Dental Clinics</a></li>
+                            <li><a href="#" data-ar="المدارس والحضانات" data-en="Schools &amp; Nurseries">Schools &amp; Nurseries</a></li>
+                            <li><a href="#" data-ar="الفنادق" data-en="Hotels">Hotels</a></li>
+                            <li><a href="#" data-ar="مراكز الصيانة والدعم الفني" data-en="Maintenance &amp; Tech Support Centers">Maintenance &amp; Tech Support Centers</a></li>
+                            <li><a href="#" data-ar="شركات تأجير السيارات والليموزين" data-en="Car Rental &amp; Limousine Companies">Car Rental &amp; Limousine Companies</a></li>
+                            <li><a href="#" data-ar="محلات الذهب والمجوهرات" data-en="Gold &amp; Jewelry Stores">Gold &amp; Jewelry Stores</a></li>
+                            <li><a href="#" data-ar="شركات الأدوية" data-en="Pharmaceutical Companies">Pharmaceutical Companies</a></li>
+                            <li><a href="#" data-ar="معارض السيارات" data-en="Car Showrooms">Car Showrooms</a></li>
+                            <li><a href="#" data-ar="مراكز تنظيف" data-en="Cleaning Centers">Cleaning Centers</a></li>
+                            <li><a href="#" data-ar="مراكز التجميل" data-en="Beauty Centers">Beauty Centers</a></li>
+                            <li><a href="#" data-ar="المكتبات" data-en="Bookstores">Bookstores</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="df-footer__col">
+                        <div class="df-footer__col-title" data-ar="الدعم" data-en="Support">Support</div>
+                        <ul>
+                            <li><a href="/contact" data-ar="اتصل بالدعم" data-en="Contact Support">Contact Support</a></li>
+                            <li>
+                                <p class="df-footer__desc"
+                                   data-ar="سيساعدك دليل الإستخدام على التعرف على جميع ميزات النظام وكيفية استخدام دفترة."
+                                   data-en="The user guide will help you explore all system features and learn how to use daftra.">
+                                    The user guide will help you explore all system features and learn how to use daftra.
+                                </p>
+                            </li>
+                            <li><a href="https://docs.daftra.com/" data-ar="اذهب إلى مركز الدعم ←" data-en="Go to Support Center →">Go to Support Center →</a></li>
+                        </ul>
+
+                        <div class="df-footer__col-title df-footer__col-title--mt"
+                             data-ar="تحدث إلى فريق المبيعات" data-en="Talk to Sales Team">Talk to Sales Team
+                        </div>
+                        <ul>
+                            <li>
+                                <p class="df-footer__desc"
+                                   data-ar="فريقنا جاهز للإجابة على استفساراتك حول الباقات، الأسعار، وحلول دفترة المخصصة."
+                                   data-en="Our team is ready to answer your questions about plans, pricing, and custom daftra solutions.">
+                                    Our team is ready to answer your questions about plans, pricing, and custom daftra solutions.
+                                </p>
+                            </li>
+                            <li><a href="tel:0248837601" class="df-footer__phone">0248837601</a></li>
+                            <li><a href="tel:966115030301" class="df-footer__phone">+966115030301</a></li>
+                            <li><a href="tel:97144986470" class="df-footer__phone">+97144986470</a></li>
+                            <li><a href="/contact" data-ar="تواصل مع المبيعات ←" data-en="Contact Sales →">Contact Sales →</a></li>
+                        </ul>
+
+                        <div class="df-footer__col-title df-footer__col-title--mt"
+                             data-ar="خدمات دفترة الإضافية" data-en="daftra Additional Services">daftra Additional Services
+                        </div>
+                        <ul>
+                            <li><a href="/accounting-services-ar/" data-ar="خدمات المحاسبة ←" data-en="Accounting Services →">Accounting Services →</a></li>
+                            <li><a href="/setup-services-ar/" data-ar="تهيئة الحساب ←" data-en="Account Setup →">Account Setup →</a></li>
+                            <li><a href="/custom-solutions/" data-ar="التخصيص ←" data-en="Customization →">Customization →</a></li>
+                            <li><a href="/enterprises" data-ar="دفترة للأعمال ←" data-en="daftra for Enterprise →">daftra for Enterprise →</a></li>
+                        </ul>
+
+                        <div class="df-footer__col-title df-footer__col-title--mt"
+                             data-ar="الموارد" data-en="Resources">Resources
+                        </div>
+                        <ul>
+                            <li><a href="/blog" data-ar="المدونة ←" data-en="Blog →">Blog →</a></li>
+                            <li><a href="/hub" data-ar="المركز التعليمي ←" data-en="Learning Center →">Learning Center →</a></li>
+                        </ul>
+
+                        <div class="df-footer__col-title df-footer__col-title--mt"
+                             data-ar="تطبيقات الجوال" data-en="Mobile Apps">Mobile Apps
+                        </div>
+                        <div class="df-footer__apps">
+                            <a href="https://play.google.com/store/apps/details?id=com.daftra.app" target="_blank">
+                                <img class="df-footer__app-badge"
+                                     src="https://static.portal.daftra.com/images/footer/download-app-badge-andriod.svg"
+                                     alt="Google Play"/>
+                            </a>
+                            <a href="https://apps.apple.com/us/app/id1347814396" target="_blank">
+                                <img class="df-footer__app-badge"
+                                     src="https://static.portal.daftra.com/images/footer/download-app-badge-ios.svg"
+                                     alt="App Store"/>
+                            </a>
+                        </div>
+
+                        <div class="df-footer__col-title df-footer__col-title--mt"
+                             data-ar="تابعنا" data-en="Follow Us">Follow Us
+                        </div>
+                        <div class="df-footer__social">
+                            <a href="#" title="Instagram"><i class="fa fa-instagram"/></a>
+                            <a href="#" title="X"><i class="fa fa-twitter"/></a>
+                            <a href="#" title="LinkedIn"><i class="fa fa-linkedin"/></a>
+                            <a href="#" title="Facebook"><i class="fa fa-facebook"/></a>
+                            <a href="#" title="YouTube"><i class="fa fa-youtube-play"/></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="df-footer__bottom">
+                    <span class="df-footer__copy df-foot-copy"
+                          data-ar="دفترة © 2026" data-en="daftra © 2026">daftra © 2026
+                    </span>
+                    <span class="df-footer__compliance-note df-foot-comp-note"
+                          data-ar="متوافق بالكامل مع المرحلة الثانية من الفاتورة الإلكترونية"
+                          data-en="Fully compliant with Phase 2 of e-invoicing">
+                        Fully compliant with Phase 2 of e-invoicing
+                    </span>
+                    <div class="df-footer__legal">
+                        <a href="/privacy-policy-ar" class="df-foot-privacy"
+                           data-ar="سياسة الخصوصية" data-en="Privacy Policy">Privacy Policy
+                        </a>
+                        <span>|</span>
+                        <a href="/terms-conditions-ar" class="df-foot-terms"
+                           data-ar="الشروط والأحكام" data-en="Terms &amp; Conditions">Terms &amp; Conditions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </template>
+
+</odoo>

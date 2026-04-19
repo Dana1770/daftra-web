@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================
+         PERFUME STORES PAGE
+         Route: /perfume-stores  |  /برنامج-إدارة-محلات-العطور
+         Mirrors: daftra.com/برنامج-إدارة-محلات-العطور/
+    ============================================================ -->
+    <template id="perfume_stores_page" name="Perfume Stores - برنامج إدارة محلات العطور">
+        <t t-call="website.layout">
+            <t t-set="no_header" t-value="True"/>
+            <t t-set="no_footer" t-value="True"/>
+            <t t-set="head">
+                <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;display=swap"
+                      rel="stylesheet"/>
+                <title data-ar="برنامج إدارة محلات العطور - دفترة"
+                       data-en="Perfume Shop Management Software - daftra">
+                    Perfume Shop Management Software - daftra
+                </title>
+                <meta name="description"
+                      content="برنامج إدارة محلات العطور من دفترة - تتبع تركيب العطور وإدارة المخزون والفواتير الإلكترونية ونقاط البيع بسهولة تامة"/>
+            </t>
+
+            <!-- Early direction script -->
+            <script>
+                (function(){
+                    var l='ar';
+                    try{ var s=localStorage.getItem('df_lang'); if(s==='en'||s==='ar') l=s; }catch(e){}
+                    var w=document.getElementById('df-perfume-wrap');
+                    if(w){ w.setAttribute('dir',l==='ar'?'rtl':'ltr'); w.classList.add('lang-'+l); }
+                    else{
+                        document.addEventListener('DOMContentLoaded',function(){
+                            var w2=document.getElementById('df-perfume-wrap');
+                            if(w2){ w2.setAttribute('dir',l==='ar'?'rtl':'ltr'); w2.classList.add('lang-'+l); }
+                        });
+                    }
+                })();
+            </script>
+
+            <div id="df-perfume-wrap" class="lang-ar" dir="rtl">
+
+                <!-- ════════════════════════════════════════════
+                     SHARED NAVIGATION
+                ════════════════════════════════════════════ -->
+                <t t-call="website_pricing_plans.df_nav"/>
+
+                <!-- ════════════════════════════════════════════
+                     SUB-NAV (sticky section anchors)
+                ════════════════════════════════════════════ -->
+                <nav class="df-p-subnav" style="
+                    position: sticky; top: 0; z-index: 100;
+                    background: rgba(255,255,255,0.95);
+                    backdrop-filter: blur(12px);
+                    border-bottom: 1px solid #e8edf5;
+                    padding: 0;
+                ">
+                    <div class="df-p-cont">
+                        <div style="display:flex; align-items:center; gap:0; overflow-x:auto; scrollbar-width:none;">
+                            <a href="#overview" class="df-p-subnav__link" style="
+                                display:inline-flex; align-items:center; gap:6px;
+                                padding:16px 20px; font-size:14px; font-weight:600;
+                                color:#4a5568; text-decoration:none; white-space:nowrap;
+                                border-bottom:2px solid transparent; transition:color 0.2s, border-color 0.2s;
+                            "
+                            data-ar="نظرة عامة" data-en="Overview">Overview</a>
+                            <a href="#first-feature" class="df-p-subnav__link" style="
+                                display:inline-flex; align-items:center; gap:6px;
+                                padding:16px 20px; font-size:14px; font-weight:600;
+                                color:#4a5568; text-decoration:none; white-space:nowrap;
+                                border-bottom:2px solid transparent; transition:color 0.2s, border-color 0.2s;
+                            "
+                            data-ar="المزايا" data-en="Features">Features</a>
+                            <a href="#why-daftra" class="df-p-subnav__link" style="
+                                display:inline-flex; align-items:center; gap:6px;
+                                padding:16px 20px; font-size:14px; font-weight:600;
+                                color:#4a5568; text-decoration:none; white-space:nowrap;
+                                border-bottom:2px solid transparent; transition:color 0.2s, border-color 0.2s;
+                            "
+                            data-ar="لماذا دفترة" data-en="Why daftra">Why daftra</a>
+                            <a href="#faq" class="df-p-subnav__link" style="
+                                display:inline-flex; align-items:center; gap:6px;
+                                padding:16px 20px; font-size:14px; font-weight:600;
+                                color:#4a5568; text-decoration:none; white-space:nowrap;
+                                border-bottom:2px solid transparent; transition:color 0.2s, border-color 0.2s;
+                            "
+                            data-ar="الأسئلة الشائعة" data-en="FAQs">FAQs</a>
+                        </div>
+                    </div>
+                    <style>
+                        .df-p-subnav__link:hover,
+                        .df-p-subnav__link--active {
+                            color: #c9a84c !important;
+                            border-bottom-color: #c9a84c !important;
+                        }
+                    </style>
+                </nav>
+
+                <!-- ════════════════════════════════════════════
+                     HERO SECTION
+                ════════════════════════════════════════════ -->
+                <section class="df-p-hero" id="overview">
+                    <div class="df-p-cont">
+                        <div class="df-p-hero__in">
+
+                            <!-- Left: Text content -->
+                            <div>
+                                <!-- Breadcrumb -->
+                                <div class="df-p-breadcrumb df-p-anim">
+                                    <a href="/home"
+                                       data-ar="الرئيسية"
+                                       data-en="Home">Home</a>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="2">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                    <span data-ar="مجالات العمل" data-en="Business Sectors">Business Sectors</span>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="2">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                    <span data-ar="محلات العطور" data-en="Perfume Shops">Perfume Shops</span>
+                                </div>
+
+                                <!-- Category pill -->
+                                <div class="df-p-anim df-p-delay-1" style="margin-bottom:16px;">
+                                    <span style="
+                                        display:inline-flex; align-items:center; gap:8px;
+                                        background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.25);
+                                        border-radius:50px; padding:6px 16px;
+                                        font-size:13px; font-weight:700; color:#c9a84c;
+                                        letter-spacing:0.5px;
+                                    "
+                                    data-ar="محلات العطور" data-en="PERFUME SHOPS">PERFUME SHOPS</span>
+                                </div>
+
+                                <h1 class="df-p-anim df-p-delay-2">
+                                    <span data-ar="برنامج إدارة" data-en="Management Software">
+                                        Management Software
+                                    </span>
+                                    <span class="df-p-highlight"
+                                          data-ar=" محلات العطور"
+                                          data-en=" for Perfume Shops">
+                                        &#160;for Perfume Shops
+                                    </span>
+                                </h1>
+
+                                <p class="df-p-hero__sub df-p-anim df-p-delay-3"
+                                   data-ar="الخصوصية التي تتمتع بها محلات العطور عن باقي الأنشطة التجارية، توجب لها نظام محاسبي كدفترة، يدمج الدورة التصنيعية لتركيب العطور من المواد الخام بشكل مباشر، مع عمليات بيع العطور المركبة والعطور الجاهزة. مع تطبيق شامل لإدارة الحسابات وتسجيل إيرادات ومصروفات النشاط، وأدوات متخصصة في مراقبة وتتبع المخزون من العطور وخامات التصنيع."
+                                   data-en="The unique nature of perfume shops sets them apart from other businesses, requiring an accounting system like daftra that directly integrates the manufacturing cycle for blending perfumes from raw materials with sales of both blended and ready-made perfumes. With a comprehensive app for managing accounts, recording revenues and expenses, and specialized tools for monitoring and tracking inventory of perfumes and manufacturing raw materials.">
+                                    The unique nature of perfume shops sets them apart from other businesses,
+                                    requiring an accounting system like daftra that directly integrates the
+                                    manufacturing cycle for blending perfumes from raw materials with sales of
+                                    both blended and ready-made perfumes. With a comprehensive app for managing
+                                    accounts, recording revenues and expenses, and specialized tools for
+                                    monitoring and tracking inventory of perfumes and manufacturing raw materials.
+                                </p>
+
+                                <!-- Hero feature bullets (from Daftra website) -->
+                                <ul class="df-p-anim df-p-delay-3" style="
+                                    list-style:none; padding:0; margin:12px 0 0 0;
+                                    display:flex; flex-direction:column; gap:6px;">
+                                    <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,0.75);">
+                                        <span style="color:#c9a84c;margin-top:2px;">&#10003;</span>
+                                        <span data-ar="إمكانية تركيب العطور عند البيع للعملاء"
+                                              data-en="Ability to blend perfumes at point of sale for customers">Ability to blend perfumes at point of sale for customers</span>
+                                    </li>
+                                    <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,0.75);">
+                                        <span style="color:#c9a84c;margin-top:2px;">&#10003;</span>
+                                        <span data-ar="تسجيل استهلاك الخام آلياً لتركيب العطر"
+                                              data-en="Automatic recording of raw material consumption for perfume blending">Automatic recording of raw material consumption for perfume blending</span>
+                                    </li>
+                                    <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,0.75);">
+                                        <span style="color:#c9a84c;margin-top:2px;">&#10003;</span>
+                                        <span data-ar="تتبع لحظي لحركة المخزون من العطور والخامات"
+                                              data-en="Real-time tracking of perfume and raw material inventory movement">Real-time tracking of perfume and raw material inventory movement</span>
+                                    </li>
+                                    <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,0.75);">
+                                        <span style="color:#c9a84c;margin-top:2px;">&#10003;</span>
+                                        <span data-ar="شاشة نقاط البيع سهلة الاستخدام مع عرض صور المنتجات"
+                                              data-en="Easy-to-use POS screen with product image display">Easy-to-use POS screen with product image display</span>
+                                    </li>
+                                    <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,0.75);">
+                                        <span style="color:#c9a84c;margin-top:2px;">&#10003;</span>
+                                        <span data-ar="دعم الفواتير الإلكترونية وحساب الضريبة"
+                                              data-en="E-invoice support and tax calculation">E-invoice support and tax calculation</span>
+                                    </li>
+                                    <li style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,0.75);">
+                                        <span style="color:#c9a84c;margin-top:2px;">&#10003;</span>
+                                        <span data-ar="إدارة مصاريف المحل وتعيين البائعين"
+                                              data-en="Managing shop expenses and assigning salespeople">Managing shop expenses and assigning salespeople</span>
+                                    </li>
+                                </ul>
+
+                                <a href="/register?trk=SEO_organic"
+                                   class="df-p-hero__cta df-p-anim df-p-delay-3"
+                                   data-ar="ابدأ الاستخدام مجانًا"
+                                   data-en="Start Using for Free">
+                                    Start Using for Free
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="2.5">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+
+                                <!-- Badges -->
+                                <div class="df-p-badges df-p-anim df-p-delay-4">
+                                    <span class="df-p-badge">
+                                        <span class="df-p-badge__dot"/>
+                                        <span data-ar="تجربة مجانية" data-en="Free Trial">Free Trial</span>
+                                    </span>
+                                    <span class="df-p-badge">
+                                        <span class="df-p-badge__dot"/>
+                                        <span data-ar="لا حاجة لبطاقة ائتمان"
+                                              data-en="No Credit Card">No Credit Card</span>
+                                    </span>
+                                    <span class="df-p-badge">
+                                        <span class="df-p-badge__dot"/>
+                                        <span data-ar="جاهز للعمل فورًا"
+                                              data-en="Ready Instantly">Ready Instantly</span>
+                                    </span>
+                                    <span class="df-p-badge">
+                                        <span class="df-p-badge__dot"/>
+                                        <span data-ar="شامل لجميع التطبيقات"
+                                              data-en="All-App Inclusive">All-App Inclusive</span>
+                                    </span>
+                                </div>
+
+                                <!-- Partners -->
+                                <div class="df-p-partners df-p-anim df-p-delay-5">
+                                    <span class="df-p-partners__label"
+                                          data-ar="يتكامل مع"
+                                          data-en="Integrates with">Integrates with</span>
+                                    <div class="df-p-partners__logos">
+                                        <img src="https://static.portal.daftra.com/images/ar/home-images/logo-home-1.svg"
+                                             alt="Zid"/>
+                                        <img src="https://static.portal.daftra.com/images/ar/home-images/logo-home-2.svg"
+                                             alt="Salla"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Hero visual -->
+                            <div class="df-p-hero__visual">
+                                <div class="df-p-hero__img-wrap">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/perfume-shop/Hero Images Section.png"
+                                         alt="Perfume Shop Management"/>
+                                </div>
+                                <!-- Floating stat card 1 -->
+                                <div class="df-p-stat-card df-p-stat-card--1">
+                                    <div class="df-p-stat-card__num">
+                                        <span data-count="98" data-suffix="%">0%</span>
+                                    </div>
+                                    <div class="df-p-stat-card__label"
+                                         data-ar="رضا العملاء"
+                                         data-en="Customer Satisfaction">Customer Satisfaction</div>
+                                </div>
+                                <!-- Floating stat card 2 -->
+                                <div class="df-p-stat-card df-p-stat-card--2">
+                                    <div class="df-p-stat-card__num">
+                                        +<span data-count="5000" data-suffix="">0</span>
+                                    </div>
+                                    <div class="df-p-stat-card__label"
+                                         data-ar="محل عطور يستخدم دفترة"
+                                         data-en="Perfume Shops use daftra">Perfume Shops use daftra</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 1 — Perfume Blending / Manufacturing
+                ════════════════════════════════════════════ -->
+                <div id="first-feature"/>
+                <section class="df-p-feat" id="feat-blending">
+                    <div class="df-p-cont">
+                        <div class="df-p-feat__in">
+                            <div class="df-p-feat__content df-p-anim--left">
+                                <div class="df-p-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+                                    </svg>
+                                    <span data-ar="تركيب العطور" data-en="Perfume Blending">Perfume Blending</span>
+                                </div>
+                                <h2 data-ar="تتبع عملية تركيب العطور ضمن نظامك المحاسبي"
+                                    data-en="Track perfume blending operations within your accounting system">
+                                    Track perfume blending operations within your accounting system
+                                </h2>
+                                <p data-ar="حدد كافة نسب المواد الخام لتركيب العطور، ليتم بعد ذلك سحب كميات المواد الخام من المخزون بشكل تلقائي عند كل عملية بيع للعطر، مع إمكانية عرض تقارير مبسطة لحساب الاستهلاك المحتمل من الخام عند إنتاج كمية من العطر وإمكانية تتبع هذا الاستهلاك لحظياً."
+                                   data-en="Define all raw material ratios for perfume blending, then have raw material quantities automatically deducted from inventory with each perfume sale. Generate simplified reports to calculate expected raw material consumption when producing any quantity, with real-time tracking of consumption per sale.">
+                                    Define all raw material ratios for perfume blending, then have raw material
+                                    quantities automatically deducted from inventory with each perfume sale.
+                                    Generate simplified reports to calculate expected raw material consumption
+                                    when producing any quantity, with real-time tracking of consumption per sale.
+                                </p>
+                                <ul class="df-p-feat__bullets">
+                                    <li data-ar="تركيب العطور عند البيع للعملاء مباشرةً"
+                                        data-en="Blend perfumes directly at point of sale">
+                                        Blend perfumes directly at point of sale
+                                    </li>
+                                    <li data-ar="تسجيل استهلاك المواد الخام آلياً لكل تركيبة"
+                                        data-en="Automatic raw material consumption tracking per formula">
+                                        Automatic raw material consumption tracking per formula
+                                    </li>
+                                    <li data-ar="تتبع لحظي لحركة المخزون من العطور والخامات"
+                                        data-en="Real-time tracking of perfume and raw material inventory movement">
+                                        Real-time tracking of perfume and raw material inventory movement
+                                    </li>
+                                </ul>
+                                <div class="df-p-feat__links">
+                                    <a href="/features/all_features" class="df-p-feat__link-primary"
+                                       data-ar="استكشف نظام التصنيع"
+                                       data-en="Explore Manufacturing System">
+                                        Explore Manufacturing System
+                                    </a>
+                                    <a href="/register" class="df-p-feat__link-secondary"
+                                       data-ar="ابدأ مجانًا ←"
+                                       data-en="Start Free →">
+                                        Start Free →
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="df-p-feat__media df-p-anim--right">
+                                <div class="df-p-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/perfume-shop/info1.svg"
+                                         alt="Perfume Blending Dashboard"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 2 — POS for Perfume Shops
+                ════════════════════════════════════════════ -->
+                <section class="df-p-feat df-p-feat--gray" id="feat-pos">
+                    <div class="df-p-cont">
+                        <div class="df-p-feat__in" style="direction:ltr;">
+                            <div class="df-p-feat__media df-p-anim--left">
+                                <div class="df-p-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/perfume-shop/info2.svg"
+                                         alt="POS for Perfume Shops"/>
+                                </div>
+                            </div>
+                            <div class="df-p-feat__content df-p-anim--right">
+                                <div class="df-p-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                        <path d="M8 21h8M12 17v4"/>
+                                    </svg>
+                                    <span data-ar="نقاط البيع" data-en="Point of Sale">Point of Sale</span>
+                                </div>
+                                <h2 data-ar="البيع بالتجزئة عبر نقاط البيع POS أصبح في متناول يديك"
+                                    data-en="Retail sales via POS are now at your fingertips">
+                                    Retail sales via POS are now at your fingertips
+                                </h2>
+                                <p data-ar="مع تعدد البائعين وتناوب الورديات في محل العطور، يمكنك تتبع مبيعات كل بائع بشكل مستقل من خلال شاشة نقاط البيع POS المخصصة لمحلات العطور، مع ميزة الصور التوضيحية لكل منتج وأدوات التحكم الكاملة في السعر والخصومات."
+                                   data-en="With multiple sellers and rotating shifts in your perfume shop, track each seller's sales independently through the dedicated POS screen for perfume shops. Features include product images, full price control, and discount management tools with detailed shift reports.">
+                                    With multiple sellers and rotating shifts in your perfume shop, track each
+                                    seller's sales independently through the dedicated POS screen. Features
+                                    include product images, full price and discount control, and detailed
+                                    reports per seller and per shift.
+                                </p>
+                                <ul class="df-p-feat__bullets">
+                                    <li data-ar="شاشة نقاط بيع سهلة الاستخدام مع صور المنتجات"
+                                        data-en="Easy-to-use POS screen with product images">
+                                        Easy-to-use POS screen with product images
+                                    </li>
+                                    <li data-ar="تتبع مبيعات كل بائع وكل وردية بشكل منفصل"
+                                        data-en="Track sales per seller and per shift separately">
+                                        Track sales per seller and per shift separately
+                                    </li>
+                                    <li data-ar="تحكم كامل في السعر والعدد ونسب الخصم"
+                                        data-en="Full control over pricing, quantities, and discounts">
+                                        Full control over pricing, quantities, and discounts
+                                    </li>
+                                </ul>
+                                <div class="df-p-feat__links">
+                                    <a href="/features/all_features" class="df-p-feat__link-primary"
+                                       data-ar="استكشف نقاط البيع"
+                                       data-en="Explore Point of Sale">
+                                        Explore Point of Sale
+                                    </a>
+                                    <a href="/register" class="df-p-feat__link-secondary"
+                                       data-ar="ابدأ مجانًا ←"
+                                       data-en="Start Free →">
+                                        Start Free →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 3 — E-Invoicing
+                ════════════════════════════════════════════ -->
+                <section class="df-p-feat" id="feat-invoicing">
+                    <div class="df-p-cont">
+                        <div class="df-p-feat__in">
+                            <div class="df-p-feat__content df-p-anim--left">
+                                <div class="df-p-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                    </svg>
+                                    <span data-ar="الفاتورة الإلكترونية" data-en="E-Invoicing">E-Invoicing</span>
+                                </div>
+                                <h2 data-ar="أصدر فاتورتك الإلكترونية المعتمدة في ثواني معدودة"
+                                    data-en="Issue your certified e-invoice in seconds">
+                                    Issue your certified e-invoice in seconds
+                                </h2>
+                                <p data-ar="الفاتورة الإلكترونية المميزة بـ QR Code هي الوثيقة الأهم في عملياتك المحاسبية. يقدم لك دفترة واجهة سهلة لإصدار الفواتير بشكل سريع ودقيق، مع إمكانية التقسيط وتحديد موعد الاستلام وإرسال إشعار للعميل عبر الرسائل النصية أو الواتساب."
+                                   data-en="The QR Code-enabled e-invoice is the most important document in your accounting operations. daftra provides an easy interface for fast and accurate invoice issuance, with installment options, delivery scheduling, and customer notifications via SMS or WhatsApp.">
+                                    The QR Code-enabled e-invoice is the most important document in your
+                                    accounting operations. daftra provides an easy interface for fast and
+                                    accurate invoice issuance, with installment options, delivery scheduling,
+                                    and customer notifications via SMS or WhatsApp.
+                                </p>
+                                <ul class="df-p-feat__bullets">
+                                    <li data-ar="فواتير إلكترونية معتمدة بـ QR Code"
+                                        data-en="Certified e-invoices with QR Code">
+                                        Certified e-invoices with QR Code
+                                    </li>
+                                    <li data-ar="دعم الأقساط وتحديد مواعيد الاستلام"
+                                        data-en="Support for installments and scheduled delivery">
+                                        Support for installments and scheduled delivery
+                                    </li>
+                                    <li data-ar="إرسال إشعارات للعملاء عبر SMS والواتساب"
+                                        data-en="Send customer notifications via SMS and WhatsApp">
+                                        Send customer notifications via SMS and WhatsApp
+                                    </li>
+                                </ul>
+                                <div class="df-p-feat__links">
+                                    <a href="/invoicing" class="df-p-feat__link-primary"
+                                       data-ar="استكشف برنامج الفواتير"
+                                       data-en="Explore Invoicing Software">
+                                        Explore Invoicing Software
+                                    </a>
+                                    <a href="/register" class="df-p-feat__link-secondary"
+                                       data-ar="ابدأ مجانًا ←"
+                                       data-en="Start Free →">
+                                        Start Free →
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="df-p-feat__media df-p-anim--right">
+                                <div class="df-p-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/perfume-shop/info3.svg"
+                                         alt="E-Invoicing"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     GROW WITH BANNER
+                ════════════════════════════════════════════ -->
+                <section class="df-p-grow">
+                    <div class="df-p-cont">
+                        <h2 class="df-p-anim"
+                            data-ar="أدِر محل عطورك باحترافية مع دفترة"
+                            data-en="Manage your perfume shop professionally with daftra">
+                            Manage your perfume shop professionally with daftra
+                        </h2>
+                        <a href="/register" class="df-p-anim df-p-delay-1"
+                           data-ar="ابدأ مجانًا الآن"
+                           data-en="Get Started Now">
+                            Get Started Now
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 4 — Inventory Management
+                ════════════════════════════════════════════ -->
+                <section class="df-p-feat df-p-feat--gray" id="feat-inventory">
+                    <div class="df-p-cont">
+                        <div class="df-p-feat__in" style="direction:ltr;">
+                            <div class="df-p-feat__media df-p-anim--left">
+                                <div class="df-p-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/perfume-shop/info4.svg"
+                                         alt="Inventory Management"/>
+                                </div>
+                            </div>
+                            <div class="df-p-feat__content df-p-anim--right">
+                                <div class="df-p-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/>
+                                        <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+                                    </svg>
+                                    <span data-ar="إدارة المخزون" data-en="Inventory Management">Inventory Management</span>
+                                </div>
+                                <h2 data-ar="تابع حركة العطور والهدايا في مخزونك"
+                                    data-en="Track perfumes and gifts movement in your inventory">
+                                    Track perfumes and gifts movement in your inventory
+                                </h2>
+                                <p data-ar="يتيح لك دفترة متابعة حركة المنتجات داخل مخزونك إلى جانب الأذون المخزنية بالصرف والإضافة والتحويل بين المستودعات، كما سينبهك النظام إذا ما قارب أحدها على النفاد أو انخفض عن المستوى الذي تقوم بتحديده في ملف المنتج، وذلك لسرعة إصدار أوامر الشراء بكمية جديدة إلى مورديك الدائمين لتلبية احتياجات أعمالك، وكذلك إدارة مورديك من خلال ملفات تعريفية لكل منهم تتضمن كافة البيانات المطلوبة، إلى جانب إجراء عمليات الجرد ومقارنتها بالموجودة في حسابك على النظام."
+                                   data-en="daftra lets you monitor product movement within your inventory alongside stock permissions for issuing, adding, and transferring between warehouses. The system alerts you when any product approaches depletion or falls below the level you set in the product file, enabling quick purchase orders from your regular suppliers. You can also manage your suppliers through profile files containing all required data, and conduct inventory counts to compare with system figures.">
+                                    daftra lets you monitor product movement within your inventory alongside
+                                    stock permissions for issuing, adding, and transferring between warehouses.
+                                    The system alerts you when any product approaches depletion or falls below
+                                    the level you set in the product file, enabling quick purchase orders from
+                                    your regular suppliers. You can also manage your suppliers through profile
+                                    files containing all required data, and conduct inventory counts to compare
+                                    with system figures.
+                                </p>
+                                <ul class="df-p-feat__bullets">
+                                    <li data-ar="تنبيهات تلقائية عند انخفاض مستوى المخزون"
+                                        data-en="Automatic alerts when stock levels drop">
+                                        Automatic alerts when stock levels drop
+                                    </li>
+                                    <li data-ar="أذون مخزنية للصرف والإضافة والتحويل"
+                                        data-en="Stock permissions for issuance, addition, and transfer">
+                                        Stock permissions for issuance, addition, and transfer
+                                    </li>
+                                    <li data-az="إجراء عمليات الجرد ومقارنتها بالنظام"
+                                        data-en="Conduct inventory counts and compare with system data">
+                                        Conduct inventory counts and compare with system data
+                                    </li>
+                                </ul>
+                                <div class="df-p-feat__links">
+                                    <a href="/features/all_features" class="df-p-feat__link-primary"
+                                       data-ar="استكشف إدارة المخزون"
+                                       data-en="Explore Inventory Management">
+                                        Explore Inventory Management
+                                    </a>
+                                    <a href="/register" class="df-p-feat__link-secondary"
+                                       data-ar="ابدأ مجانًا ←"
+                                       data-en="Start Free →">
+                                        Start Free →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 5 — Expense & Cost Tracking
+                ════════════════════════════════════════════ -->
+                <section class="df-p-feat" id="feat-expenses">
+                    <div class="df-p-cont">
+                        <div class="df-p-feat__in">
+                            <div class="df-p-feat__content df-p-anim--left">
+                                <div class="df-p-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                                        <path d="M12 6v6l4 2"/>
+                                    </svg>
+                                    <span data-ar="المصروفات والتكاليف" data-en="Expenses &amp; Costs">Expenses &amp; Costs</span>
+                                </div>
+                                <h2 data-ar="تتبع المصروفات والهالك من المنتجات والمواد الخام"
+                                    data-en="Track expenses and waste of products and raw materials">
+                                    Track expenses and waste of products and raw materials
+                                </h2>
+                                <p data-ar="يعطيك برنامج إدارة العطور من دفترة أدوات مخصصة لتسجيل مصروفات المحل من مصاريف تشغيل وإهلاك ومرتبات البائعين، مع تقارير مميزة لمراقبة مصروفاتك ومبيعاتك بشكل دوري عبر التقارير اليومية والأسبوعية والشهرية."
+                                   data-en="daftra's perfume management software provides dedicated tools to record shop expenses including operating costs, depreciation, and seller salaries. Featured reports let you monitor your expenses and sales periodically through daily, weekly, and monthly reports.">
+                                    daftra's perfume management software provides dedicated tools to record
+                                    shop expenses including operating costs, depreciation, and seller
+                                    salaries. Featured reports let you monitor your expenses and sales
+                                    periodically through daily, weekly, and monthly reports.
+                                </p>
+                                <ul class="df-p-feat__bullets">
+                                    <li data-ar="تسجيل مصروفات التشغيل والإهلاك والمرتبات"
+                                        data-en="Record operating expenses, depreciation, and salaries">
+                                        Record operating expenses, depreciation, and salaries
+                                    </li>
+                                    <li data-ar="تقارير مقارنة للمصروفات مقابل الإيرادات"
+                                        data-en="Comparative reports for expenses vs. revenues">
+                                        Comparative reports for expenses vs. revenues
+                                    </li>
+                                    <li data-ar="تتبع الهالك والمفقود من المخزون والمواد الخام"
+                                        data-en="Track waste and loss from inventory and raw materials">
+                                        Track waste and loss from inventory and raw materials
+                                    </li>
+                                </ul>
+                                <div class="df-p-feat__links">
+                                    <a href="/features/all_features" class="df-p-feat__link-primary"
+                                       data-ar="استكشف إدارة المصروفات"
+                                       data-en="Explore Expense Management">
+                                        Explore Expense Management
+                                    </a>
+                                    <a href="/register" class="df-p-feat__link-secondary"
+                                       data-ar="ابدأ مجانًا ←"
+                                       data-en="Start Free →">
+                                        Start Free →
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="df-p-feat__media df-p-anim--right">
+                                <div class="df-p-feat__img-card">
+                                    <img src="https://static.portal.daftra.com/images/ar/industries/perfume-shop/info5.svg"
+                                         alt="Expense Tracking"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FEATURE 6 — Advanced Reports
+                ════════════════════════════════════════════ -->
+                <section class="df-p-feat df-p-feat--gray" id="feat-reports">
+                    <div class="df-p-cont">
+                        <div class="df-p-feat__in" style="direction:ltr;">
+                            <div class="df-p-feat__media df-p-anim--left">
+                                <div class="df-p-feat__img-card">
+                                    <img src="/website_pricing_plans/static/src/img/img_1.png"
+                                         alt="Advanced Reports"/>
+                                </div>
+                            </div>
+                            <div class="df-p-feat__content df-p-anim--right">
+                                <div class="df-p-feat__tag">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                    <span data-ar="التقارير والتحليلات" data-en="Reports &amp; Analytics">Reports &amp; Analytics</span>
+                                </div>
+                                <h2 data-ar="باقة وافية من التقارير المخصصة لمساعدتك"
+                                    data-en="A comprehensive package of specialized reports to help you">
+                                    A comprehensive package of specialized reports to help you
+                                </h2>
+                                <p data-ar="تقارير المشتريات للمواد الخام، وتقارير الموردين، وتقارير العطور التي قمت بتركيبها، وتقارير حركة المخزون، وتقارير الجرد، وتقارير العملاء والبائعين — كلها ينظر لها دفترة ليحلل البيانات بشكل فعال ويساعدك على اتخاذ القرارات الصحيحة."
+                                   data-en="Purchase reports for raw materials, supplier reports, blended perfume reports, inventory movement reports, stock count reports, and customer and seller reports — daftra analyzes all these data points effectively to help you make the right business decisions.">
+                                    Purchase reports for raw materials, supplier reports, blended perfume
+                                    reports, inventory movement reports, stock count reports, and customer
+                                    and seller reports — daftra analyzes all these data points effectively
+                                    to help you make the right business decisions.
+                                </p>
+                                <ul class="df-p-feat__bullets">
+                                    <li data-ar="تقارير تركيب العطور واستهلاك الخامات"
+                                        data-en="Perfume blending and raw material consumption reports">
+                                        Perfume blending and raw material consumption reports
+                                    </li>
+                                    <li data-ar="تقارير المبيعات اليومية والأسبوعية والشهرية"
+                                        data-en="Daily, weekly, and monthly sales reports">
+                                        Daily, weekly, and monthly sales reports
+                                    </li>
+                                    <li data-ar="تقارير الموردين والمشتريات والجرد"
+                                        data-en="Supplier, purchasing, and inventory count reports">
+                                        Supplier, purchasing, and inventory count reports
+                                    </li>
+                                </ul>
+                                <div class="df-p-feat__links">
+                                    <a href="/features/all_features" class="df-p-feat__link-primary"
+                                       data-ar="استكشف جميع التقارير"
+                                       data-en="Explore All Reports">
+                                        Explore All Reports
+                                    </a>
+                                    <a href="/register" class="df-p-feat__link-secondary"
+                                       data-ar="ابدأ مجانًا ←"
+                                       data-en="Start Free →">
+                                        Start Free →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     WHY DAFTRA SECTION
+                ════════════════════════════════════════════ -->
+                <section class="df-p-why" id="why-daftra">
+                    <div class="df-p-cont">
+                        <div class="df-p-why__head df-p-anim">
+                            <h2 data-ar="لماذا يعتبر دفترة شريكك الرقمي الأمثل لإدارة أعمالك؟"
+                                data-en="Why is daftra your ideal digital partner for managing your business?">
+                                Why is daftra your ideal digital partner for managing your business?
+                            </h2>
+                            <p data-ar="أكثر من مجرد برنامج — دفترة شريك نجاح متكامل"
+                               data-en="More than just software — daftra is a complete success partner">
+                                More than just software — daftra is a complete success partner
+                            </p>
+                        </div>
+                        <div class="df-p-why__grid">
+                            <!-- Card 1 -->
+                            <div class="df-p-why__card df-p-anim df-p-delay-1">
+                                <div class="df-p-why__icon">
+                                    <img src="https://static.portal.daftra.com/images/why-section/free-lifetime-updates.svg"
+                                         alt="Updates"
+                                         onerror="this.parentElement.innerHTML='&#x1F504;'"/>
+                                </div>
+                                <h3 data-ar="تحديثات مجانية مدى الحياة"
+                                    data-en="Free Lifetime Updates">
+                                    Free Lifetime Updates
+                                </h3>
+                                <p data-ar="دفترة يسمعك ويتطوّر باستمرار ليواكب احتياجات أعمالك. تحديثات دورية، أدوات جديدة، وميزات إضافية، كلها توصلك مجانًا مدى الحياة مع دفترة."
+                                   data-en="daftra listens and continuously evolves to keep pace with your business needs. Regular updates, new tools, and additional features, all delivered free for life.">
+                                    daftra listens and continuously evolves to keep pace with your business
+                                    needs. Regular updates, new tools, and additional features, all delivered
+                                    free for life.
+                                </p>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="df-p-why__card df-p-anim df-p-delay-2">
+                                <div class="df-p-why__icon">
+                                    <img src="https://static.portal.daftra.com/images/why-section/safe-secure&amp;trusted.svg"
+                                         alt="Secure"
+                                         onerror="this.parentElement.innerHTML='&#x1F512;'"/>
+                                </div>
+                                <h3 data-ar="آمن ومتوافق مع أعلى المعايير"
+                                    data-en="Secure &amp; Compliant with Highest Standards">
+                                    Secure &amp; Compliant with Highest Standards
+                                </h3>
+                                <p data-ar="دفترة ملتزم بمعايير GDPR الأوروبية لحماية خصوصية وأمان بياناتك. تشفير SSL 256-bit، نسخ احتياطي دوري، وخوادم سحابية مؤمنة في أكثر من قارة."
+                                   data-en="daftra complies with European GDPR standards for data protection. 256-bit SSL encryption, regular backups, and secured cloud servers on multiple continents.">
+                                    daftra complies with European GDPR standards for data protection.
+                                    256-bit SSL encryption, regular backups, and secured cloud servers
+                                    on multiple continents.
+                                </p>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="df-p-why__card df-p-anim df-p-delay-3">
+                                <div class="df-p-why__icon">
+                                    <img src="https://static.portal.daftra.com/images/why-section/free-quick&amp;reliable-support.svg"
+                                         alt="Support"
+                                         onerror="this.parentElement.innerHTML='&#x1F4AC;'"/>
+                                </div>
+                                <h3 data-ar="دعم سريع ومجاني على مدار الساعة"
+                                    data-en="Fast &amp; Free 24/7 Support">
+                                    Fast &amp; Free 24/7 Support
+                                </h3>
+                                <p data-ar="دفترة بجانبك دائمًا، دعم فني مجاني على مدار الساعة عبر الهاتف والواتساب والبريد الإلكتروني، مع دليل مستخدم شامل بالعربية والإنجليزية."
+                                   data-en="daftra is always by your side — free 24/7 technical support via phone, WhatsApp, and email, with a comprehensive user guide in Arabic and English.">
+                                    daftra is always by your side — free 24/7 technical support via
+                                    phone, WhatsApp, and email, with a comprehensive user guide in
+                                    Arabic and English.
+                                </p>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="df-p-why__card df-p-anim df-p-delay-4">
+                                <div class="df-p-why__icon">
+                                    <img src="https://static.portal.daftra.com/images/why-section/remote-yes-disconnected-never.svg"
+                                         alt="Remote"
+                                         onerror="this.parentElement.innerHTML='&#x1F4F1;'"/>
+                                </div>
+                                <h3 data-ar="كل أعمالك بين يديك دائمًا"
+                                    data-en="Your Business Always at Hand">
+                                    Your Business Always at Hand
+                                </h3>
+                                <p data-ar="دفترة يجعلك متصلًا بأعمالك أينما كنت. نظام سحابي يعمل في أي وقت وأي مكان، ومع تطبيقات الجوال المتنوعة تستطيع العمل حتى بدون إنترنت."
+                                   data-en="daftra keeps you connected to your business wherever you are. A cloud system that works anytime, anywhere, and with various mobile apps you can even work offline.">
+                                    daftra keeps you connected to your business wherever you are. A
+                                    cloud system that works anytime, anywhere, and with various mobile
+                                    apps you can even work offline.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FAQ SECTION
+                ════════════════════════════════════════════ -->
+                <section class="df-p-faq" id="faq">
+                    <div class="df-p-cont">
+                        <div class="df-p-faq__head df-p-anim">
+                            <h2 data-ar="الأسئلة الشائعة"
+                                data-en="Frequently Asked Questions">
+                                Frequently Asked Questions
+                            </h2>
+                            <p data-ar="كل ما تريد معرفته عن برنامج إدارة محلات العطور"
+                               data-en="Everything you need to know about perfume shop management software">
+                                Everything you need to know about perfume shop management software
+                            </p>
+                        </div>
+                        <div class="df-p-faq__list">
+                            <div class="df-p-faq__item df-p-anim df-p-delay-1">
+                                <button class="df-p-faq__q" type="button">
+                                    <span data-ar="هل يدعم دفترة عمليات تركيب العطور من المواد الخام؟"
+                                          data-en="Does daftra support perfume blending operations from raw materials?">
+                                        Does daftra support perfume blending operations from raw materials?
+                                    </span>
+                                    <span class="df-p-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-p-faq__a">
+                                    <div class="df-p-faq__a-inner"
+                                         data-ar="نعم، يدعم دفترة دورة التصنيع الكاملة لمحلات العطور. يمكنك تحديد نسب المواد الخام لكل تركيبة عطر، وسيتم خصم الكميات المستهلكة تلقائياً من المخزون عند كل عملية بيع."
+                                         data-en="Yes, daftra supports the full manufacturing cycle for perfume shops. You can define raw material ratios for each perfume formula, and consumed quantities will be automatically deducted from inventory with each sale.">
+                                        Yes, daftra supports the full manufacturing cycle for perfume shops.
+                                        You can define raw material ratios for each perfume formula, and
+                                        consumed quantities will be automatically deducted from inventory
+                                        with each sale.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="df-p-faq__item df-p-anim df-p-delay-2">
+                                <button class="df-p-faq__q" type="button">
+                                    <span data-ar="هل يمكن تخصيص النظام لطبيعة محل العطور؟"
+                                          data-en="Can the system be customized for the nature of a perfume shop?">
+                                        Can the system be customized for the nature of a perfume shop?
+                                    </span>
+                                    <span class="df-p-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-p-faq__a">
+                                    <div class="df-p-faq__a-inner"
+                                         data-ar="بالتأكيد، دفترة مصمم خصيصاً للتكيف مع طبيعة مختلف أنواع الأنشطة التجارية. يمكنك تخصيص فئات المنتجات للعطور والمواد الخام، وإعداد هياكل التسعير المناسبة، وتكوين تقارير مخصصة."
+                                         data-en="Absolutely, daftra is designed to adapt to the nature of different business types. You can customize product categories for perfumes and raw materials, set up appropriate pricing structures, and configure custom reports.">
+                                        Absolutely, daftra is designed to adapt to the nature of different
+                                        business types. You can customize product categories for perfumes
+                                        and raw materials, set up appropriate pricing structures, and
+                                        configure custom reports.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="df-p-faq__item df-p-anim df-p-delay-3">
+                                <button class="df-p-faq__q" type="button">
+                                    <span data-ar="كيف تقارن دفترة بالحلول الأخرى لمحلات العطور؟"
+                                          data-en="How does daftra compare to other solutions for perfume shops?">
+                                        How does daftra compare to other solutions for perfume shops?
+                                    </span>
+                                    <span class="df-p-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-p-faq__a">
+                                    <div class="df-p-faq__a-inner"
+                                         data-ar="دفترة يتميز بدمج دورة التصنيع الكاملة مع المحاسبة ونقاط البيع والمخزون في منصة واحدة، مما يوفر عليك الحاجة لأكثر من برنامج. كما يدعم الفاتورة الإلكترونية المعتمدة في مختلف الدول العربية."
+                                         data-en="daftra stands out by integrating the complete manufacturing cycle with accounting, POS, and inventory in a single platform, saving you the need for multiple software solutions. It also supports certified e-invoicing in various Arab countries.">
+                                        daftra stands out by integrating the complete manufacturing cycle
+                                        with accounting, POS, and inventory in a single platform, saving
+                                        you the need for multiple software solutions. It also supports
+                                        certified e-invoicing in various Arab countries.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="df-p-faq__item df-p-anim df-p-delay-4">
+                                <button class="df-p-faq__q" type="button">
+                                    <span data-ar="هل أحتاج إلى نسخ احتياطي لبياناتي؟"
+                                          data-en="Do I need a data backup?">
+                                        Do I need a data backup?
+                                    </span>
+                                    <span class="df-p-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-p-faq__a">
+                                    <div class="df-p-faq__a-inner"
+                                         data-ar="لا داعي للقلق — دفترة يقوم بنسخ احتياطي تلقائي لجميع بياناتك على فترات منتظمة على خوادم سحابية مؤمنة في أكثر من قارة، مما يضمن لك أمان بياناتك في جميع الأوقات."
+                                         data-en="No worries — daftra automatically backs up all your data at regular intervals on secured cloud servers on multiple continents, ensuring your data is safe at all times.">
+                                        No worries — daftra automatically backs up all your data at regular
+                                        intervals on secured cloud servers on multiple continents, ensuring
+                                        your data is safe at all times.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="df-p-faq__item df-p-anim df-p-delay-5">
+                                <button class="df-p-faq__q" type="button">
+                                    <span data-ar="هل يمكنني نقل بياناتي من نظام آخر إلى دفترة؟"
+                                          data-en="Can I migrate data from another platform to daftra?">
+                                        Can I migrate data from another platform to daftra?
+                                    </span>
+                                    <span class="df-p-faq__chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <path d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <div class="df-p-faq__a">
+                                    <div class="df-p-faq__a-inner"
+                                         data-ar="نعم، يدعم دفترة استيراد البيانات من منصات وأنظمة مختلفة. فريق الدعم لدينا يساعدك في عملية الترحيل لضمان انتقال سلس لجميع بياناتك."
+                                         data-en="Yes, daftra supports importing data from various platforms and systems. Our support team will assist you through the migration process to ensure a smooth transition of all your data.">
+                                        Yes, daftra supports importing data from various platforms and systems.
+                                        Our support team will assist you through the migration process to ensure
+                                        a smooth transition of all your data.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     FINAL CTA STRIP
+                ════════════════════════════════════════════ -->
+                <section class="df-p-cta-strip">
+                    <div class="df-p-cont">
+                        <h2 class="df-p-anim"
+                            data-ar="جاهز لبدء إدارة محل عطورك باحترافية؟"
+                            data-en="Ready to manage your perfume shop professionally?">
+                            Ready to manage your perfume shop professionally?
+                        </h2>
+                        <p class="df-p-anim df-p-delay-1"
+                           data-ar="انضم إلى آلاف محلات العطور التي تثق في دفترة"
+                           data-en="Join thousands of perfume shops that trust daftra">
+                            Join thousands of perfume shops that trust daftra
+                        </p>
+                        <a href="/register?trk=SEO_organic" class="df-p-anim df-p-delay-2"
+                           data-ar="ابدأ الاستخدام مجانًا"
+                           data-en="Start Using for Free">
+                            Start Using for Free
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- ════════════════════════════════════════════
+                     SHARED FOOTER
+                ════════════════════════════════════════════ -->
+                <t t-call="website_pricing_plans.df_footer"/>
+
+            </div><!-- /#df-perfume-wrap -->
+
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="all_features_page" name="All Features Page">
+        <t t-call="website.layout">
+            <t t-set="no_header" t-value="True"/>
+            <t t-set="no_footer" t-value="True"/>
+            <t t-set="head">
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+                      rel="stylesheet"/>
+                <link rel="stylesheet" href="/website_pricing_plans/static/src/css/all_features.css?v=2"/>
+            </t>
+
+            <script>
+                (function(){
+                var l='en';
+                try{ var s=localStorage.getItem('df_lang'); if(s==='en'||s==='ar') l=s; }catch(e){}
+                var w=document.getElementById('df-feat-wrap');
+                if(w){ w.setAttribute('dir',l==='ar'?'rtl':'ltr'); w.classList.add('lang-'+l); }
+                else{
+                document.addEventListener('DOMContentLoaded',function(){
+                var w2=document.getElementById('df-feat-wrap');
+                if(w2){ w2.setAttribute('dir',l==='ar'?'rtl':'ltr'); w2.classList.add('lang-'+l); }
+                });
+                }
+                })();
+            </script>
+
+            <div id="df-feat-wrap" class="lang-en" dir="ltr">
+                <div class="df-glow-wrap">
+                    <div class="df-glow-item df-glow-item--1"/>
+                    <div class="df-glow-item df-glow-item--2"/>
+                </div>
+
+                <t t-call="website_pricing_plans.df_nav"/>
+
+                <section class="df-af-hero">
+                    <div class="df-af-hero__bg-lines"/>
+                    <div class="df-af-hero__bg-circles"/>
+                    <div class="df-af-cont">
+                        <p class="df-af-hero__eyebrow" data-en="Seamless" data-ar="سلس">Seamless</p>
+                        <h1 class="df-af-hero__title" data-en="Powerful Features" data-ar="مزايا قوية">Powerful
+                            Features
+                        </h1>
+                        <p class="df-af-hero__sub"
+                           data-en="Performing equally effectively, separately and simultaneously — Utilize all, activate or deactivate to match your business needs."
+                           data-ar="تعمل بفاعلية متساوية، بشكل منفصل ومتزامن — استخدم الكل، فعّل أو عطّل حسب احتياجات عملك.">
+                            Performing equally effectively, separately and simultaneously — Utilize all, activate or
+                            deactivate to match your business needs.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="df-af-section">
+                    <div class="df-af-cont">
+
+                        <div class="df-af-category" id="af-sales">
+                            <div class="df-af-category__head">
+                                <div class="df-af-category__icon-wrap">
+                                    <img src="https://www.daftra.com/img/uploads/6915994ac618d_67dc022744fcf_sales_target_commissions.svg"
+                                         alt="Sales"/>
+                                </div>
+                                <div>
+                                    <h2 class="df-af-category__title" data-en="Sales" data-ar="المبيعات">Sales</h2>
+                                    <p class="df-af-category__desc"
+                                       data-en="Complete sales management from invoicing to commissions."
+                                       data-ar="إدارة المبيعات الكاملة من الفواتير إلى العمولات.">Complete sales
+                                        management from invoicing to commissions.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="df-af-grid">
+                                <a class="df-af-card" href="/invoicing">
+                                    <img src="https://www.daftra.com/img/uploads/691596657a70e_67dad712885eb_invoices_1_.svg"
+                                         alt=""/>
+                                    <span data-en="Invoicing" data-ar="الفواتير">Invoicing</span>
+                                </a>
+                                <a class="df-af-card" href="/pos">
+                                    <img src="https://www.daftra.com/img/uploads/69159678e6997_67dbfb34cf9ba_pos.svg"
+                                         alt=""/>
+                                    <span data-en="POS" data-ar="نقاط البيع">POS</span>
+                                </a>
+                                <a class="df-af-card" href="/installments">
+                                    <img src="https://www.daftra.com/img/uploads/691596867559a_67dbfc93a405c_installments.svg"
+                                         alt=""/>
+                                    <span data-en="Installments Management" data-ar="إدارة الأقساط">Installments
+                                        Management
+                                    </span>
+                                </a>
+                                <a class="df-af-card" href="/insurance-management">
+                                    <img src="https://www.daftra.com/img/uploads/691596bc40e36_67dbfd1c0d7b4_insurance.svg"
+                                         alt=""/>
+                                    <span data-en="Insurance Management" data-ar="إدارة التأمينات">Insurance
+                                        Management
+                                    </span>
+                                </a>
+                                <a class="df-af-card" href="/sales-commission">
+                                    <img src="https://www.daftra.com/img/uploads/691596cdbe958_67dbfcad9990a_sales_target_commissions.svg"
+                                         alt=""/>
+                                    <span data-en="Sales Commissions" data-ar="عمولات المبيعات">Sales Commissions</span>
+                                </a>
+                                <a class="df-af-card" href="/offers">
+                                    <img src="https://www.daftra.com/img/uploads/691596dfd8ecb_67dc00d232158_67bc2ce0cc182_cached.svg"
+                                         alt=""/>
+                                    <span data-en="Offers" data-ar="العروض">Offers</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="df-af-category" id="af-accounting">
+                            <div class="df-af-category__head">
+                                <div class="df-af-category__icon-wrap">
+                                    <img src="https://www.daftra.com/img/uploads/6915996297804_67dc023ec8b5b_accounting.svg"
+                                         alt="Accounting"/>
+                                </div>
+                                <div>
+                                    <h2 class="df-af-category__title" data-en="Accounting" data-ar="المحاسبة">
+                                        Accounting
+                                    </h2>
+                                    <p class="df-af-category__desc"
+                                       data-en="Full financial control with accounting tools built for your business."
+                                       data-ar="تحكم مالي كامل بأدوات محاسبية مبنية لعملك.">Full financial control with
+                                        accounting tools built for your business.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="df-af-grid">
+                                <a class="df-af-card" href="/expenses">
+                                    <img src="https://www.daftra.com/img/uploads/691597094a54e_67dbffff9653f_67bc2591b86a5_cash.svg"
+                                         alt=""/>
+                                    <span data-en="Expense Management" data-ar="إدارة المصروفات">Expense Management
+                                    </span>
+                                </a>
+                                <a class="df-af-card" href="/chart-of-accounts">
+                                    <img src="https://www.daftra.com/img/uploads/6915971c5140b_67dbff08488de_finance.svg"
+                                         alt=""/>
+                                    <span data-en="Chart of Accounts" data-ar="دليل الحسابات">Chart of Accounts</span>
+                                </a>
+                                <a class="df-af-card" href="/cost-centers">
+                                    <img src="https://www.daftra.com/img/uploads/691597977e32f_67dc001be40ba_67d15adc6284f_icons8_fund_accounting_1.svg"
+                                         alt=""/>
+                                    <span data-en="Cost Centers" data-ar="مراكز التكلفة">Cost Centers</span>
+                                </a>
+                                <a class="df-af-card" href="/cheque-cycle">
+                                    <img src="https://www.daftra.com/img/uploads/69159746a22af_67dbff3c7827b_cheque_cycle.svg"
+                                         alt=""/>
+                                    <span data-en="Cheque Cycle" data-ar="دورة الشيكات">Cheque Cycle</span>
+                                </a>
+                                <a class="df-af-card" href="/asset-management">
+                                    <img src="https://www.daftra.com/img/uploads/6915975a0cc62_67dc0032151b2_67bc261576880_account_cash.svg"
+                                         alt=""/>
+                                    <span data-en="Assets Management" data-ar="إدارة الأصول">Assets Management</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="df-af-category" id="af-inventory">
+                            <div class="df-af-category__head">
+                                <div class="df-af-category__icon-wrap">
+                                    <img src="https://www.daftra.com/img/uploads/6915997d58e24_67dc02912b77f_industry_12594063_e1730635268435_150x150_1.png"
+                                         alt="Inventory"/>
+                                </div>
+                                <div>
+                                    <h2 class="df-af-category__title" data-en="Inventory" data-ar="المخزون">Inventory
+                                    </h2>
+                                    <p class="df-af-category__desc"
+                                       data-en="Track products, purchases and stock with precision."
+                                       data-ar="تتبع المنتجات والمشتريات والمخزون بدقة.">Track products, purchases and
+                                        stock with precision.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="df-af-grid">
+                                <a class="df-af-card" href="/product-management">
+                                    <img src="https://www.daftra.com/img/uploads/691597321ae17_67dc001be40ba_67d15adc6284f_icons8_fund_accounting_1.svg"
+                                         alt=""/>
+                                    <span data-en="Product Management" data-ar="إدارة المنتجات">Product Management
+                                    </span>
+                                </a>
+                                <a class="df-af-card" href="/purchase-management">
+                                    <img src="https://www.daftra.com/img/uploads/691597b4281b6_67dc007e3fef9_67bc26f75241c_inventory_2.svg"
+                                         alt=""/>
+                                    <span data-en="Purchase Management" data-ar="إدارة المشتريات">Purchase Management
+                                    </span>
+                                </a>
+                                <a class="df-af-card" href="/supplier-management">
+                                    <img src="https://www.daftra.com/img/uploads/691597c54b5b4_67dc00a9f020c_67bc3259929a2_account_tie.svg"
+                                         alt=""/>
+                                    <span data-en="Supplier Management" data-ar="إدارة الموردين">Supplier Management
+                                    </span>
+                                </a>
+                                <a class="df-af-card" href="/requisitions">
+                                    <img src="https://www.daftra.com/img/uploads/691597d689072_67dc013c313ac_67bc2d202af39_calendar_month.svg"
+                                         alt=""/>
+                                    <span data-en="Requisition Management" data-ar="إدارة الطلبيات">Requisition
+                                        Management
+                                    </span>
+                                </a>
+                                <a class="df-af-card" href="/stocktaking">
+                                    <img src="https://www.daftra.com/img/uploads/691597f205121_67dc00f0c7a02_67bc270c6b782_book.svg"
+                                         alt=""/>
+                                    <span data-en="Stocktaking" data-ar="الجرد">Stocktaking</span>
+                                </a>
+                                <a class="df-af-card" href="/manufacturing-software">
+                                    <img src="https://www.daftra.com/img/uploads/6915981ddf9f4_67dbff6edcdff_industry_12594063_e1730635268435_150x150_1.png"
+                                         alt=""/>
+                                    <span data-en="Manufacturing" data-ar="التصنيع">Manufacturing</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="df-af-category" id="af-hrm">
+                            <div class="df-af-category__head">
+                                <div class="df-af-category__icon-wrap">
+                                    <img src="https://www.daftra.com/img/uploads/69159999dffdf_67dc02b2a2cb9_client_attendance.svg"
+                                         alt="HRM"/>
+                                </div>
+                                <div>
+                                    <h2 class="df-af-category__title" data-en="HRM" data-ar="الموارد البشرية">HRM</h2>
+                                    <p class="df-af-category__desc"
+                                       data-en="Manage your team from hiring to payroll, all in one place."
+                                       data-ar="إدارة فريقك من التوظيف إلى الرواتب، كل ذلك في مكان واحد.">Manage your
+                                        team from hiring to payroll, all in one place.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="df-af-grid">
+                                <a class="df-af-card" href="/organizational-structure">
+                                    <img src="https://www.daftra.com/img/uploads/69159842d846b_67dbfd8cd81f2_employees_organizational.svg"
+                                         alt=""/>
+                                    <span data-en="Organizational Structure" data-ar="الهيكل التنظيمي">Organizational
+                                        Structure
+                                    </span>
+                                </a>
+                                <a class="df-af-card" href="/contracts">
+                                    <img src="https://www.daftra.com/img/uploads/69159865e28af_67dc01097813d_67bc31a6ec17b_clipboard_text.svg"
+                                         alt=""/>
+                                    <span data-en="Contracts" data-ar="العقود">Contracts</span>
+                                </a>
+                                <a class="df-af-card" href="/attendance-leave-management">
+                                    <img src="https://www.daftra.com/img/uploads/6915987883d54_67dbff9b55da7_employees_attendance.svg"
+                                         alt=""/>
+                                    <span data-en="Attendance" data-ar="الحضور والانصراف">Attendance</span>
+                                </a>
+                                <a class="df-af-card" href="/payroll">
+                                    <img src="https://www.daftra.com/img/uploads/6915988a26a56_67dbfda33fb65_employees_payroll.svg"
+                                         alt=""/>
+                                    <span data-en="Payroll" data-ar="الرواتب">Payroll</span>
+                                </a>
+                                <a class="df-af-card" href="/requests">
+                                    <img src="https://www.daftra.com/img/uploads/6915989d62607_67dbffb11422c_requests.svg"
+                                         alt=""/>
+                                    <span data-en="Requests" data-ar="الطلبات">Requests</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="df-af-category" id="af-operations">
+                            <div class="df-af-category__head">
+                                <div class="df-af-category__icon-wrap">
+                                    <img src="https://www.daftra.com/img/uploads/691599c36b327_67dc02d0239d2_work_orders.svg"
+                                         alt="Operations"/>
+                                </div>
+                                <div>
+                                    <h2 class="df-af-category__title" data-en="Operations" data-ar="العمليات">
+                                        Operations
+                                    </h2>
+                                    <p class="df-af-category__desc"
+                                       data-en="Streamline work orders, bookings and time tracking."
+                                       data-ar="تبسيط أوامر الشغل والحجوزات وتتبع الوقت.">Streamline work orders,
+                                        bookings and time tracking.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="df-af-grid">
+                                <a class="df-af-card" href="/work-orders">
+                                    <img src="https://www.daftra.com/img/uploads/691598b4d21af_67dbfdd9ca895_work_orders.svg"
+                                         alt=""/>
+                                    <span data-en="Work Orders" data-ar="أوامر الشغل">Work Orders</span>
+                                </a>
+                                <a class="df-af-card" href="/booking-management">
+                                    <img src="https://www.daftra.com/img/uploads/691598cd9c23f_67dbfde8e7c8d_bookings.svg"
+                                         alt=""/>
+                                    <span data-en="Booking" data-ar="الحجوزات">Booking</span>
+                                </a>
+                                <a class="df-af-card" href="/time-tracking">
+                                    <img src="https://www.daftra.com/img/uploads/691598ea9545a_67dbfdfa3bf24_time_tracking.svg"
+                                         alt=""/>
+                                    <span data-en="Time Tracking" data-ar="تتبع الوقت">Time Tracking</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="df-af-category" id="af-crm">
+                            <div class="df-af-category__head">
+                                <div class="df-af-category__icon-wrap">
+                                    <img src="https://www.daftra.com/img/uploads/691599da4fb49_67dc02fdc7d23_clients.svg"
+                                         alt="CRM"/>
+                                </div>
+                                <div>
+                                    <h2 class="df-af-category__title" data-en="CRM" data-ar="إدارة العملاء">CRM</h2>
+                                    <p class="df-af-category__desc"
+                                       data-en="Build lasting customer relationships with follow-up and loyalty tools."
+                                       data-ar="بناء علاقات دائمة مع العملاء بأدوات المتابعة والولاء.">Build lasting
+                                        customer relationships with follow-up and loyalty tools.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="df-af-grid">
+                                <a class="df-af-card" href="/crm">
+                                    <img src="https://www.daftra.com/img/uploads/6915990183295_67dbfd3034d19_clients.svg"
+                                         alt=""/>
+                                    <span data-en="Client Management" data-ar="إدارة العملاء">Client Management</span>
+                                </a>
+                                <a class="df-af-card" href="/client-follow-up">
+                                    <img src="https://www.daftra.com/img/uploads/6915990f505c3_67dbfd3ec275c_clients_follow_up.svg"
+                                         alt=""/>
+                                    <span data-en="Client Follow-Up" data-ar="متابعة العملاء">Client Follow-Up</span>
+                                </a>
+                                <a class="df-af-card" href="/memberships">
+                                    <img src="https://www.daftra.com/img/uploads/6915991dc6729_67dbfd52b8f07_memberships.svg"
+                                         alt=""/>
+                                    <span data-en="Memberships" data-ar="العضويات">Memberships</span>
+                                </a>
+                                <a class="df-af-card" href="/points-credits">
+                                    <img src="https://www.daftra.com/img/uploads/69159929d7abc_67dbfe1679677_points_credits.svg"
+                                         alt=""/>
+                                    <span data-en="Points &amp; Credits" data-ar="النقاط والأرصدة">Points &amp;
+                                        Credits
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="df-af-category" id="af-mobile">
+                            <div class="df-af-category__head">
+                                <div class="df-af-category__icon-wrap df-af-category__icon-wrap--purple">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                         stroke-width="2">
+                                        <rect x="5" y="2" width="14" height="20" rx="2"/>
+                                        <circle cx="12" cy="17" r="1"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h2 class="df-af-category__title" data-en="Mobile Apps" data-ar="تطبيقات الجوال">
+                                        Mobile Apps
+                                    </h2>
+                                    <p class="df-af-category__desc"
+                                       data-en="Run your business on the go with powerful mobile applications."
+                                       data-ar="أدر عملك أينما كنت مع تطبيقات الجوال القوية.">Run your business on the
+                                        go with powerful mobile applications.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="df-af-grid">
+                                <a class="df-af-card" href="/business-application">
+                                    <img src="https://www.daftra.com/files/landing_page_icons/68c26c7436598_68bed390932c6_Mobile_Apps_Icons.png"
+                                         alt=""/>
+                                    <span data-en="Daftra Business App" data-ar="تطبيق دفترة للأعمال">Daftra Business
+                                        App
+                                    </span>
+                                </a>
+                                <a class="df-af-card" href="/pos-application">
+                                    <img src="https://www.daftra.com/files/landing_page_icons/68c26c8ab37f8_68bed428ea9e7_Daftra_POS.png"
+                                         alt=""/>
+                                    <span data-en="POS App" data-ar="تطبيق نقاط البيع">POS App</span>
+                                </a>
+                                <a class="df-af-card" href="/quick-expense-scanner">
+                                    <img src="https://www.daftra.com/files/landing_page_icons/68c26ccfb695a_68bed45c62fe6_Daftra_EXP.png"
+                                         alt=""/>
+                                    <span data-en="Expense Scanner App" data-ar="تطبيق مسح المصروفات">Expense Scanner
+                                        App
+                                    </span>
+                                </a>
+                                <a class="df-af-card" href="/ess-app">
+                                    <img src="https://www.daftra.com/files/landing_page_icons/68c26cb6dd7a2_68bed4490a0a6_Daftra_ESS.png"
+                                         alt=""/>
+                                    <span data-en="ESS Application" data-ar="تطبيق خدمة الموظفين">ESS Application</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <t t-call="website_pricing_plans.df_footer"/>
+
+            </div>
+
+        </t>
+    </template>
+
+    <record id="all_features_page_route" model="website.page">
+        <field name="name">All Features</field>
+        <field name="url">/features/all_features</field>
+        <field name="view_id" ref="all_features_page"/>
+        <field name="website_published">True</field>
+    </record>
+</odoo>

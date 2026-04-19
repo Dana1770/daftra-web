@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pricing_plan_list" model="ir.ui.view">
+        <field name="name">website.pricing.plan.list</field>
+        <field name="model">website.pricing.plan</field>
+        <field name="arch" type="xml">
+            <list string="Pricing Plans">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="monthly_price"/>
+                <field name="annual_price_per_month"/>
+                <field name="is_featured"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_pricing_plan_form" model="ir.ui.view">
+        <field name="name">website.pricing.plan.form</field>
+        <field name="model">website.pricing.plan</field>
+        <field name="arch" type="xml">
+            <form string="Pricing Plan">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="tagline"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                            <field name="is_featured"/>
+                            <field name="featured_label"/>
+                            <field name="color_class"/>
+                        </group>
+                        <group>
+                            <field name="monthly_price"/>
+                            <field name="annual_price_per_month"/>
+                            <field name="annual_total"/>
+                            <field name="currency_symbol"/>
+                            <field name="cta_label"/>
+                            <field name="cta_url"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Features">
+                            <field name="feature_line_ids">
+                                <list editable="bottom">
+                                    <field name="feature_id"/>
+                                    <field name="value_type"/>
+                                    <field name="value_text"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_section_list" model="ir.ui.view">
+        <field name="name">website.pricing.feature.section.list</field>
+        <field name="model">website.pricing.feature.section</field>
+        <field name="arch" type="xml">
+            <list string="Feature Sections">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_section_form" model="ir.ui.view">
+        <field name="name">website.pricing.feature.section.form</field>
+        <field name="model">website.pricing.feature.section</field>
+        <field name="arch" type="xml">
+            <form string="Feature Section">
+                <sheet>
+                    <group><field name="name"/><field name="sequence"/></group>
+                    <field name="feature_ids">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

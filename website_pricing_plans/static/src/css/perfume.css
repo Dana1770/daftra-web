@@ -1,0 +1,631 @@
+/* ============================================================
+   PERFUME STORES PAGE — perfume.css
+   ============================================================ */
+
+/* ── Reset & base ─────────────────────────────────── */
+#df-perfume-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+
+#df-perfume-wrap {
+    font-family: 'Cairo', 'Segoe UI', sans-serif;
+    color: #1a1a2e;
+    background: #fff;
+    overflow-x: hidden;
+    direction: ltr;
+}
+#df-perfume-wrap.lang-ar { direction: rtl; }
+
+/* ── Container ────────────────────────────────────── */
+.df-p-cont {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.df-p-hero {
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1154 50%, #1a0a2e 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.df-p-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 900px 700px at 70% 40%, rgba(200,120,0,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 600px 500px at 10% 80%, rgba(160,80,200,0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.df-p-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: df-pgrid-drift 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes df-pgrid-drift {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(60px, 60px); }
+}
+
+.df-p-hero__in {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Breadcrumb */
+.df-p-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.df-p-breadcrumb span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+}
+.df-p-breadcrumb a {
+    font-size: 13px;
+    color: #c9a84c;
+    text-decoration: none;
+}
+.df-p-breadcrumb svg { color: rgba(255,255,255,0.3); }
+
+.df-p-hero h1 {
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.df-p-highlight {
+    background: linear-gradient(135deg, #c9a84c, #f0d080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.df-p-hero__sub {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 32px;
+    max-width: 520px;
+}
+
+.df-p-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #c9a84c, #e8c35a);
+    color: #1a0a2e;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+}
+.df-p-hero__cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.5);
+}
+
+/* Badges */
+.df-p-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+.df-p-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+}
+.df-p-badge__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #c9a84c;
+    display: inline-block;
+}
+
+/* Partners */
+.df-p-partners {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+.df-p-partners__label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    white-space: nowrap;
+}
+.df-p-partners__logos {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.df-p-partners__logos img {
+    height: 28px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.55;
+    transition: opacity 0.2s;
+}
+.df-p-partners__logos img:hover { opacity: 0.85; }
+
+/* Hero visual */
+.df-p-hero__visual {
+    position: relative;
+}
+.df-p-hero__img-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    position: relative;
+}
+.df-p-hero__img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(26,10,46,0.6) 100%);
+}
+.df-p-hero__img-wrap img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Stat cards */
+.df-p-stat-card {
+    position: absolute;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    backdrop-filter: blur(12px);
+    min-width: 140px;
+    text-align: center;
+    animation: df-float 4s ease-in-out infinite;
+}
+.df-p-stat-card--1 { bottom: -20px; left: -20px; animation-delay: 0s; }
+.df-p-stat-card--2 { top: 20px; right: -20px; animation-delay: 2s; }
+
+@keyframes df-float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+}
+
+.df-p-stat-card__num {
+    font-size: 24px;
+    font-weight: 800;
+    color: #c9a84c;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+.df-p-stat-card__label {
+    font-size: 11px;
+    color: #6b7280;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* ============================================================
+   FEATURE SECTIONS
+   ============================================================ */
+.df-p-feat {
+    padding: 100px 0;
+}
+.df-p-feat--gray {
+    background: #f8fafc;
+}
+.df-p-feat__in {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.df-p-feat__in--rev { direction: ltr; }
+#df-perfume-wrap.lang-ar .df-p-feat__in--rev { direction: rtl; }
+
+.df-p-feat__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.10);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #c9a84c;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.df-p-feat__tag svg { width: 16px; height: 16px; color: #c9a84c; }
+
+.df-p-feat__content h2 {
+    font-size: clamp(22px, 2.8vw, 36px);
+    font-weight: 800;
+    color: #1a1a2e;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+.df-p-feat__content p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #4a5568;
+    margin-bottom: 24px;
+}
+.df-p-feat__bullets {
+    list-style: none;
+    margin-bottom: 28px;
+}
+.df-p-feat__bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.df-p-feat__bullets li::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c9a84c, #e8c35a);
+    display: inline-block;
+    margin-top: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%231a0a2e' stroke-width='3'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #c9a84c;
+    background-size: 10px;
+}
+.df-p-feat__links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.df-p-feat__link-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #c9a84c, #e8c35a);
+    color: #1a0a2e;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+}
+.df-p-feat__link-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.45);
+}
+.df-p-feat__link-secondary {
+    color: #c9a84c;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.df-p-feat__link-secondary:hover { color: #a07a28; }
+
+/* Feature media */
+.df-p-feat__media {}
+.df-p-feat__img-card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+    transition: transform 0.3s;
+}
+.df-p-feat__img-card:hover { transform: translateY(-6px); }
+.df-p-feat__img-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================================
+   GROW-WITH BANNER
+   ============================================================ */
+.df-p-grow {
+    background: linear-gradient(135deg, #c9a84c 0%, #e8c35a 50%, #c9a84c 100%);
+    padding: 64px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.df-p-grow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.15) 0%, transparent 60%);
+}
+.df-p-grow h2 {
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 800;
+    color: #1a0a2e;
+    margin-bottom: 16px;
+    position: relative;
+}
+.df-p-grow a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1a0a2e;
+    color: #c9a84c;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(26,10,46,0.3);
+}
+.df-p-grow a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(26,10,46,0.45);
+}
+
+/* ============================================================
+   WHY SECTION
+   ============================================================ */
+.df-p-why {
+    padding: 100px 0;
+    background: #fff;
+}
+.df-p-why__head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 60px;
+}
+.df-p-why__head h2 {
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+}
+.df-p-why__head p {
+    font-size: 16px;
+    color: #6b7280;
+}
+.df-p-why__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+.df-p-why__card {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border: 1px solid #e8edf5;
+}
+.df-p-why__card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+}
+.df-p-why__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+.df-p-why__icon img { width: 64px; height: 64px; object-fit: contain; }
+.df-p-why__card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+.df-p-why__card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #6b7280;
+}
+
+/* ============================================================
+   FAQ SECTION
+   ============================================================ */
+.df-p-faq {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+.df-p-faq__head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 56px;
+}
+.df-p-faq__head h2 {
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+}
+.df-p-faq__head p { font-size: 16px; color: #6b7280; }
+.df-p-faq__list {
+    max-width: 760px;
+    margin: 0 auto;
+}
+.df-p-faq__item {
+    background: #fff;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e8edf5;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+.df-p-faq__item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.df-p-faq__q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: start;
+}
+.df-p-faq__q span:first-child {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+    flex: 1;
+}
+.df-p-faq__chevron svg {
+    width: 20px;
+    height: 20px;
+    color: #c9a84c;
+    transition: transform 0.25s;
+}
+.df-p-faq__item.df-p-open .df-p-faq__chevron svg { transform: rotate(180deg); }
+.df-p-faq__a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+.df-p-faq__item.df-p-open .df-p-faq__a { max-height: 200px; }
+.df-p-faq__a-inner {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #4a5568;
+}
+
+/* ============================================================
+   CTA STRIP
+   ============================================================ */
+.df-p-cta-strip {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1154 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.df-p-cta-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 800px 400px at 50% 50%, rgba(201,168,76,0.12) 0%, transparent 70%);
+}
+.df-p-cta-strip h2 {
+    font-size: clamp(22px, 3vw, 38px);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+    position: relative;
+}
+.df-p-cta-strip p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 32px;
+    position: relative;
+}
+.df-p-cta-strip a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #c9a84c, #e8c35a);
+    color: #1a0a2e;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 16px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 32px rgba(201,168,76,0.4);
+    position: relative;
+}
+.df-p-cta-strip a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(201,168,76,0.55);
+}
+
+/* ============================================================
+   ANIMATION HELPERS
+   ============================================================ */
+.df-p-anim,
+.df-p-anim--left,
+.df-p-anim--right {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.df-p-anim { transform: translateY(30px); }
+.df-p-anim--left { transform: translateX(-40px); }
+.df-p-anim--right { transform: translateX(40px); }
+
+.df-p-visible {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.df-p-delay-1 { transition-delay: 0.1s; }
+.df-p-delay-2 { transition-delay: 0.2s; }
+.df-p-delay-3 { transition-delay: 0.3s; }
+.df-p-delay-4 { transition-delay: 0.4s; }
+.df-p-delay-5 { transition-delay: 0.5s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+    .df-p-hero__in,
+    .df-p-feat__in { grid-template-columns: 1fr; gap: 40px; }
+    .df-p-hero__visual { order: -1; }
+    .df-p-why__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .df-p-why__grid { grid-template-columns: 1fr; }
+    .df-p-feat__links { flex-direction: column; align-items: flex-start; }
+    .df-p-stat-card--2 { display: none; }
+}

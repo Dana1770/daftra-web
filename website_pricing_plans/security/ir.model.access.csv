@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wpp_plan_pub,wpp.plan.pub,model_website_pricing_plan,,1,0,0,0
+access_wpp_line_pub,wpp.line.pub,model_website_pricing_plan_line,,1,0,0,0
+access_wpp_feat_pub,wpp.feat.pub,model_website_pricing_feature,,1,0,0,0
+access_wpp_sect_pub,wpp.sect.pub,model_website_pricing_feature_section,,1,0,0,0
+access_wpp_plan_adm,wpp.plan.adm,model_website_pricing_plan,base.group_system,1,1,1,1
+access_wpp_line_adm,wpp.line.adm,model_website_pricing_plan_line,base.group_system,1,1,1,1
+access_wpp_feat_adm,wpp.feat.adm,model_website_pricing_feature,base.group_system,1,1,1,1
+access_wpp_sect_adm,wpp.sect.adm,model_website_pricing_feature_section,base.group_system,1,1,1,1
